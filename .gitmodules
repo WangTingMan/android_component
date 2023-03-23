@@ -1,0 +1,84 @@
+[submodule "boringssl"]
+	path = boringssl
+	url = https://github.com/WangTingMan/boringssl.git
+[submodule "chromebase"]
+	path = chromebase
+	url = https://github.com/WangTingMan/chromebase.git
+[submodule "core"]
+	path = core
+	url = https://github.com/WangTingMan/platform_system_core.git
+[submodule "flatbuffers"]
+	path = flatbuffers
+	url = https://github.com/WangTingMan/flatbuffers.git
+[submodule "frameworks_native"]
+	path = frameworks_native
+	url = https://github.com/WangTingMan/frameworks_native.git
+[submodule "generated_files"]
+	path = generated_files
+	url = https://github.com/WangTingMan/android_generated_files.git
+[submodule "libbase"]
+	path = libbase
+	url = https://github.com/WangTingMan/libbase.git
+[submodule "libfmq"]
+	path = libfmq
+	url = https://github.com/WangTingMan/android_system_libfmq.git
+[submodule "libhardware"]
+	path = libhardware
+	url = https://github.com/WangTingMan/platform_system_libhardware.git
+[submodule "libhidl"]
+	path = libhidl
+	url = https://github.com/WangTingMan/android_system_libhidl.git
+[submodule "libhwbinder"]
+	path = libhwbinder
+	url = https://github.com/WangTingMan/platform_system_libhwbinder.git
+[submodule "logging"]
+	path = logging
+	url = https://github.com/WangTingMan/android_system_logging.git
+[submodule "protobuf"]
+	path = protobuf
+	url = https://github.com/WangTingMan/protobuf.git
+[submodule "system/external/fmtlib"]
+	path = system/external/fmtlib
+	url = https://github.com/WangTingMan/platform_external_fmtlib.git
+[submodule "system/external/googletest"]
+	path = system/external/googletest
+	url = https://github.com/WangTingMan/googletest.git
+[submodule "system/external/grpc-grpc"]
+	path = system/external/grpc-grpc
+	url = https://github.com/WangTingMan/grpc-grpc.git
+[submodule "system/external/jsoncpp"]
+	path = system/external/jsoncpp
+	url = https://github.com/WangTingMan/jsoncpp.git
+[submodule "system/external/libbrillo"]
+	path = system/external/libbrillo
+	url = https://github.com/WangTingMan/platform_external_libbrillo.git
+[submodule "system/external/libldac"]
+	path = system/external/libldac
+	url = https://github.com/WangTingMan/platform_external_libldac.git
+[submodule "system/external/libopus"]
+	path = system/external/libopus
+	url = https://github.com/WangTingMan/platform_external_libopus.git
+[submodule "system/external/libxml2"]
+	path = system/external/libxml2
+	url = https://github.com/WangTingMan/libxml2.git
+[submodule "system/external/modp_b64"]
+	path = system/external/modp_b64
+	url = https://github.com/WangTingMan/platform_external_modp_b64.git
+[submodule "system/external/nanopb-c"]
+	path = system/external/nanopb-c
+	url = https://github.com/WangTingMan/nanopb-c.git
+[submodule "system/external/tinyxml2"]
+	path = system/external/tinyxml2
+	url = https://github.com/WangTingMan/tinyxml2.git
+[submodule "system/external/zlib"]
+	path = system/external/zlib
+	url = https://github.com/WangTingMan/zlib.git
+[submodule "system/media"]
+	path = system/media
+	url = https://github.com/WangTingMan/platform_system_media.git
+[submodule "system/tools/aidl"]
+	path = system/tools/aidl
+	url = https://github.com/WangTingMan/system_tools_aidl.git
+[submodule "system/tools/hidl"]
+	path = system/tools/hidl
+	url = https://github.com/WangTingMan/system_tools_hidl.git
