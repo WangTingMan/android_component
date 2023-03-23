@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6f7f200e-e54c-41fe-a826-4462223eb88e}</ProjectGuid>
+    <RootNamespace>libhidlbase</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <TargetExt>.so</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;LIBHIDL_IMPLEMENTATION;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbase.lib;libutils.lib;libcutils.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\BaseAll.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceManagerAll.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceNotificationAll.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.1\ServiceManagerAll.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ClientCallbackAll.cpp" />
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ServiceManagerAll.cpp" />
+    <ClCompile Include="..\..\libhidl\base\HidlInternal.cpp" />
+    <ClCompile Include="..\..\libhidl\base\HidlSupport.cpp" />
+    <ClCompile Include="..\..\libhidl\base\Status.cpp" />
+    <ClCompile Include="..\..\libhidl\base\TaskRunner.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\HidlBinderSupport.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\HidlLazyUtils.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\HidlPassthroughSupport.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\HidlTransportSupport.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\HidlTransportUtils.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\LegacySupport.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\ServiceManagement.cpp" />
+    <ClCompile Include="..\..\libhidl\transport\Static.cpp" />
+    <ClCompile Include="..\..\libhwbinder\Binder.cpp" />
+    <ClCompile Include="..\..\libhwbinder\BpHwBinder.cpp" />
+    <ClCompile Include="..\..\libhwbinder\BufferedTextOutput.cpp" />
+    <ClCompile Include="..\..\libhwbinder\Debug.cpp" />
+    <ClCompile Include="..\..\libhwbinder\IInterface.cpp" />
+    <ClCompile Include="..\..\libhwbinder\IPCThreadState.cpp" />
+    <ClCompile Include="..\..\libhwbinder\Parcel.cpp" />
+    <ClCompile Include="..\..\libhwbinder\ProcessState.cpp" />
+    <ClCompile Include="..\..\libhwbinder\Static.cpp" />
+    <ClCompile Include="..\..\libhwbinder\TextOutput.cpp" />
+    <ClCompile Include="..\..\libhwbinder\Utils.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BnHwBase.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BpHwBase.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BsBase.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\hwtypes.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IBase.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IHwBase.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.h" />
+    <ClInclude Include="..\..\libhidl\base\include\hidl\HidlInternal.h" />
+    <ClInclude Include="..\..\libhidl\base\include\hidl\HidlSupport.h" />
+    <ClInclude Include="..\..\libhidl\base\include\hidl\MQDescriptor.h" />
+    <ClInclude Include="..\..\libhidl\base\include\hidl\Status.h" />
+    <ClInclude Include="..\..\libhidl\base\include\hidl\TaskRunner.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\ConcurrentMap.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlBinderSupport.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlLazyUtils.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlPassthroughSupport.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlTransportSupport.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlTransportUtils.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\LegacySupport.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\ServiceManagement.h" />
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\Static.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Binder.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\BpHwBinder.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Debug.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IBinder.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IInterface.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IPCThreadState.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\libhidl_export.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Parcel.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\ProcessState.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Static.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

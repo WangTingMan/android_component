@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="libcutils_sockets">
+      <UniqueIdentifier>{bc527d39-16e6-4435-87af-30acdd874a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="internal">
+      <UniqueIdentifier>{58b2a6be-43bd-4539-bb9a-bf07443787e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\strlcpy.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\config_utils.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\iosched_policy.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\load_file.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\native_handle.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\properties.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\record_stream.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\threads.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\trace-host.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\socket_inaddr_any_server_windows.cpp">
+      <Filter>libcutils_sockets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\socket_network_client_windows.cpp">
+      <Filter>libcutils_sockets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\sockets_windows.cpp">
+      <Filter>libcutils_sockets</Filter>
+    </ClCompile>
+    <ClCompile Include="internal_property.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\socket_local_server_windows.cpp">
+      <Filter>libcutils_sockets</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\ashmem-host.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="iniparser.c">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="dictionary.c">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="ini_property_parser.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\getopt.c">
+      <Filter>source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h">
+      <Filter>libcutils_sockets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\cutils_export.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\iosched_policy.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\native_handle.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\properties.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\record_stream.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\threads.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="internal_property.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\trace.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\atomic.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\ashmem.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="tailor.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="iniparser.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="dictionary.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\getopt.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\memory.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

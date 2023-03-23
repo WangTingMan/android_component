@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{bb735993-cdb9-4c82-a7ce-360b1621df4e}</ProjectGuid>
+    <RootNamespace>libbinder</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <TargetExt>.so</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;LIBBINDER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LIBBINDER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;LIBBINDER_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;NOMINMAX;LIBBINDER_IMPLEMENTATION;WIN32_LEAN_AND_MEAN;BINDER_WITH_KERNEL_IPC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libutils.lib;liblog.lib;libbase.lib;libhidlbase.lib;libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;LIBBINDER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\atomic_porting_header.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Binder.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BpBinder.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Debug.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\FdTrigger.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IInterface.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IMemory.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IPCThreadState.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IPermissionController.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IResultReceiver.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IServiceManager.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IShellCallback.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\LazyServiceRegistrar.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryBase.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryDealer.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryHeapBase.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Parcel.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelableHolder.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelFileDescriptor.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PermissionCache.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PermissionController.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PersistableBundle.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ProcessState.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcServer.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcSession.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcState.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcTransportRaw.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ServiceManagerHost.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Stability.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Static.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Status.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\TextOutput.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Utils.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\UtilsHost.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\windows_binder_porting.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\windows_porting.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Debug.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\FdTrigger.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnClientCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnServiceCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\atomic_porting_header.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Binder.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\BinderService.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\BpBinder.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\compatible_porting.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Enums.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IBinder.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IInterface.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IMemory.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IPCThreadState.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IPermissionController.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IResultReceiver.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IServiceManager.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IShellCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\LazyServiceRegistrar.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\libbinder_export.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryBase.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryDealer.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryHeapBase.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Parcel.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Parcelable.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ParcelableHolder.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ParcelFileDescriptor.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PermissionCache.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PermissionController.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PersistableBundle.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ProcessState.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcCertificateFormat.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcKeyFormat.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcServer.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcSession.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcThreads.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcTransport.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcTransportRaw.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\SafeInterface.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Stability.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Status.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\TextOutput.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\windows_porting.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\OS.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\RpcState.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Static.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Utils.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\UtilsHost.h" />
+    <ClInclude Include="..\..\libhwbinder\include\linux\binder.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

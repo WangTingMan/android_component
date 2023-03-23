@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="libhidlbase-combined-impl">
+      <UniqueIdentifier>{1c793fd3-0bfa-4248-b742-3f47a0d9baec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="libhwbinder_defaults">
+      <UniqueIdentifier>{bf60d8cc-6a16-4099-95e4-57bc2dab0e4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated_files">
+      <UniqueIdentifier>{0f5e2cce-d1bd-418b-bde8-79549395b44f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated_files\header">
+      <UniqueIdentifier>{0e39177d-28a2-4cbc-8bcb-4b51190d0dc1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\base\TaskRunner.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\HidlBinderSupport.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\base\HidlInternal.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\base\HidlSupport.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\base\Status.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\HidlLazyUtils.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\HidlPassthroughSupport.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\HidlTransportSupport.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\HidlTransportUtils.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\LegacySupport.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\ServiceManagement.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhidl\transport\Static.cpp">
+      <Filter>libhidlbase-combined-impl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\Binder.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\BpHwBinder.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\BufferedTextOutput.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\Debug.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\IInterface.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\IPCThreadState.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\Parcel.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\ProcessState.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\Static.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\TextOutput.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libhwbinder\Utils.cpp">
+      <Filter>libhwbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\BaseAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ClientCallbackAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ServiceManagerAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceManagerAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceNotificationAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.1\ServiceManagerAll.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\libhidl\base\include\hidl\TaskRunner.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlBinderSupport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\base\include\hidl\HidlInternal.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\base\include\hidl\HidlSupport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\base\include\hidl\MQDescriptor.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\base\include\hidl\Status.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\ConcurrentMap.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlLazyUtils.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlPassthroughSupport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlTransportSupport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\HidlTransportUtils.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\LegacySupport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\ServiceManagement.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhidl\transport\include\hidl\Static.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Binder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\BpHwBinder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Debug.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IBinder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IInterface.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\IPCThreadState.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Parcel.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\ProcessState.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\Static.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\libhidl_export.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BnHwBase.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BpHwBase.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\BsBase.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\hwtypes.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IBase.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IHwBase.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.h">
+      <Filter>generated_files\header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

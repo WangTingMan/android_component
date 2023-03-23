@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="generated_files">
+      <UniqueIdentifier>{852ca035-812f-4589-9e5b-196cce48bc13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win">
+      <UniqueIdentifier>{a065a1f0-3f38-4c07-8221-66c654ea4ca4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libbinder_defaults">
+      <UniqueIdentifier>{e2672274-17e9-49e2-98fa-9b8287ac723e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libbinder_kernel_defaults">
+      <UniqueIdentifier>{e4fe0a99-fd00-4f99-836f-aebe42e98de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libbinder_kernel_defaults\libbinder_device_interface_sources">
+      <UniqueIdentifier>{1f16bff8-a79a-4a6f-ad3c-90ef1571dc51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IMemory.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IShellCallback.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\LazyServiceRegistrar.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryBase.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryDealer.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryHeapBase.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelableHolder.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PersistableBundle.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\windows_porting.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\atomic_porting_header.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Binder.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BpBinder.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Debug.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\FdTrigger.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IInterface.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IResultReceiver.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Parcel.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelFileDescriptor.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcServer.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcSession.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcState.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RpcTransportRaw.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Stability.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Status.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\TextOutput.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Utils.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\UtilsHost.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IPCThreadState.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IServiceManager.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ProcessState.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\Static.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\IPermissionController.cpp">
+      <Filter>libbinder_kernel_defaults\libbinder_device_interface_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PermissionCache.cpp">
+      <Filter>libbinder_kernel_defaults\libbinder_device_interface_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\PermissionController.cpp">
+      <Filter>libbinder_kernel_defaults\libbinder_device_interface_sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ServiceManagerHost.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\windows_binder_porting.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Binder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\BinderService.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\BpBinder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Enums.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IBinder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IInterface.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IMemory.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IPCThreadState.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IPermissionController.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IResultReceiver.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IServiceManager.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\IShellCallback.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\LazyServiceRegistrar.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryBase.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryDealer.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\MemoryHeapBase.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Parcel.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Parcelable.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ParcelableHolder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ParcelFileDescriptor.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PermissionCache.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PermissionController.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\PersistableBundle.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\ProcessState.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcCertificateFormat.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcKeyFormat.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcServer.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcSession.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcThreads.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcTransport.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\RpcTransportRaw.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\SafeInterface.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Stability.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Status.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\TextOutput.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnClientCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\atomic_porting_header.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Debug.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\FdTrigger.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\OS.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\RpcState.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Utils.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\UtilsHost.h">
+      <Filter>libbinder_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\windows_porting.h">
+      <Filter>win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\compatible_porting.h">
+      <Filter>win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.h">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\Static.h">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnServiceCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\libbinder_export.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\linux\binder.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
