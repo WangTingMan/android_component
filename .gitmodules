@@ -82,3 +82,9 @@
 [submodule "system/tools/hidl"]
 	path = system/tools/hidl
 	url = https://github.com/WangTingMan/system_tools_hidl.git
+[submodule "system/external/sqlite"]
+	path = system/external/sqlite
+	url = https://github.com/WangTingMan/platform_external_sqlite.git
+[submodule "system/external/aac"]
+	path = system/external/aac
+	url = https://github.com/WangTingMan/platform_external_aac.git
