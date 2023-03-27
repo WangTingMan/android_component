@@ -197,6 +197,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sqlite", "sqlite", "{990005
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsqlite3_android_defaults", "system\external\sqlite\ms_build\libsqlite3_android_defaults\libsqlite3_android_defaults.vcxproj", "{3398682A-52B9-4A92-8C8A-F1A1CFFE9440}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtinyxml2", "system\external\tinyxml2\ms_build\libtinyxml2\libtinyxml2.vcxproj", "{66C03EB1-13FA-4692-93AD-611D21660D67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -845,6 +847,14 @@ Global
 		{3398682A-52B9-4A92-8C8A-F1A1CFFE9440}.Release|x64.Build.0 = Release|x64
 		{3398682A-52B9-4A92-8C8A-F1A1CFFE9440}.Release|x86.ActiveCfg = Release|Win32
 		{3398682A-52B9-4A92-8C8A-F1A1CFFE9440}.Release|x86.Build.0 = Release|Win32
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Debug|x64.ActiveCfg = Debug|x64
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Debug|x64.Build.0 = Debug|x64
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Debug|x86.ActiveCfg = Debug|Win32
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Debug|x86.Build.0 = Debug|Win32
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Release|x64.ActiveCfg = Release|x64
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Release|x64.Build.0 = Release|x64
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Release|x86.ActiveCfg = Release|Win32
+		{66C03EB1-13FA-4692-93AD-611D21660D67}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -935,6 +945,7 @@ Global
 		{CC3F78D5-C342-4B77-AB3B-53C84650540D} = {9900052B-7C73-46A2-9313-555E8D9A065A}
 		{9900052B-7C73-46A2-9313-555E8D9A065A} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 		{3398682A-52B9-4A92-8C8A-F1A1CFFE9440} = {9900052B-7C73-46A2-9313-555E8D9A065A}
+		{66C03EB1-13FA-4692-93AD-611D21660D67} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5CAD3F7-BD31-4D1A-B479-5B9995E1080E}
