@@ -88,3 +88,6 @@
 [submodule "system/external/aac"]
 	path = system/external/aac
 	url = https://github.com/WangTingMan/platform_external_aac.git
+[submodule "hardware/interfaces"]
+	path = hardware/interfaces
+	url = https://github.com/WangTingMan/platform_hardware_interfaces.git
