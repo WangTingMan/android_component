@@ -188,5 +188,8 @@
     <ClInclude Include="..\..\core\libutils\include\utils\LruCache.h">
       <Filter>header files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h">
+      <Filter>header files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
