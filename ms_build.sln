@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33516.290
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32428.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{101A6572-13FD-4C33-AF35-A0BE31A90874}"
 EndProject
@@ -218,6 +218,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.audio.common-V1-ndk", "projects\android.hardware.audio.common-V1-ndk\android.hardware.audio.common-V1-ndk.vcxproj", "{FC4FCEEF-EDF2-4CA3-B135-AA089C26B6DC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.media.audio.common.types-V1-ndk", "projects\android.media.audio.common.types-V1-ndk\android.media.audio.common.types-V1-ndk.vcxproj", "{A1694A0B-DD79-4597-AE59-BBD3C97DBA15}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloBinerService", "projects\HelloBinerService\HelloBinerService.vcxproj", "{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbinder_driver", "projects\libbinder_driver\libbinder_driver.vcxproj", "{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -947,6 +951,22 @@ Global
 		{A1694A0B-DD79-4597-AE59-BBD3C97DBA15}.Release|x64.Build.0 = Release|x64
 		{A1694A0B-DD79-4597-AE59-BBD3C97DBA15}.Release|x86.ActiveCfg = Release|Win32
 		{A1694A0B-DD79-4597-AE59-BBD3C97DBA15}.Release|x86.Build.0 = Release|Win32
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Debug|x64.ActiveCfg = Debug|x64
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Debug|x64.Build.0 = Debug|x64
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Debug|x86.ActiveCfg = Debug|Win32
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Debug|x86.Build.0 = Debug|Win32
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Release|x64.ActiveCfg = Release|x64
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Release|x64.Build.0 = Release|x64
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Release|x86.ActiveCfg = Release|Win32
+		{4F69A73A-CCB3-4984-93AF-CCEE2EA76DF5}.Release|x86.Build.0 = Release|Win32
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Debug|x64.ActiveCfg = Debug|x64
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Debug|x64.Build.0 = Debug|x64
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Debug|x86.ActiveCfg = Debug|Win32
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Debug|x86.Build.0 = Debug|Win32
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Release|x64.ActiveCfg = Release|x64
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Release|x64.Build.0 = Release|x64
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Release|x86.ActiveCfg = Release|Win32
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1047,6 +1067,7 @@ Global
 		{B33F292D-9E4B-44F9-8294-5F1FA3143A4A} = {10AB76B5-C0C5-48C4-AE80-68506146314C}
 		{FC4FCEEF-EDF2-4CA3-B135-AA089C26B6DC} = {10AB76B5-C0C5-48C4-AE80-68506146314C}
 		{A1694A0B-DD79-4597-AE59-BBD3C97DBA15} = {10AB76B5-C0C5-48C4-AE80-68506146314C}
+		{99AB0BB1-5E7A-4E5A-9C27-F09BE74FAD8F} = {5AD873C5-69DC-42F1-984C-43B8D7674285}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5CAD3F7-BD31-4D1A-B479-5B9995E1080E}
