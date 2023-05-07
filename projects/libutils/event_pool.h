@@ -15,6 +15,8 @@
 
 #include <utils/Log.h>
 
+#include <base/threading/platform_thread.h>
+
 namespace EventPool {
 class EventPool {
  public:
@@ -23,7 +25,7 @@ class EventPool {
   std::shared_ptr<TimeEventHandler> PushTimeEvent( std::shared_ptr<TimeEvent> te) {
     std::unique_lock<std::mutex> guard(mut_);
     not_fill_cv_.wait(guard, [this]() -> bool { return this->timer_queue_.size() < this->max_time_event_count_; });
-    te->handler_.reset(new TimeEventHandler(te->type_));
+    te->handler_ = std::make_shared<TimeEventHandler>();
     auto result = te->handler_;
     timer_queue_.push(std::move(te));
     at_least_one_cv_.notify_all();
@@ -31,6 +33,8 @@ class EventPool {
   }
 
   void Run() {
+    base::PlatformThread::SetName( "libutils_timer_thread" );
+
     while (true) {
       bool stop = false;
       try {
@@ -45,7 +49,7 @@ class EventPool {
         for (auto& each : events) {
           bool more = each->OnExpire(false);
           /* 对于DURATION类型的事件而言，返回true则表示更新时间戳并继续放入事件池中。*/
-          if (more && each->GetType() == Type::DURATION) {
+          if (more) {
             each->UpdateTimePoint();
             continue_to.push_back(each);
           }
@@ -100,7 +104,7 @@ class EventPool {
       std::swap(tasks, tasks_);
       guard.unlock();
 
-      for (auto& ele : tasks_)
+      for (auto& ele : tasks)
       {
           if (ele)
           {

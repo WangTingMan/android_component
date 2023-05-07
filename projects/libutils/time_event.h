@@ -9,29 +9,26 @@
 #include <functional>
 #include <future>
 #include <string>
+#include <mutex>
 
 namespace EventPool {
-enum class Type {
-  TIME_POINT,
-  DURATION,
-};
 
 class TimeEventHandler {
  public:
-  explicit TimeEventHandler(Type type) : type_(type), stop_(false) {}
+  explicit TimeEventHandler() : stop_(false) {}
 
   // 多次调用只有第一次返回true，之后返回false
   // 只有time_point类型允许Stop
-  bool Stop() {
-    if (type_ != Type::TIME_POINT) {
-      return false;
-    }
-    bool expect = false;
-    return stop_.compare_exchange_strong(expect, true);
+  bool IsStop() {
+    return stop_;
+  }
+
+  void SetStop()
+  {
+      stop_.exchange( true );
   }
 
  private:
-  Type type_;
   std::atomic<bool> stop_;
 };
 
@@ -41,26 +38,23 @@ class TimeEvent {
  public:
   using time_type = std::chrono::time_point<std::chrono::steady_clock, std::chrono::milliseconds>;
 
-  template <typename Duration>
-  explicit TimeEvent(std::chrono::time_point<std::chrono::steady_clock, Duration> time_point)
-      : time_point_(std::chrono::time_point_cast<std::chrono::milliseconds>(time_point)), type_(Type::TIME_POINT)
-  {
-      SetTimerId();
-  }
-
   template <typename Rep, typename Period>
   explicit TimeEvent(std::chrono::duration<Rep, Period> duration)
-      : time_point_(std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now())),
-        type_(Type::DURATION),
+      : start_point_(std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now())),
         duration_(std::chrono::duration_cast<std::chrono::milliseconds>(duration))
   {
-      time_point_ = time_point_ + duration_;
+      time_point_ = start_point_ + duration_;
+      triger_count = 1;
       SetTimerId();
+      CheckValid();
   }
 
   TimeEvent()
   {
+      start_point_ = std::chrono::time_point_cast< std::chrono::milliseconds >( std::chrono::steady_clock::now() );
+      duration_ = std::chrono::milliseconds( 0 );
       SetTimerId();
+      CheckValid();
   }
 
   TimeEvent(const TimeEvent&) = delete;
@@ -71,72 +65,120 @@ class TimeEvent {
 
   // 完美转发
   template <typename TaskType>
-  void SetCallBack(TaskType&& task) {
+  void SetCallBack( TaskType&& task )
+  {
+    std::unique_lock<std::recursive_mutex> locker( mutex_ );
     call_back_ = std::forward<TaskType>(task);
+    CheckValid();
   }
 
-  bool OnExpire(bool pool_exit) {
+  bool OnExpire( bool pool_exit )
+  {
+    std::unique_lock<std::recursive_mutex> locker( mutex_ );
     // 首先检查是否被调用线程Stop，如果是则直接返回false
-    if (type_ == Type::TIME_POINT && !handler_->Stop()) {
+    if (handler_->IsStop()) {
       return false;
     }
     if (valid && call_back_) {
-      bool result = call_back_(pool_exit);
+      auto timer_callback = call_back_;
+      locker.unlock();
+      bool result = timer_callback(pool_exit);
       return result;
     }
     return false;
   }
 
-  time_type& GetTimePoint() { return time_point_; }
-
-  const time_type& GetTimePoint() const { return time_point_; }
-
-  Type GetType() const { return type_; }
-
-  void SetType(Type a_type)
+  time_type& GetTimePoint()
   {
-      type_ = a_type;
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
+      return time_point_;
   }
 
-  void UpdateTimePoint() {
-    if (GetType() != Type::DURATION) {
-      return;
-    }
-    time_point_ = time_point_ + duration_;
+  const time_type& GetTimePoint() const
+  {
+      std::lock_guard<std::recursive_mutex> locker( mutex_ ); 
+      return time_point_;
   }
 
-  int GetTimerId() const
+  void UpdateTimePoint()
   {
+    std::lock_guard<std::recursive_mutex> locker( mutex_ );
+    triger_count++;
+    time_point_ = start_point_ + ( duration_ * triger_count );
+  }
+
+  uint32_t GetTimerId() const
+  {
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
       return timer_id_;
   }
 
   void SetName(std::string name)
   {
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
       name_ = name;
   }
 
   void SetDuration(std::chrono::milliseconds a_duration)
   {
-      time_point_ = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now());
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
+      start_point_ = std::chrono::time_point_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now());
       duration_ = a_duration;
-      time_point_ = time_point_ + duration_;
-      valid = true;
+      triger_count = 1;
+      time_point_ = start_point_ + duration_ * triger_count;
+      CheckValid();
   }
 
   void Stop()
   {
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
       valid = false;
+  }
+
+  int RemainMs()const
+  {
+      std::lock_guard<std::recursive_mutex> locker( mutex_ );
+      auto _now = std::chrono::time_point_cast< std::chrono::milliseconds >( std::chrono::steady_clock::now() );
+      if( time_point_ >= _now )
+      {
+          return static_cast<int>( (time_point_ - _now).count() );
+      }
+      return 0;
+  }
+
+  bool IsScheduled()
+  {
+      return valid;
   }
 
  private:
 
   void SetTimerId();
 
+  void CheckValid()
+  {
+      if( !call_back_ )
+      {
+          valid = false;
+          return;
+      }
+
+      if( duration_.count() == 0 )
+      {
+          valid = false;
+      }
+
+      valid = true;
+
+  }
+
+  mutable std::recursive_mutex mutex_;
   bool valid = true;
-  int timer_id_ = 0;
+  uint32_t timer_id_ = 0;
   std::string name_;
+  uint32_t triger_count = 0;
   time_type time_point_;
-  Type type_;
+  time_type start_point_;
   std::function<bool(bool)> call_back_;
   std::chrono::milliseconds duration_;
   std::shared_ptr<TimeEventHandler> handler_;
