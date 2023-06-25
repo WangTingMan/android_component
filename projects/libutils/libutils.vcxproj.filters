@@ -102,6 +102,12 @@
     <ClCompile Include="..\..\core\libutils\executing_time.cpp">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libutils\direct.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libutils\direct_ext.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libutils\include\utils\CallStack.h">
@@ -189,6 +195,9 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libutils\include\utils\direct.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>

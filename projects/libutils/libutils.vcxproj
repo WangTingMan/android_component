@@ -158,6 +158,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\core\libutils\CallStack.cpp" />
+    <ClCompile Include="..\..\core\libutils\direct.cpp" />
+    <ClCompile Include="..\..\core\libutils\direct_ext.cpp" />
     <ClCompile Include="..\..\core\libutils\Errors.cpp" />
     <ClCompile Include="..\..\core\libutils\executing_time.cpp" />
     <ClCompile Include="..\..\core\libutils\ExtendableRingBuffer.cpp" />
@@ -190,6 +192,7 @@
     <ClInclude Include="..\..\core\libutils\include\utils\AndroidThreads.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\CallStack.h" />
+    <ClInclude Include="..\..\core\libutils\include\utils\direct.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Errors.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\executing_time.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\ExtendableRingBuffer.h" />
