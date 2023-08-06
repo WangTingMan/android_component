@@ -19,23 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\TestBinder\Interface\IAddTest.cpp" />
-    <ClCompile Include="..\TestBinder\Interface\ITestBinderService.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\AddTestService.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\main_testBinder.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\TestBinderService.cpp" />
+    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h" />
+    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h" />
+    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h" />
+    <ClInclude Include="selinux\android.h" />
+    <ClInclude Include="selinux\avc.h" />
+    <ClInclude Include="vintf\constants.h" />
+    <ClInclude Include="vintf\VintfObject.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\TestBinder\Interface\IAddTest.h" />
-    <ClInclude Include="..\TestBinder\Interface\ITestBinderService.h" />
-    <ClInclude Include="..\TestBinder\TestBinderServer\AddTestService.h" />
-    <ClInclude Include="..\TestBinder\TestBinderServer\TestBinderService.h" />
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp" />
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\main.cpp" />
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
+    <ClCompile Include="selinux\android.cpp" />
+    <ClCompile Include="vintf\VintfObject.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4f69a73a-ccb3-4984-93af-ccee2ea76df5}</ProjectGuid>
-    <RootNamespace>HelloBinerService</RootNamespace>
+    <ProjectGuid>{9e24ffb5-d0f7-419c-bcb7-ee5dcd19c0ad}</ProjectGuid>
+    <RootNamespace>servicemanager</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,8 +88,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -119,15 +124,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;NOMINMAX;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;liblog.lib;libbinder.lib;libbinder_ndk.lib;libutils.lib;libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -81,6 +81,9 @@
     <ClCompile Include="..\..\core\libcutils\getopt.c">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\multiuser.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h">
@@ -132,6 +135,9 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\memory.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\multiuser.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -15,21 +15,33 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HelloBinerService.cpp">
+    <ClCompile Include="..\TestBinder\TestBinderServer\AddTestService.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BnHelloService.cpp">
+    <ClCompile Include="..\TestBinder\TestBinderServer\main_testBinder.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="BpHelloService.cpp">
+    <ClCompile Include="..\TestBinder\TestBinderServer\TestBinderService.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Test_server.cpp">
+    <ClCompile Include="..\TestBinder\Interface\IAddTest.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\TestBinder\Interface\ITestBinderService.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IHelloService.h">
+    <ClInclude Include="..\TestBinder\TestBinderServer\AddTestService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TestBinder\Interface\IAddTest.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TestBinder\Interface\ITestBinderService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TestBinder\TestBinderServer\TestBinderService.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

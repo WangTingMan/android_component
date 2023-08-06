@@ -1,0 +1,28 @@
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.binder.driver";
+option java_outer_classname = "BinderDriverDataLink";
+option objc_class_prefix = "BND";
+
+package BinderDriverDataLink;
+
+message MessageFromServer {
+  uint64 id = 1;
+  uint32 type = 2;
+  string msg = 3;
+  bytes buffer = 4;
+}
+
+message MessageFromClient {
+  uint64 id = 1;
+  uint32 type = 2;
+  string msg = 3;
+  bytes buffer = 4;
+}
+
+// The greeting service definition.
+service BinderDriverService {
+  rpc BidirectionalStreamMessages (stream MessageFromClient) returns (stream MessageFromServer) {}
+}

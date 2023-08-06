@@ -13,6 +13,21 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="protobuf">
+      <UniqueIdentifier>{1f04b7c0-7692-4a22-a161-414bea04de98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="grpc_data_link">
+      <UniqueIdentifier>{47eb3d32-cf3c-428e-92b3-b9e60c74b488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="grpc_data_link\server_side">
+      <UniqueIdentifier>{55e825f8-2d12-4acf-a460-9fc070b35525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="grpc_data_link\client_side">
+      <UniqueIdentifier>{c4a90439-4612-44e5-a57b-7520679cbd3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data_link">
+      <UniqueIdentifier>{981fadf2-e567-4478-825d-21bd0a1a5c9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -22,6 +37,45 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\binder_driver_data_link.grpc.pb.cc">
+      <Filter>protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="protobuf\binder_driver_data_link.pb.cc">
+      <Filter>protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\io_runner.cpp">
+      <Filter>grpc_data_link</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\library_loader.cpp">
+      <Filter>grpc_data_link</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\tag_handler_manager.cpp">
+      <Filter>grpc_data_link</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\server\binder_client_proxy.cpp">
+      <Filter>grpc_data_link\server_side</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\server\binder_server.cpp">
+      <Filter>grpc_data_link\server_side</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\client\binder_client.cpp">
+      <Filter>grpc_data_link\client_side</Filter>
+    </ClCompile>
+    <ClCompile Include="grpc_data_link\server_test.cpp">
+      <Filter>grpc_data_link</Filter>
+    </ClCompile>
+    <ClCompile Include="data_link\message_types.cpp">
+      <Filter>data_link</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block_mgr.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -39,6 +93,51 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\libbinder_driver_exports.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\binder_driver_data_link.grpc.pb.h">
+      <Filter>protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="protobuf\binder_driver_data_link.pb.h">
+      <Filter>protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\io_runner.h">
+      <Filter>grpc_data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\message_define.h">
+      <Filter>grpc_data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\tag_handler_manager.h">
+      <Filter>grpc_data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\server\binder_client_proxy.h">
+      <Filter>grpc_data_link\server_side</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\server\binder_server.h">
+      <Filter>grpc_data_link\server_side</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\client\binder_client.h">
+      <Filter>grpc_data_link\client_side</Filter>
+    </ClInclude>
+    <ClInclude Include="data_link\message_types.h">
+      <Filter>data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="data_link\server.h">
+      <Filter>data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="data_link\client.h">
+      <Filter>data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="grpc_data_link\server_test.h">
+      <Filter>grpc_data_link</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal_control_block_mgr.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

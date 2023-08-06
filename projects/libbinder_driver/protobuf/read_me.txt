@@ -1,0 +1,1 @@
+protoc --grpc_out=. --cpp_out=. --plugin=protoc-gen-grpc=protoc-gen-grpc-cpp-plugin.exe binder_driver_data_link.proto

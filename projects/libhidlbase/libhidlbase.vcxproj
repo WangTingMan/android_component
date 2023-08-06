@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -123,7 +123,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;LIBHIDL_IMPLEMENTATION;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;LIBHIDL_IMPLEMENTATION;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>

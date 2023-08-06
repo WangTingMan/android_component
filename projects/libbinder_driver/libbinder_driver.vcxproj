@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\system\external\grpc-grpc\include;$(ProjectDir)..\..\system\external\jsoncpp\include;$(ProjectDir)..\..\protobuf\src;$(ProjectDir);$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -123,18 +123,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBBINDERDRIVER_EXPORTS_IMPL;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBBINDERDRIVER_EXPORTS_IMPL;_WINDOWS;_USRDLL;_SILENCE_CXX20_IS_POD_DEPRECATION_WARNING;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libutils.lib;liblog.lib;libbase.lib;libhidlbase.lib;libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils.lib;liblog.lib;libbase.lib;libhidlbase.lib;libcutils.lib;libChromeBase.lib;libjsoncpp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,15 +158,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\windows_binder_porting.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block_mgr.cpp" />
+    <ClCompile Include="data_link\message_types.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="grpc_data_link\client\binder_client.cpp" />
+    <ClCompile Include="grpc_data_link\io_runner.cpp" />
+    <ClCompile Include="grpc_data_link\library_loader.cpp" />
+    <ClCompile Include="grpc_data_link\server\binder_client_proxy.cpp" />
+    <ClCompile Include="grpc_data_link\server\binder_server.cpp" />
+    <ClCompile Include="grpc_data_link\server_test.cpp" />
+    <ClCompile Include="grpc_data_link\tag_handler_manager.cpp" />
+    <ClCompile Include="protobuf\binder_driver_data_link.grpc.pb.cc" />
+    <ClCompile Include="protobuf\binder_driver_data_link.pb.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\base_types.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal_control_block.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal_control_block_mgr.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\libbinder_driver_exports.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.h" />
+    <ClInclude Include="data_link\client.h" />
+    <ClInclude Include="data_link\message_types.h" />
+    <ClInclude Include="data_link\server.h" />
+    <ClInclude Include="grpc_data_link\client\binder_client.h" />
+    <ClInclude Include="grpc_data_link\io_runner.h" />
+    <ClInclude Include="grpc_data_link\message_define.h" />
+    <ClInclude Include="grpc_data_link\server\binder_client_proxy.h" />
+    <ClInclude Include="grpc_data_link\server\binder_server.h" />
+    <ClInclude Include="grpc_data_link\server_test.h" />
+    <ClInclude Include="grpc_data_link\tag_handler_manager.h" />
+    <ClInclude Include="protobuf\binder_driver_data_link.grpc.pb.h" />
+    <ClInclude Include="protobuf\binder_driver_data_link.pb.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

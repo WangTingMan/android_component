@@ -123,7 +123,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;UTILS_IMPLEMENTATION;NOMINMAX;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;UTILS_IMPLEMENTATION;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -164,6 +164,7 @@
     <ClCompile Include="..\..\core\libutils\FileMap.cpp" />
     <ClCompile Include="..\..\core\libutils\JenkinsHash.cpp" />
     <ClCompile Include="..\..\core\libutils\LightRefBase.cpp" />
+    <ClCompile Include="..\..\core\libutils\Looper.cpp" />
     <ClCompile Include="..\..\core\libutils\misc.cpp" />
     <ClCompile Include="..\..\core\libutils\NativeHandle.cpp" />
     <ClCompile Include="..\..\core\libutils\Printer.cpp" />
@@ -196,6 +197,7 @@
     <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\JenkinsHash.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\LightRefBase.h" />
+    <ClInclude Include="..\..\core\libutils\include\utils\Looper.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\LruCache.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\misc.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h" />

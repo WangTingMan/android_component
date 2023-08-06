@@ -162,6 +162,9 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder\ServiceManagerHost.cpp">
       <Filter>libbinder_kernel_defaults</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\parcel_writer_impl.cpp">
+      <Filter>win</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Binder.h">
@@ -327,6 +330,9 @@
       <Filter>generated_files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\libbinder_export.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\parcel_writer_impl.h">
       <Filter>headers</Filter>
     </ClInclude>
   </ItemGroup>
