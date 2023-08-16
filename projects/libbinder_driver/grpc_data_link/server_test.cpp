@@ -29,7 +29,7 @@ void send_message_to_client( std::string a_client_peer, std::string a_message )
     msg = std::make_shared<data_link::message_from_server>();
     msg->id = 1;
     msg->message = a_message;
-    server->send_message( a_client_peer, msg );
+    //server->send_message( a_client_peer, msg );
 }
 
 void client_connection_status_changed_server( std::string a_client_peer, data_link::connection_status a_status )
@@ -96,7 +96,7 @@ static void server_test_()
     data_link::binder_servcer_callbacks cbs;
     cbs.client_status_changed = std::bind( &client_connection_status_changed_server, std::placeholders::_1, std::placeholders::_2 );
     cbs.new_message_from_client = std::bind( &message_from_client, std::placeholders::_1, std::placeholders::_2 );
-    server->set_callbacks( cbs );
+    //server->set_callbacks( cbs );
     data_link::server_io_runner::get_default_instance().run( true );
 }
 

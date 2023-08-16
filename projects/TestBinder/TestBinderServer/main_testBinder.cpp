@@ -16,7 +16,7 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
 int main(int argc, char** argv)
 {
     logging::SetLogMessageHandler( libchrome_logging_handler );
-	__set_default_log_file_name( "E:/VCLAB/component/x64/Debug/HelloBinerService.log" );
+    __set_default_log_file_name( nullptr, false );
 
 	sp<ProcessState> proc(ProcessState::self());
 	sp<IServiceManager> sm = defaultServiceManager();
@@ -26,6 +26,7 @@ int main(int argc, char** argv)
 	ProcessState::self()->startThreadPool();
 	IPCThreadState::self()->joinThreadPool();
 	ALOGI("TestBinderService End");
+    system( "pause" );
 	return 0;
 
 }

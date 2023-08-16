@@ -6,6 +6,15 @@
 
 namespace data_link {
 
+uint32_t connection_status_callback_control_block::s_next_id = 0;
+
+connection_status_callback_control_block::connection_status_callback_control_block
+    ( connection_status_callback a_cb )
+    : m_callback( a_cb )
+{
+    m_id = s_next_id++;
+}
+
 binder_client_proxy::binder_client_proxy
     (
     BinderDriverDataLink::BinderDriverService::AsyncService& a_detail_service
@@ -42,12 +51,29 @@ void binder_client_proxy::start()
     ALOGI( "Start listen new remote client rpc calling" );
 }
 
+void binder_client_proxy::connect( std::string a_address )
+{
+    ALOGE( "client proxy not support connect action" );
+}
+
+void binder_client_proxy::send_message( std::shared_ptr<binder_ipc_message> a_message )
+{
+    server_io_runner::get_default_instance()
+        .post_task( std::bind( &binder_client_proxy::async_send_biddirection_message, this, a_message ) );
+}
+
+connection_status binder_client_proxy::get_connection_status()
+{
+    std::lock_guard<std::mutex> loker( m_mutex );
+    return m_connection_status;
+}
+
 void binder_client_proxy::terminate()
 {
     unregister_all_tag_handlers();
 }
 
-void binder_client_proxy::async_send_biddirection_message( BinderDriverDataLink::MessageFromServer a_msg )
+void binder_client_proxy::async_send_biddirection_message( std::shared_ptr<binder_ipc_message> a_msg )
 {
     if( m_connection_status != connection_status::connected )
     {
@@ -57,12 +83,19 @@ void binder_client_proxy::async_send_biddirection_message( BinderDriverDataLink:
 
     if( !m_message_sending )
     {
-        m_biddiraction_stream.Write( std::move( a_msg ), (void*)( m_write_done_id ) );
+        BinderDriverDataLink::MessageFromServer msg;
+        msg.set_msg( a_msg->to_string() );
+        msg.set_id( a_msg->get_id() );
+        // after invoke extract_raw_buffer, the raw data size member of binder_ipc_message
+        // will change to zero. So we need generate the string first!!
+        msg.set_buffer( std::move( a_msg->extract_raw_buffer() ) );
+        msg.set_type( uint32_t( a_msg->get_type() ) );
+        m_biddiraction_stream.Write( std::move( msg ), (void*)( m_write_done_id ) );
         m_message_sending = true;
     }
     else
     {
-        m_msg_to_send.push_back( std::move( a_msg ) );
+        m_msgs_to_send.push_back( std::move( a_msg ) );
     }
 }
 
@@ -76,7 +109,6 @@ void binder_client_proxy::create_tag_handler()
         fun = std::bind( &binder_client_proxy::handle_message_write_done,
                          shared_from_this(), std::placeholders::_1 );
         id = tag_handler_manager::get_instance().register_tag_handler( fun );
-        ALOGI( "task id = %d", id );
         m_write_done_id = id;
     }
 
@@ -85,7 +117,6 @@ void binder_client_proxy::create_tag_handler()
         fun = std::bind( &binder_client_proxy::handle_request_done,
                          shared_from_this(), std::placeholders::_1 );
         id = tag_handler_manager::get_instance().register_tag_handler( fun );
-        ALOGI( "task id = %d", id );
         m_done_id = id;
     }
 
@@ -94,7 +125,6 @@ void binder_client_proxy::create_tag_handler()
         fun = std::bind( &binder_client_proxy::handle_request_start,
                          shared_from_this(), std::placeholders::_1 );
         id = tag_handler_manager::get_instance().register_tag_handler( fun );
-        ALOGI( "task id = %d", id );
         m_start_id = id;
     }
 
@@ -103,7 +133,6 @@ void binder_client_proxy::create_tag_handler()
         fun = std::bind( &binder_client_proxy::handle_request_message_read_come,
                          shared_from_this(), std::placeholders::_1 );
         id = tag_handler_manager::get_instance().register_tag_handler( fun );
-        ALOGI( "task id = %d", id );
         m_read_come_id = id;
     }
 }
@@ -146,10 +175,26 @@ void binder_client_proxy::handle_request_message_read_come( bool ok )
         return;
     }
 
-    if( m_callbacks.new_message_come )
+    std::lock_guard<std::mutex> locker( m_mutex );
+
+    if( m_message_callback )
     {
-        m_callbacks.new_message_come( shared_from_this(), m_read_msg );
+        std::shared_ptr<binder_ipc_message> msg;
+        binder_message_type msg_type = static_cast< binder_message_type >( m_read_msg.type() );
+        msg = create( msg_type );
+        if( !msg )
+        {
+            ALOGE( "Unknown message type: %d", m_read_msg.type() );
+            return;
+        }
+        msg->set_from_client( false );
+        msg->set_endpoint( peer() );
+        msg->set_id( m_read_msg.id() );
+        msg->set_raw_buffer( std::move( m_read_msg.buffer() ) );
+        msg->parse_from_message( m_read_msg.msg() );
+        m_message_callback( msg );
     }
+
     m_biddiraction_stream.Read( &m_read_msg, (void*)( m_read_come_id ) );
 }
 
@@ -169,7 +214,7 @@ void binder_client_proxy::handle_message_write_done( bool ok )
         return;
     }
 
-    async_send_biddirection_message( m_msg_to_send.front() );
+    async_send_biddirection_message( m_msgs_to_send.front() );
     m_msg_to_send.erase( m_msg_to_send.begin() );
 }
 
@@ -209,9 +254,17 @@ void binder_client_proxy::change_to_new_status( connection_status a_status )
     }
 
     m_msg_to_send.clear();
-    if( m_callbacks.connection_status_changed )
+
+    std::unique_lock<std::mutex> locker( m_mutex );
+    auto cbs = m_connection_cbs;
+    locker.unlock();
+
+    for( auto& ele : cbs )
     {
-        m_callbacks.connection_status_changed( shared_from_this(), m_connection_status );
+        if( ele.m_callback )
+        {
+            ele.m_callback( shared_from_this(), m_connection_status );
+        }
     }
 }
 

@@ -43,6 +43,12 @@ public:
 
     connection_status get_connection_status() override;
 
+    void register_connection_status_callback( std::function<void( connection_status )> a_callback ) override
+    {
+        std::lock_guard<std::shared_mutex> lcker( m_mutex );
+        m_callbacks.connection_status_changed = a_callback;
+    }
+
     void send_message( std::shared_ptr<message_from_client> );
 
     void connect();

@@ -28,6 +28,9 @@
     <Filter Include="libbinder_kernel_defaults\libbinder_device_interface_sources">
       <UniqueIdentifier>{1f16bff8-a79a-4a6f-ad3c-90ef1571dc51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="compitable">
+      <UniqueIdentifier>{1d496c12-02c8-4d28-b650-f69ebfabadda}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\frameworks_native\libs\binder\IMemory.cpp">
@@ -164,6 +167,18 @@
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder\parcel_writer_impl.cpp">
       <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp">
+      <Filter>compitable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp">
+      <Filter>compitable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp">
+      <Filter>compitable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp">
+      <Filter>compitable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +349,24 @@
     </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\parcel_writer_impl.h">
       <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h">
+      <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h">
+      <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h">
+      <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h">
+      <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h">
+      <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h">
+      <Filter>compitable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

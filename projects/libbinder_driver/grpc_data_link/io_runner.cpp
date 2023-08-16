@@ -46,6 +46,11 @@ void io_runner_task_wrapper
     bool ok
     )
 {
+    if( a_cb->alarm )
+    {
+        a_cb->alarm->Cancel();
+    }
+
     if( !a_cb )
     {
         return;
@@ -57,10 +62,6 @@ void io_runner_task_wrapper
     }
 
     tag_handler_manager::get_instance().delete_tag_handler( a_cb->tag_id );
-    if( a_cb->alarm )
-    {
-        a_cb->alarm->Cancel();
-    }
 }
 
 }
@@ -121,7 +122,7 @@ void abstract_io_runner::post_delay_task
 
 void abstract_io_runner::running_detail()
 {
-    base::PlatformThread::SetName( "io_runner::running_detail" );
+    base::PlatformThread::SetName( m_running_thread_name );
 
     gpr_set_log_function( &gpr_log_func_ );
     gpr_set_log_verbosity( GPR_LOG_SEVERITY_INFO );
@@ -157,7 +158,7 @@ io_runner& io_runner::get_default_instance()
 
 io_runner::io_runner()
 {
-
+    set_running_thread_name( "io_runner" );
 }
 
 server_io_runner& server_io_runner::get_default_instance()
@@ -168,6 +169,7 @@ server_io_runner& server_io_runner::get_default_instance()
 
 server_io_runner::server_io_runner()
 {
+    set_running_thread_name( "server_io_runner" );
     m_server_task_queue = m_service_builder.AddCompletionQueue();
 }
 

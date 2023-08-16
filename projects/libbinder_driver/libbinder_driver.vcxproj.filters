@@ -28,18 +28,15 @@
     <Filter Include="data_link">
       <UniqueIdentifier>{981fadf2-e567-4478-825d-21bd0a1a5c9e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="internal">
+      <UniqueIdentifier>{694e0bb2-344a-4015-a0d7-4cc23b09a09f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\windows_binder_porting.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.cpp">
@@ -78,6 +75,18 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_internal_control_block_mgr.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\ipc_connection_token.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_utils.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\internal\client_control_block.cpp">
+      <Filter>internal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\MessageLooper.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\base_types.h">
@@ -89,13 +98,7 @@
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal_control_block.h">
-      <Filter>header</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\libbinder_driver_exports.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_porting.h">
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\parcel_writer_interface.h">
@@ -138,6 +141,18 @@
       <Filter>grpc_data_link</Filter>
     </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\binder_internal_control_block_mgr.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\ipc_connection_token.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\binder_utils.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\internal\client_control_block.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder_driver\linux\MessageLooper.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

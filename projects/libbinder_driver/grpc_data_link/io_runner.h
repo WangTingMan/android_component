@@ -33,9 +33,15 @@ protected:
 
     void running_detail();
 
+    void set_running_thread_name( std::string a_name )
+    {
+        m_running_thread_name = a_name;
+    }
+
 private:
 
     std::thread m_running_thread;
+    std::string m_running_thread_name;
 };
 
 class io_runner : public abstract_io_runner

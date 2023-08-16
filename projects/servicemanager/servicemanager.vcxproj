@@ -22,18 +22,18 @@
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h" />
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h" />
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h" />
-    <ClInclude Include="selinux\android.h" />
-    <ClInclude Include="selinux\avc.h" />
-    <ClInclude Include="vintf\constants.h" />
-    <ClInclude Include="vintf\VintfObject.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\main.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
-    <ClCompile Include="selinux\android.cpp" />
-    <ClCompile Include="vintf\VintfObject.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -88,7 +88,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>

@@ -1,6 +1,8 @@
 #pragma once
 #include <atomic>
 #include <memory>
+#include <mutex>
+#include <vector>
 
 #include "protobuf/binder_driver_data_link.pb.h"
 #include "protobuf/binder_driver_data_link.grpc.pb.h"
@@ -9,21 +11,29 @@
 
 #include <grpcpp/server_builder.h>
 #include <grpcpp/server.h>
+#include <data_link/client.h>
 
 namespace data_link {
 
 class binder_client_proxy;
 
-struct client_proxy_callbacks
+using connection_status_callback = std::function<void( std::shared_ptr<binder_client_proxy>, connection_status )>;
+
+struct connection_status_callback_control_block
 {
-    std::function<void(std::shared_ptr<binder_client_proxy>, connection_status )> connection_status_changed;
-    std::function<void(std::shared_ptr<binder_client_proxy>, BinderDriverDataLink::MessageFromClient&)> new_message_come;
+    connection_status_callback_control_block( connection_status_callback a_cb );
+
+    connection_status_callback m_callback;
+    uint32_t m_id = 0;
+    static uint32_t s_next_id;
 };
 
-class binder_client_proxy : public std::enable_shared_from_this<binder_client_proxy>
+class binder_client_proxy : public client, public std::enable_shared_from_this<binder_client_proxy>
 {
 
 public:
+
+    using new_message_callback = std::function<void( std::shared_ptr<binder_client_proxy>, BinderDriverDataLink::MessageFromClient& )>;
 
     binder_client_proxy
         (
@@ -34,13 +44,37 @@ public:
 
     void start();
 
+    void connect( std::string a_address ) override;
+
+    void send_message( std::shared_ptr<binder_ipc_message> a_message ) override;
+
+    connection_status get_connection_status()override;
+
+    void register_connection_status_callback( std::function<void( connection_status )> a_callback )override
+    {
+        auto fun = [a_callback]( std::shared_ptr<binder_client_proxy>, connection_status a_status )
+        {
+            a_callback( a_status );
+        };
+
+        return register_connection_callback( fun );
+    }
+
+    void register_message_incoming_callback( message_callback a_callback )override
+    {
+        std::lock_guard<std::mutex> locker( m_mutex );
+        m_message_callback = a_callback;
+    }
+
     void terminate();
 
-    void async_send_biddirection_message( BinderDriverDataLink::MessageFromServer a_msg );
+    void async_send_biddirection_message( std::shared_ptr<binder_ipc_message> a_msg );
 
-    void register_callbacks( client_proxy_callbacks a_callbacks )
+    void register_connection_callback( connection_status_callback a_callback )
     {
-        m_callbacks = a_callbacks;
+        connection_status_callback_control_block cb( a_callback );
+        std::lock_guard<std::mutex> locker( m_mutex );
+        m_connection_cbs.push_back( connection_status_callback_control_block( a_callback ) );
     }
 
     std::string peer()
@@ -72,7 +106,6 @@ private:
     bid_stream m_biddiraction_stream;
 
     BinderDriverDataLink::MessageFromClient m_read_msg;
-    connection_status m_connection_status = connection_status::disconnected;
     uint64_t m_read_come_id = 0;
     uint64_t m_done_id = 0;
     uint64_t m_start_id = 0;
@@ -80,7 +113,12 @@ private:
     std::string m_peer;
     bool m_message_sending = false;
     std::vector<BinderDriverDataLink::MessageFromServer> m_msg_to_send;
-    client_proxy_callbacks m_callbacks;
+    std::vector<std::shared_ptr<binder_ipc_message>> m_msgs_to_send;
+
+    std::mutex m_mutex;
+    connection_status m_connection_status = connection_status::disconnected;
+    std::vector<connection_status_callback_control_block> m_connection_cbs;
+    message_callback m_message_callback;
 };
 
 }

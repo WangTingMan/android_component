@@ -8,10 +8,14 @@
 namespace data_link
 {
 
+class client;
+
 class server
 {
 
 public:
+
+    using new_client_callback = std::function<void( std::shared_ptr<client> )>;
 
     static std::shared_ptr<server> make_one();
 
@@ -23,9 +27,7 @@ public:
         bool a_accupy_current_thread
         ) = 0;
 
-    virtual void send_message( std::shared_ptr<binder_ipc_message> a_message ) = 0;
-
-    virtual void register_message_incoming_callback( message_callback a_callback ) = 0;
+    virtual void new_client_connected( new_client_callback a_new_client_callback ) = 0;
 
 private:
 

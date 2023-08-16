@@ -25,6 +25,8 @@ public:
 
     virtual connection_status get_connection_status() = 0;
 
+    virtual void register_connection_status_callback( std::function<void( connection_status )> a_callback ) = 0;
+
 private:
 
 

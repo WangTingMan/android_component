@@ -21,21 +21,17 @@
   <ItemGroup>
     <ClCompile Include="..\TestBinder\Interface\IAddTest.cpp" />
     <ClCompile Include="..\TestBinder\Interface\ITestBinderService.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\AddTestService.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\main_testBinder.cpp" />
-    <ClCompile Include="..\TestBinder\TestBinderServer\TestBinderService.cpp" />
+    <ClCompile Include="..\TestBinder\TestBinderClient\testBinder.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\TestBinder\Interface\IAddTest.h" />
     <ClInclude Include="..\TestBinder\Interface\ITestBinderService.h" />
-    <ClInclude Include="..\TestBinder\TestBinderServer\AddTestService.h" />
-    <ClInclude Include="..\TestBinder\TestBinderServer\TestBinderService.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{4f69a73a-ccb3-4984-93af-ccee2ea76df5}</ProjectGuid>
-    <RootNamespace>HelloBinerService</RootNamespace>
+    <ProjectGuid>{a12683c7-e11a-47b7-84e6-e4317fd7eeeb}</ProjectGuid>
+    <RootNamespace>HelloBinerClient</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -120,15 +116,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;liblog.lib;libbinder.lib;libbinder_ndk.lib;libutils.lib;libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>liblog.lib;libcutils.lib;libutils.lib;libbinder.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

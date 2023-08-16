@@ -62,7 +62,7 @@ void binder_client::register_message_incoming_callback( message_callback a_callb
     {
         data_link::binder_message_type a_msg_type;
         a_msg_type = static_cast<data_link::binder_message_type>( a_msg->type );
-        auto ipc_msg = data_link::create( a_msg_type );
+        auto ipc_msg = data_link::create( a_msg_type, false );
         if( !ipc_msg )
         {
             return;
@@ -161,12 +161,11 @@ void binder_client::connect_internal()
         }
 
         auto cq = io_runner::get_default_instance().get_detail_queue();
-        if( m_stream )
+        if( !m_stream )
         {
-            m_stream.reset();
+            m_stream = m_stub->AsyncBidirectionalStreamMessages( &m_client_context,
+                cq, ( void* )( m_connect_done_id ) );
         }
-        m_stream = m_stub->AsyncBidirectionalStreamMessages( &m_client_context,
-                                                             cq, (void*)( m_connect_done_id ) );
         change_to_new_status( connection_status::connecting );
     }
     else
