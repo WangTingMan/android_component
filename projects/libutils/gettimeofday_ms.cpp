@@ -85,6 +85,13 @@ int gettimeofday(struct timeval* p, struct timezone* z)
     return 0;
 }
 
+#if defined(_MSC_VER)
+static void localtime_r( const time_t* secs, struct tm* time )
+{
+    (void)localtime_s( time, secs );
+}
+#endif
+
 int clock_gettime(int type, struct timespec* time)
 {
     return timespec_get(time, TIME_UTC);
