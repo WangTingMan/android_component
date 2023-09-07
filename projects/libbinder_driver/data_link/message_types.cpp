@@ -33,6 +33,7 @@ void binder_ipc_message::fill_json_value( Json::Value& a_value )const noexcept
     a_value[s_raw_buffer_size_key.data()] = m_raw_buffer_size;
     a_value[s_source_connection_id_key.data()] = m_source_connection_id;
     a_value[s_debug_info_key.data()] = m_debug_info;
+    a_value[s_tr_is_aidl_message_key.data()] = m_tr_is_aidl_message;
 }
 
 bool binder_ipc_message::parse_from_json( Json::Value& a_value )
@@ -73,6 +74,9 @@ bool binder_ipc_message::parse_from_json( Json::Value& a_value )
 
     value = a_value[static_cast< std::string >( s_debug_info_key )];
     m_debug_info = value.asString();
+
+    value = a_value[static_cast< std::string >( s_tr_is_aidl_message_key )];
+    m_tr_is_aidl_message = value.asBool();
 
     return is_success;
 }
@@ -225,6 +229,7 @@ void binder_transaction_message::init_transaction_context( binder_transaction_da
     m_tr_offsets_size = a_binder_transaction_data->offsets_size;
     m_tr_data_ptr_offsets = a_binder_transaction_data->data.ptr.offsets;
     m_tr_service_name.assign( a_binder_transaction_data->service_name );
+    set_aidl_message( a_binder_transaction_data->is_aidl_transaction );
     set_connection_name( a_binder_transaction_data->source_connection_name );
     set_id( a_binder_transaction_data->current_transaction_message_id );
 }
@@ -243,6 +248,7 @@ void binder_transaction_message::parse_transaction_context( binder_transaction_d
     a_binder_transaction_data->code = m_tr_code;
     a_binder_transaction_data->offsets_size = m_tr_offsets_size;
     a_binder_transaction_data->data.ptr.offsets = m_tr_offsets_size;
+    a_binder_transaction_data->is_aidl_transaction = is_aidl_message();
     if( m_tr_service_name.size() < MAX_SERVICE_NAME_SIZE )
     {
         strcpy_s( a_binder_transaction_data->service_name, m_tr_service_name.c_str() );

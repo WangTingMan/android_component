@@ -42,6 +42,7 @@ public:
     static constexpr std::string_view s_raw_buffer_size_key{ "raw_buffer_size" };
     static constexpr std::string_view s_source_connection_id_key{ "source_connection_id" };
     static constexpr std::string_view s_debug_info_key{ "debug_info" };
+    static constexpr std::string_view s_tr_is_aidl_message_key{ "tr_is_aidl_message" };
 
     binder_ipc_message( bool a_auto_incread_id = true );
 
@@ -122,6 +123,21 @@ public:
         m_debug_info = a_debug_info;
     }
 
+    void set_aidl_message( bool a_for_aidl_message )
+    {
+        m_tr_is_aidl_message = a_for_aidl_message;
+    }
+
+    bool is_aidl_message()
+    {
+        return m_tr_is_aidl_message;
+    }
+
+    bool is_hidl_message()
+    {
+        return !m_tr_is_aidl_message;
+    }
+
 protected:
 
     void set_type( binder_message_type a_type )
@@ -146,6 +162,7 @@ private:
     std::string m_raw_buffer;
     std::string m_source_connection_id; // who send this message
     std::string m_debug_info; // just used for debug. maybe empty.
+    bool m_tr_is_aidl_message = true;
 };
 
 struct binder_ping_message : public binder_ipc_message

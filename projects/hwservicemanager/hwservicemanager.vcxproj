@@ -19,27 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h" />
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h" />
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\main.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp" />
-    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\AccessControl.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\HidlService.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\service.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\ServiceManager.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\TokenManager.cpp" />
+    <ClCompile Include="..\..\system\hwservicemanager\Vintf.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9e24ffb5-d0f7-419c-bcb7-ee5dcd19c0ad}</ProjectGuid>
-    <RootNamespace>servicemanager</RootNamespace>
+    <ProjectGuid>{ebd906df-7b52-49ad-95b0-5458e584be9e}</ProjectGuid>
+    <RootNamespace>hwservicemanager</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,9 +80,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);E:\VCLAB\component\x64\Debug;$(LibraryPath)</LibraryPath>
-    <OutDir>E:\VCLAB\component\x64\Debug</OutDir>
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\system\tools\hidl\utils\include;$(ProjectDir)..\..\system/libvintf/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\system\tools\hidl\metadata\include;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\boringssl/src/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -124,15 +115,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;NOMINMAX;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

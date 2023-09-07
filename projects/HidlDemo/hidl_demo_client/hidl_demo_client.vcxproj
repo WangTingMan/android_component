@@ -18,28 +18,11 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h" />
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h" />
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\main.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
-    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp" />
-    <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9e24ffb5-d0f7-419c-bcb7-ee5dcd19c0ad}</ProjectGuid>
-    <RootNamespace>servicemanager</RootNamespace>
+    <ProjectGuid>{b1143b4b-d587-47ba-9688-bfdb91d65001}</ProjectGuid>
+    <RootNamespace>hidldemoclient</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -88,9 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);E:\VCLAB\component\x64\Debug;$(LibraryPath)</LibraryPath>
-    <OutDir>E:\VCLAB\component\x64\Debug</OutDir>
+    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -124,15 +106,15 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;NOMINMAX;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -151,6 +133,13 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\hidl_client.cpp" />
+    <ClCompile Include="hidl_demo_client.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\hidl_client.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

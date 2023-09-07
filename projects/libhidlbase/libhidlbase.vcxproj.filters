@@ -25,6 +25,18 @@
     <Filter Include="generated_files\header">
       <UniqueIdentifier>{0e39177d-28a2-4cbc-8bcb-4b51190d0dc1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="generated_files\source">
+      <UniqueIdentifier>{a9e5a2ae-ed4d-4677-a7da-3e4b513ed699}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated_files\manager1.0">
+      <UniqueIdentifier>{85245dc2-eed9-4c02-a73f-bdda45018a61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated_files\manager1.1">
+      <UniqueIdentifier>{5f90d6f8-d88d-4b91-a9c8-85595b0c85b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generated_files\manager1.2">
+      <UniqueIdentifier>{dac4f373-6894-4a9b-b084-192976bf8604}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -99,26 +111,29 @@
     <ClCompile Include="..\..\libhwbinder\Utils.cpp">
       <Filter>libhwbinder_defaults</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\BaseAll.cpp">
-      <Filter>generated_files</Filter>
+    <ClCompile Include="..\..\libhwbinder\hidl_parcel_writer_impl.cpp">
+      <Filter>libhwbinder_defaults</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.cpp">
-      <Filter>generated_files</Filter>
+      <Filter>generated_files\source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ClientCallbackAll.cpp">
-      <Filter>generated_files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ServiceManagerAll.cpp">
-      <Filter>generated_files</Filter>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\base\1.0\BaseAll.cpp">
+      <Filter>generated_files\source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceManagerAll.cpp">
-      <Filter>generated_files</Filter>
+      <Filter>generated_files\manager1.0</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.0\ServiceNotificationAll.cpp">
-      <Filter>generated_files</Filter>
+      <Filter>generated_files\manager1.0</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.1\ServiceManagerAll.cpp">
-      <Filter>generated_files</Filter>
+      <Filter>generated_files\manager1.1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ClientCallbackAll.cpp">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\hidl\android\hidl\manager\1.2\ServiceManagerAll.cpp">
+      <Filter>generated_files\manager1.2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +229,84 @@
     </ClInclude>
     <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.h">
       <Filter>generated_files\header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\hidl_parcel_writer_impl.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BnHwServiceManager.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BnHwServiceNotification.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BpHwServiceManager.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BpHwServiceNotification.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BsServiceManager.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BsServiceNotification.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IHwServiceManager.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IHwServiceNotification.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IServiceManager.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IServiceNotification.h">
+      <Filter>generated_files\manager1.0</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BnHwServiceManager.h">
+      <Filter>generated_files\manager1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BpHwServiceManager.h">
+      <Filter>generated_files\manager1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BsServiceManager.h">
+      <Filter>generated_files\manager1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\IHwServiceManager.h">
+      <Filter>generated_files\manager1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\IServiceManager.h">
+      <Filter>generated_files\manager1.1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BnHwClientCallback.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BnHwServiceManager.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BpHwClientCallback.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BpHwServiceManager.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BsClientCallback.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BsServiceManager.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IClientCallback.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IHwClientCallback.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IHwServiceManager.h">
+      <Filter>generated_files\manager1.2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IServiceManager.h">
+      <Filter>generated_files\manager1.2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

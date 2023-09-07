@@ -91,3 +91,12 @@
 [submodule "hardware/interfaces"]
 	path = hardware/interfaces
 	url = https://github.com/WangTingMan/platform_hardware_interfaces.git
+[submodule "packages/modules/Gki"]
+	path = packages/modules/Gki
+	url = https://github.com/WangTingMan/packages_modules_Gki.git
+[submodule "system/hwservicemanager"]
+	path = system/hwservicemanager
+	url = https://github.com/WangTingMan/hwservicemanager.git
+[submodule "system/libvintf"]
+	path = system/libvintf
+	url = https://github.com/WangTingMan/libvintf.git

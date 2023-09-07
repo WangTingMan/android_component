@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\frameworks_native\libs;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -123,7 +123,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;LIBHIDL_IMPLEMENTATION;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBHIDLBASE_EXPORTS;_WINDOWS;_USRDLL;LIBHIDL_IMPLEMENTATION;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;DO_NOT_DEFINE_TIME_VAL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -135,7 +135,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbase.lib;libutils.lib;libcutils.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libutils.lib;libcutils.lib;liblog.lib;libbinder_driver.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -181,6 +181,7 @@
     <ClCompile Include="..\..\libhwbinder\BpHwBinder.cpp" />
     <ClCompile Include="..\..\libhwbinder\BufferedTextOutput.cpp" />
     <ClCompile Include="..\..\libhwbinder\Debug.cpp" />
+    <ClCompile Include="..\..\libhwbinder\hidl_parcel_writer_impl.cpp" />
     <ClCompile Include="..\..\libhwbinder\IInterface.cpp" />
     <ClCompile Include="..\..\libhwbinder\IPCThreadState.cpp" />
     <ClCompile Include="..\..\libhwbinder\Parcel.cpp" />
@@ -198,6 +199,31 @@
     <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IBase.h" />
     <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\IHwBase.h" />
     <ClInclude Include="..\..\generated_files\hidl\android\hidl\base\1.0\types.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BnHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BnHwServiceNotification.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BpHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BpHwServiceNotification.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BsServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\BsServiceNotification.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IHwServiceNotification.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.0\IServiceNotification.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BnHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BpHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\BsServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\IHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.1\IServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BnHwClientCallback.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BnHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BpHwClientCallback.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BpHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BsClientCallback.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\BsServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IClientCallback.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IHwClientCallback.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IHwServiceManager.h" />
+    <ClInclude Include="..\..\generated_files\hidl\android\hidl\manager\1.2\IServiceManager.h" />
     <ClInclude Include="..\..\libhidl\base\include\hidl\HidlInternal.h" />
     <ClInclude Include="..\..\libhidl\base\include\hidl\HidlSupport.h" />
     <ClInclude Include="..\..\libhidl\base\include\hidl\MQDescriptor.h" />
@@ -215,6 +241,7 @@
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\Binder.h" />
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\BpHwBinder.h" />
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\Debug.h" />
+    <ClInclude Include="..\..\libhwbinder\include\hwbinder\hidl_parcel_writer_impl.h" />
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\IBinder.h" />
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\IInterface.h" />
     <ClInclude Include="..\..\libhwbinder\include\hwbinder\IPCThreadState.h" />
