@@ -41,5 +41,6 @@
 #pragma comment(lib,"libprotobuf.lib")
 
 #pragma comment(lib,"libssl.lib")
+#pragma comment(lib,"libcrypto.lib")
 #pragma comment(lib,"Ws2_32.lib")
 #pragma comment(lib,"zlib.lib")
