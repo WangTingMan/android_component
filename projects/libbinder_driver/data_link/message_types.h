@@ -41,6 +41,7 @@ public:
     static constexpr std::string_view s_end_point_key{ "endpoint" };
     static constexpr std::string_view s_raw_buffer_size_key{ "raw_buffer_size" };
     static constexpr std::string_view s_source_connection_id_key{ "source_connection_id" };
+    static constexpr std::string_view s_target_connection_id_key{ "target_connection_id" };
     static constexpr std::string_view s_debug_info_key{ "debug_info" };
     static constexpr std::string_view s_tr_is_aidl_message_key{ "tr_is_aidl_message" };
 
@@ -56,7 +57,7 @@ public:
 
     std::string to_string();
 
-    uint64_t get_id()const
+    uint64_t get_id()const noexcept
     {
         return m_id;
     }
@@ -66,7 +67,7 @@ public:
         m_id = a_id;
     }
 
-    binder_message_type get_type()const
+    binder_message_type get_type()const noexcept
     {
         return m_type;
     }
@@ -108,9 +109,24 @@ public:
         m_raw_buffer_size = m_raw_buffer.size();
     }
 
-    std::string const& get_source_connection_id()const
+    std::string const& get_source_connection_id()const noexcept
     {
         return m_source_connection_id;
+    }
+
+    void set_source_connection_name( std::string a_name )
+    {
+        m_source_connection_id = a_name;
+    }
+
+    std::string const& get_target_connection_id()const noexcept
+    {
+        return m_target_connection_id;
+    }
+
+    void set_target_connection_name( std::string a_name )
+    {
+        m_target_connection_id = a_name;
     }
 
     std::string const& get_debug_info()const noexcept
@@ -145,11 +161,6 @@ protected:
         m_type = a_type;
     }
 
-    void set_connection_name( std::string a_name )
-    {
-        m_source_connection_id = a_name;
-    }
-
 private:
 
     static std::atomic<uint64_t> s_next_id;
@@ -161,6 +172,7 @@ private:
     uint32_t m_raw_buffer_size = 0;
     std::string m_raw_buffer;
     std::string m_source_connection_id; // who send this message
+    std::string m_target_connection_id; // who will receive this message
     std::string m_debug_info; // just used for debug. maybe empty.
     bool m_tr_is_aidl_message = true;
 };
@@ -229,6 +241,7 @@ struct binder_transaction_message : public binder_ipc_message
     static constexpr std::string_view s_is_reply_key{ "is_reply" };
     static constexpr std::string_view s_transaction_state_key{ "transaction_state" };
     static constexpr std::string_view s_tr_service_name_key{ "tr_service_name" };
+    static constexpr std::string_view s_tr_init_connection_name_key{ "tr_init_connection_name" };
 
     transaction_state m_transaction_state = transaction_state::init; // When reply this message, means that this trasaction has been done.
     uint32_t m_tr_code = 0;
@@ -236,6 +249,7 @@ struct binder_transaction_message : public binder_ipc_message
     uint32_t m_tr_target_binder_handle = 0;
     uint32_t m_tr_data_ptr_offsets = 0;
     std::string m_tr_service_name; // which service should handle this message
+    std::string m_tr_init_connection_name; // who init this transaction
     bool m_is_reply = false;
 };
 

@@ -112,7 +112,6 @@ private:
     uint64_t m_write_done_id = 0;
     std::string m_peer;
     bool m_message_sending = false;
-    std::vector<BinderDriverDataLink::MessageFromServer> m_msg_to_send;
     std::vector<std::shared_ptr<binder_ipc_message>> m_msgs_to_send;
 
     std::mutex m_mutex;

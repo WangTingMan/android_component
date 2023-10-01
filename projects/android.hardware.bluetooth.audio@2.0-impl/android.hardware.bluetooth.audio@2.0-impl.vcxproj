@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\A2dpOffloadAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\A2dpSoftwareAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\ANDROIDHARDWAREBLUETOOTHAUDIO20IMPL_EXPORTS.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\BluetoothAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\BluetoothAudioProvidersFactory.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\HearingAidAudioProvider.h" />

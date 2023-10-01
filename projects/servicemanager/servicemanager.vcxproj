@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\Access.h" />
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h" />
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h" />
@@ -29,11 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\main.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp" />
+    <ClCompile Include="hw_service_manager_loader.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

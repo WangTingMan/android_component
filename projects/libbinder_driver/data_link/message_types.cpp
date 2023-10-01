@@ -5,14 +5,36 @@
 #include "ipc_connection_token.h"
 
 #include "linux/binder_internal_control_block_mgr.h"
+#include <base/rand_util.h>
+
+#include <cutils/properties.h>
+
+// #define USING_RANDOM_ID_START
 
 namespace data_link
 {
 
-std::atomic<uint64_t> binder_ipc_message::s_next_id{ 0 };
+#ifdef USING_RANDOM_ID_START
+std::atomic<uint64_t> binder_ipc_message::s_next_id{ static_cast<uint64_t>( ::base::RandInt(0,1000) )};
+#else
+std::atomic<uint64_t> binder_ipc_message::s_next_id;
+#endif
 
 binder_ipc_message::binder_ipc_message( bool a_auto_incread_id )
 {
+#ifndef USING_RANDOM_ID_START
+    if( s_next_id == 0 )
+    {
+        std::string start_id_key{ "persist.message.id.start" };
+        int64_t v = property_get_int64( start_id_key.c_str(), 0 );
+        if( v == 0 )
+        {
+            v = ::base::RandInt( 0, 1000 );
+        }
+        s_next_id.exchange( static_cast<uint64_t>( v ) );
+    }
+#endif
+
     if( a_auto_incread_id )
     {
         m_id = s_next_id.fetch_add( 1 );
@@ -32,6 +54,7 @@ void binder_ipc_message::fill_json_value( Json::Value& a_value )const noexcept
     a_value[s_end_point_key.data()] = m_endpoint;
     a_value[s_raw_buffer_size_key.data()] = m_raw_buffer_size;
     a_value[s_source_connection_id_key.data()] = m_source_connection_id;
+    a_value[s_target_connection_id_key.data()] = m_target_connection_id;
     a_value[s_debug_info_key.data()] = m_debug_info;
     a_value[s_tr_is_aidl_message_key.data()] = m_tr_is_aidl_message;
 }
@@ -77,6 +100,9 @@ bool binder_ipc_message::parse_from_json( Json::Value& a_value )
 
     value = a_value[static_cast< std::string >( s_tr_is_aidl_message_key )];
     m_tr_is_aidl_message = value.asBool();
+
+    value = a_value[static_cast<std::string>( s_target_connection_id_key )];
+    m_target_connection_id = value.asString();
 
     return is_success;
 }
@@ -184,6 +210,7 @@ void binder_transaction_message::fill_json_value( Json::Value& a_value )const no
     a_value[s_is_reply_key.data()] = m_is_reply;
     a_value[s_transaction_state_key.data()] = ( uint32_t )m_transaction_state;
     a_value[s_tr_service_name_key.data()] = m_tr_service_name;
+    a_value[s_tr_init_connection_name_key.data()] = m_tr_init_connection_name;
     return;
 }
 
@@ -213,6 +240,9 @@ bool binder_transaction_message::parse_from_json( Json::Value& a_value )
     value = a_value[static_cast< std::string >( s_tr_service_name_key )];
     m_tr_service_name = value.asString();
 
+    value = a_value[static_cast<std::string>( s_tr_init_connection_name_key )];
+    m_tr_init_connection_name = value.asString();
+
     is_success = true;
     return is_success;
 }
@@ -230,7 +260,7 @@ void binder_transaction_message::init_transaction_context( binder_transaction_da
     m_tr_data_ptr_offsets = a_binder_transaction_data->data.ptr.offsets;
     m_tr_service_name.assign( a_binder_transaction_data->service_name );
     set_aidl_message( a_binder_transaction_data->is_aidl_transaction );
-    set_connection_name( a_binder_transaction_data->source_connection_name );
+    m_tr_init_connection_name = a_binder_transaction_data->source_connection_name;
     set_id( a_binder_transaction_data->current_transaction_message_id );
 }
 
@@ -255,10 +285,9 @@ void binder_transaction_message::parse_transaction_context( binder_transaction_d
         a_binder_transaction_data->target.binder_handle = 0;
     }
 
-    std::string connection_name = get_source_connection_id();
-    if( connection_name.size() < MAX_CONNECTION_NAME_SIZE )
+    if( m_tr_init_connection_name.size() < MAX_CONNECTION_NAME_SIZE )
     {
-        strcpy_s( a_binder_transaction_data->source_connection_name, connection_name.c_str() );
+        strcpy_s( a_binder_transaction_data->source_connection_name, m_tr_init_connection_name.c_str() );
     }
 
     a_binder_transaction_data->current_transaction_message_id = get_id();

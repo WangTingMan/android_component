@@ -58,6 +58,7 @@ void binder_client_proxy::connect( std::string a_address )
 
 void binder_client_proxy::send_message( std::shared_ptr<binder_ipc_message> a_message )
 {
+    ALOGI( "send message with id: %d", a_message->get_id() );
     server_io_runner::get_default_instance()
         .post_task( std::bind( &binder_client_proxy::async_send_biddirection_message, this, a_message ) );
 }
@@ -77,12 +78,17 @@ void binder_client_proxy::async_send_biddirection_message( std::shared_ptr<binde
 {
     if( m_connection_status != connection_status::connected )
     {
-        ALOGE( "no connected, cannot send message." );
+        ALOGE( "no connected, cannot send message. message dispatched with id: %d", a_msg->get_id() );
         return;
     }
 
     if( !m_message_sending )
     {
+        if( a_msg->get_endpoint().empty() )
+        {
+            a_msg->set_endpoint( m_peer );
+        }
+
         BinderDriverDataLink::MessageFromServer msg;
         msg.set_msg( a_msg->to_string() );
         msg.set_id( a_msg->get_id() );
@@ -90,11 +96,13 @@ void binder_client_proxy::async_send_biddirection_message( std::shared_ptr<binde
         // will change to zero. So we need generate the string first!!
         msg.set_buffer( std::move( a_msg->extract_raw_buffer() ) );
         msg.set_type( uint32_t( a_msg->get_type() ) );
+        ALOGI( "send message with id: %d", msg.id() );
         m_biddiraction_stream.Write( std::move( msg ), (void*)( m_write_done_id ) );
         m_message_sending = true;
     }
     else
     {
+        ALOGI( "since we are sending other message. So cache message id: %d", a_msg->get_id() );
         m_msgs_to_send.push_back( std::move( a_msg ) );
     }
 }
@@ -209,13 +217,14 @@ void binder_client_proxy::handle_message_write_done( bool ok )
         return;
     }
 
-    if( m_msg_to_send.empty() )
+    if( m_msgs_to_send.empty() )
     {
         return;
     }
 
-    async_send_biddirection_message( m_msgs_to_send.front() );
-    m_msg_to_send.erase( m_msg_to_send.begin() );
+    auto front_ele = m_msgs_to_send.front();
+    m_msgs_to_send.erase( m_msgs_to_send.begin() );
+    async_send_biddirection_message( front_ele );
 }
 
 void binder_client_proxy::unregister_all_tag_handlers()
@@ -244,16 +253,17 @@ void binder_client_proxy::change_to_new_status( connection_status a_status )
     case connection_status::connected:
         break;
     case connection_status::connecting:
+        m_msgs_to_send.clear();
         break;
     case connection_status::disconnected:
         m_server_context.TryCancel();
+        m_msgs_to_send.clear();
         ALOGD( "cancel server context." );
         break;
     case connection_status::disconnecting:
+        m_msgs_to_send.clear();
         break;
     }
-
-    m_msg_to_send.clear();
 
     std::unique_lock<std::mutex> locker( m_mutex );
     auto cbs = m_connection_cbs;

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b1143b4b-d587-47ba-9688-bfdb91d65001}</ProjectGuid>
-    <RootNamespace>hidldemoclient</RootNamespace>
+    <ProjectGuid>{12e6bf0f-8638-405e-8635-352dae702275}</ProjectGuid>
+    <RootNamespace>hidldemoserver</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(ProjectDir)..\..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhidl\transport\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)..\..\..\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,11 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\hidl_client.cpp" />
-    <ClCompile Include="hidl_demo_client.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\hidl_client.h" />
+    <ClCompile Include="hidl_demo_server.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

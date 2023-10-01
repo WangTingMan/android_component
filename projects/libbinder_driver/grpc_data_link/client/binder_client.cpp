@@ -178,7 +178,7 @@ void binder_client::send_message_internal( std::shared_ptr<message_from_client> 
 {
     if( m_connection_status != connection_status::connected )
     {
-        ALOGE( "Not connected. Reject send message." );
+        ALOGE( "Not connected. Reject send message. dispatched message id: %d", a_message->id );
         return;
     }
 
@@ -311,6 +311,11 @@ void binder_client::change_to_new_status( connection_status a_status )
         break;
     case connection_status::disconnecting:
         break;
+    }
+
+    for( auto& ele : m_message_to_send )
+    {
+        ALOGI( "message dispatched with id: %d", ele->id );
     }
 
     m_message_to_send.clear();

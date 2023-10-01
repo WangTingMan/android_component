@@ -35,6 +35,7 @@
 #include <android/hardware/bluetooth/1.1/IBluetoothHciCallbacks.h>
 #include <hwbinder/ProcessState.h>
 #include <hwbinder/IPCThreadState.h>
+#include <linux/MessageLooper.h>
 
 #define LOG_PATH "/data/misc/bluetooth/logs/firmware_events.log"
 #define LAST_LOG_PATH "/data/misc/bluetooth/logs/firmware_events.log.last"
@@ -73,10 +74,22 @@ public:
     {
         if( status == Status::SUCCESS )
         {
+            ALOGE( "%s: HCI Init OK ", __func__ );
             if( hidl_cbs.hci_initialized_cb )
             {
                 hidl_cbs.hci_initialized_cb();
             }
+            auto send_data_fun = []()
+                {
+                    ALOGI( "send hci command test..." );
+                    std::vector<uint8_t> buffer;
+                    buffer.push_back( 0x05 );
+                    buffer.push_back( 0x06 );
+                    buffer.push_back( 0x07 );
+                    ::android::hardware::hidl_vec<uint8_t> cmd( buffer );
+                    btHci->sendHciCommand( cmd );
+                };
+            MessageLooper::GetDefault().PostDelayTask( 1000, send_data_fun );
         }
         else
         {
@@ -92,6 +105,7 @@ public:
 
     Return<void> aclDataReceived( const hidl_vec<uint8_t>& data )
     {
+        ALOGI( "Received ACL data" );
         return Void();
     }
 
@@ -134,9 +148,11 @@ void hci_initialize()
     {
         android::sp<V1_1::IBluetoothHciCallbacks> callbacks =
             new BluetoothHciCallbacks();
+        ALOGI( "Start initialize HCI" );
         auto hidl_daemon_status = btHci_1_1 != nullptr ?
             btHci_1_1->initialize_1_1( callbacks ) :
             btHci->initialize( callbacks );
+        ALOGI( "HCI initialization started. Waiting for result." );
 
         if( !hidl_daemon_status.isOk() )
         {

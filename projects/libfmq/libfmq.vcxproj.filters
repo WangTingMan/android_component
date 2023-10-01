@@ -98,24 +98,6 @@
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\Ashmem.h">
       <Filter>generated_files\aidl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnAshmem.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnMappableFile.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnNativeHandle.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpAshmem.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpMappableFile.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpNativeHandle.h">
-      <Filter>generated_files\aidl</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\MappableFile.h">
       <Filter>generated_files\aidl</Filter>
     </ClInclude>

@@ -172,12 +172,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\libfmq\base\fmq\MQDescriptorBase.h" />
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\Ashmem.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnAshmem.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnMappableFile.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BnNativeHandle.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpAshmem.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpMappableFile.h" />
-    <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\BpNativeHandle.h" />
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\fmq\GrantorDescriptor.h" />
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\fmq\MQDescriptor.h" />
     <ClInclude Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\fmq\SynchronizedReadWrite.h" />

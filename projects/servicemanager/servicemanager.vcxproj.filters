@@ -21,9 +21,6 @@
     <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.h">
-      <Filter>header</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h">
       <Filter>header</Filter>
     </ClInclude>
@@ -47,13 +44,13 @@
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\BaseMessageLooper.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="hw_service_manager_loader.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

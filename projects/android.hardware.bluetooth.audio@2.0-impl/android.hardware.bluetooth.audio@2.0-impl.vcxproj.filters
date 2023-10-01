@@ -50,5 +50,8 @@
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\HearingAidAudioProvider.h">
       <Filter>header</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\2.0\default\ANDROIDHARDWAREBLUETOOTHAUDIO20IMPL_EXPORTS.h">
+      <Filter>header</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

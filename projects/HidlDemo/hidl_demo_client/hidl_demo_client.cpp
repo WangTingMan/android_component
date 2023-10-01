@@ -6,11 +6,14 @@
 
 #include "../hidl_client.h"
 
+#include <cutils/properties.h>
+
 bool libchrome_logging_handler( int levelIn, const char* file, int line,
                                 size_t message_start, const std::string& str );
 
 int main()
 {
+    property_set( "persist.message.id.start", "200" );
     logging::SetLogMessageHandler( libchrome_logging_handler );
     __set_default_log_file_name( nullptr, false );
 

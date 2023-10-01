@@ -112,6 +112,7 @@ void abstract_io_runner::post_delay_task
 
     std::shared_ptr<grpc::Alarm> alarm = std::make_shared<grpc::Alarm>();
     cb->alarm = alarm;
+    alarm->IgnoreEarlyCheck();
 
     cb->detail_task = a_tsk;
     // go!
