@@ -160,9 +160,6 @@
     <ClCompile Include="..\..\libfmq\EventFlag.cpp" />
     <ClCompile Include="..\..\libfmq\FmqInternal.cpp" />
     <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\GrantorDescriptor.cpp" />
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\MQDescriptor.cpp" />
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\SynchronizedReadWrite.cpp" />
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\UnsynchronizedWrite.cpp" />
     <ClCompile Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\Ashmem.cpp" />
     <ClCompile Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\MappableFile.cpp" />
     <ClCompile Include="..\..\libfmq\generated_files\include\aidl\android\hardware\common\NativeHandle.cpp" />

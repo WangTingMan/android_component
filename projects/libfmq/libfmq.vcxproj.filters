@@ -30,15 +30,6 @@
     <ClCompile Include="..\..\libfmq\FmqInternal.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\MQDescriptor.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\SynchronizedReadWrite.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libfmq\generated_files\android\hardware\common\fmq\UnsynchronizedWrite.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\libfmq\system_porting.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
