@@ -9,10 +9,11 @@
 
 #include "../Interface/IAddTest.h"
 static int debug_flag = 1;
+
 namespace android {
 
 void TestBinderService::instantiate() {
-	ALOGI("Enter TestBinderService::instantiate");
+    ALOGI( "Enter TestBinderService::instantiate" );
 	status_t st = defaultServiceManager()->addService(
 			String16("my.test.binder"), new TestBinderService());
 	ALOGD("ServiceManager addService ret=%d", st);

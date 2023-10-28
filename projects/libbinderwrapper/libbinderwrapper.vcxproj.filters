@@ -18,54 +18,57 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\code_generators.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\binder_wrapper.cc">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\idl_gen_fbs.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\real_binder_wrapper.cc">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\idl_gen_text.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\stub_binder_wrapper.cc">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\idl_parser.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_server.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\reflection.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_internal.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\flatbuffers\src\util.cpp">
+    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_client.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libbinderwrapper\observer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libbinderwrapper\server.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\base.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\binder_wrapper.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\code_generators.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\stub_binder_wrapper.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\reflection.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\real_binder_wrapper.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\libbinderwrapper_export.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\reflection_generated.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\common_binder_server.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\util.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\common_binder_internal.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\common_binder_client.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\flatbuffers.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\observer.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\idl.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\flexbuffers.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\stl_emulation.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\flatbuffers\include\flatbuffers\libflatbuffer_cpp_export.h">
+    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\service.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

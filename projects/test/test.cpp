@@ -1,48 +1,45 @@
 ﻿
 #include <iostream>
 #include <atomic>
+#include <thread>
+#include <vector>
 #include <base/logging.h>
 
 #include <fmq/MessageQueue.h>
 #include <log/log.h>
+#include <utils/RefBase.h>
+#include <utils/StrongPointer.h>
+#include <fmq/system_porting.h>
+#include <openssl/digest.h>
 
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;
 
+
 int main()
 {
-    native_handle_t na_handle;
-    na_handle.version = sizeof( native_handle_t );
-    na_handle.numInts = 2;
-    na_handle.numFds = 1;
-    memset( na_handle.data, 0x00, NATIVE_HANDLE_DATA_SIZE );
-    size_t bufferSize = 1024;
-    native_handle_t* nHandle = &na_handle;
-    size_t messageSize = sizeof( uint8_t );
-    bool configureEventFlag = true;
+    DataMQ mq( 76800, "A2dpSoftwareAudioProviderMemoryZone", true );
+    auto desc = mq.getDesc();
+    std::string name = desc->toString();
 
-    DataMQ::Descriptor desciptor( bufferSize, nHandle, messageSize, configureEventFlag );
+    std::vector<uint8_t> p_buf;
+    p_buf.resize( 100 );
 
-    DataMQ mq( desciptor, true );
-
-    size_t size = mq.availableToRead();
-    std::vector<uint8_t> p_buf( size );
-
-    if( !mq.read( p_buf.data(), size ) )
-        LOG( WARNING ) << __func__ << ", failed to flush data queue!";
-
-    uint8_t buffer[10];
-    for( int i = 0; i < 10; ++i )
+    std::string msg{ "hello, this is " };
+    std::vector<std::string> msgs;
+    for( int i = 0; i < 10000; ++i )
     {
-        buffer[i] = 'A' + i;
+        std::string send_msg;
+        send_msg = msg;
+        send_msg.append( std::to_string( i ) );
+        send_msg.append( " message\n" );
+        send_msg.push_back( 0x00 );
+        memcpy( p_buf.data(), send_msg.c_str(), send_msg.size() );
+        mq.write( p_buf.data(), 100 );
+        msgs.push_back( send_msg );
+        //std::this_thread::sleep_for( std::chrono::milliseconds( 1 ) );
     }
-    mq.write( buffer, 10 );
 
-    size = mq.availableToRead();
-    p_buf.resize( size );
-
-    if( !mq.read( p_buf.data(), size ) )
-        LOG( WARNING ) << __func__ << ", failed to flush data queue!";
     std::cout << "Hello World!\n";
 }
 

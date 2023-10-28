@@ -123,7 +123,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libcrypto.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libcrypto_d.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

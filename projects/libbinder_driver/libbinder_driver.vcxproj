@@ -157,7 +157,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\frameworks_native\libs\binder_driver\binder_utils.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\internal\client_control_block.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\ipc_connection_token.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder_driver\MessageLooper.cpp" />

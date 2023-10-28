@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32428.217
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{101A6572-13FD-4C33-AF35-A0BE31A90874}"
 EndProject
@@ -223,15 +223,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "servicemanager", "projects\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hidl.token@1.0", "projects\android.hidl.token@1.0\android.hidl.token@1.0.vcxproj", "{22E8545E-BB2E-4C52-AF3D-F1094CE8B206}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "audio_example", "projects\audio_example\audio_example.vcxproj", "{DD3D6111-CF90-4DCF-9939-9990B679CD23}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hidl_demo_client", "projects\HidlDemo\hidl_demo_client\hidl_demo_client.vcxproj", "{B1143B4B-D587-47BA-9688-BFDB91D65001}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth@1.0", "projects\android.hardware.bluetooth@1.0\android.hardware.bluetooth@1.0.vcxproj", "{19C6D733-9F1A-48DD-ABB0-FC1D5B986B13}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth@1.1", "projects\android.hardware.bluetooth@1.1\android.hardware.bluetooth@1.1.vcxproj", "{95288814-88DA-46BB-8A48-CC02086F9633}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloBinerClient", "projects\HelloBinerClient\HelloBinerClient.vcxproj", "{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhidl-gen-utils", "projects\libhidl-gen-utils\libhidl-gen-utils.vcxproj", "{612926AA-6D5B-447B-8F68-4C1903E20CC7}"
 EndProject
@@ -246,6 +242,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth@1.0-impl", "projects\HidlDemo\android.hardware.bluetooth@1.0-impl\android.hardware.bluetooth@1.0-impl.vcxproj", "{6667A9EA-7254-4D33-9242-BE164757911A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libhwservicemanager", "projects\libhwservicemanager\libhwservicemanager.vcxproj", "{1B4B7235-862D-47EA-B8AC-4FDA91FEEC81}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinderDemo", "projects\BinderDemo\BinderDemo.vcxproj", "{7D3594DB-1133-46E9-8453-A9DA2DCA912C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbinderwrapper", "projects\libbinderwrapper\libbinderwrapper.vcxproj", "{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -991,14 +991,6 @@ Global
 		{22E8545E-BB2E-4C52-AF3D-F1094CE8B206}.Release|x64.Build.0 = Release|x64
 		{22E8545E-BB2E-4C52-AF3D-F1094CE8B206}.Release|x86.ActiveCfg = Release|Win32
 		{22E8545E-BB2E-4C52-AF3D-F1094CE8B206}.Release|x86.Build.0 = Release|Win32
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Debug|x64.ActiveCfg = Debug|x64
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Debug|x64.Build.0 = Debug|x64
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Debug|x86.ActiveCfg = Debug|Win32
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Debug|x86.Build.0 = Debug|Win32
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Release|x64.ActiveCfg = Release|x64
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Release|x64.Build.0 = Release|x64
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Release|x86.ActiveCfg = Release|Win32
-		{DD3D6111-CF90-4DCF-9939-9990B679CD23}.Release|x86.Build.0 = Release|Win32
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Debug|x64.ActiveCfg = Debug|x64
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Debug|x64.Build.0 = Debug|x64
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Debug|x86.ActiveCfg = Debug|Win32
@@ -1023,14 +1015,6 @@ Global
 		{95288814-88DA-46BB-8A48-CC02086F9633}.Release|x64.Build.0 = Release|x64
 		{95288814-88DA-46BB-8A48-CC02086F9633}.Release|x86.ActiveCfg = Release|Win32
 		{95288814-88DA-46BB-8A48-CC02086F9633}.Release|x86.Build.0 = Release|Win32
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Debug|x64.ActiveCfg = Debug|x64
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Debug|x64.Build.0 = Debug|x64
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Debug|x86.ActiveCfg = Debug|Win32
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Debug|x86.Build.0 = Debug|Win32
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Release|x64.ActiveCfg = Release|x64
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Release|x64.Build.0 = Release|x64
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Release|x86.ActiveCfg = Release|Win32
-		{A12683C7-E11A-47B7-84E6-E4317FD7EEEB}.Release|x86.Build.0 = Release|Win32
 		{612926AA-6D5B-447B-8F68-4C1903E20CC7}.Debug|x64.ActiveCfg = Debug|x64
 		{612926AA-6D5B-447B-8F68-4C1903E20CC7}.Debug|x64.Build.0 = Debug|x64
 		{612926AA-6D5B-447B-8F68-4C1903E20CC7}.Debug|x86.ActiveCfg = Debug|Win32
@@ -1087,6 +1071,22 @@ Global
 		{1B4B7235-862D-47EA-B8AC-4FDA91FEEC81}.Release|x64.Build.0 = Release|x64
 		{1B4B7235-862D-47EA-B8AC-4FDA91FEEC81}.Release|x86.ActiveCfg = Release|Win32
 		{1B4B7235-862D-47EA-B8AC-4FDA91FEEC81}.Release|x86.Build.0 = Release|Win32
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Debug|x64.ActiveCfg = Debug|x64
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Debug|x64.Build.0 = Debug|x64
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Debug|x86.ActiveCfg = Debug|Win32
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Debug|x86.Build.0 = Debug|Win32
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Release|x64.ActiveCfg = Release|x64
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Release|x64.Build.0 = Release|x64
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Release|x86.ActiveCfg = Release|Win32
+		{7D3594DB-1133-46E9-8453-A9DA2DCA912C}.Release|x86.Build.0 = Release|Win32
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Debug|x64.ActiveCfg = Debug|x64
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Debug|x64.Build.0 = Debug|x64
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Debug|x86.ActiveCfg = Debug|Win32
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Debug|x86.Build.0 = Debug|Win32
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Release|x64.ActiveCfg = Release|x64
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Release|x64.Build.0 = Release|x64
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Release|x86.ActiveCfg = Release|Win32
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1197,6 +1197,7 @@ Global
 		{A3ACF506-A7DE-43D2-81AB-3C299006858E} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 		{5CD83943-A45D-46A2-921D-3113FB7B3960} = {ACA6E3CC-6E09-4AAC-8989-BC99F371D381}
 		{1B4B7235-862D-47EA-B8AC-4FDA91FEEC81} = {398F7293-23B6-48BE-B060-5368D04285BE}
+		{D2930819-3BF1-4789-A9C6-F33F05AE1ACF} = {101A6572-13FD-4C33-AF35-A0BE31A90874}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5CAD3F7-BD31-4D1A-B479-5B9995E1080E}

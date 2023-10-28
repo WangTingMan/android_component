@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(ProjectDir)..\..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(ProjectDir)..\..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\..\core\libbinderwrapper\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)..\..\..\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;libbinder_driver.lib;libbinderwrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

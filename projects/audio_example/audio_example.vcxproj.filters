@@ -18,5 +18,19 @@
     <ClCompile Include="audio_example.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="audio_component_config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="bluetooth_observer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_component_config.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bluetooth_observer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

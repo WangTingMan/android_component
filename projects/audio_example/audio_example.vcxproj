@@ -78,8 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\2.0\default;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\2.0\default;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\core\libbinderwrapper\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\..\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -116,7 +117,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <DisableSpecificWarnings>4251</DisableSpecificWarnings>
@@ -124,7 +125,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.audio.common@5.0.lib;android.hardware.bluetooth.audio@2.0.lib;android.hardware.bluetooth.audio@2.1.lib;libbluetooth_audio_session_aidl.lib;android.hardware.bluetooth.audio-V2-ndk.lib;libbluetooth_audio_session.lib;android.hardware.bluetooth.audio@2.0-impl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libbinder.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.audio.common@5.0.lib;android.hardware.bluetooth.audio@2.0.lib;android.hardware.bluetooth.audio@2.1.lib;libbluetooth_audio_session_aidl.lib;android.hardware.bluetooth.audio-V2-ndk.lib;libbluetooth_audio_session.lib;android.hardware.bluetooth.audio@2.0-impl.lib;libbinder_driver.lib;libbinderwrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -144,7 +145,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="audio_component_config.cpp" />
     <ClCompile Include="audio_example.cpp" />
+    <ClCompile Include="bluetooth_observer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_component_config.h" />
+    <ClInclude Include="bluetooth_observer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

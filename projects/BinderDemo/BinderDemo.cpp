@@ -237,12 +237,31 @@ class Demo : public BnDemo
 };
 
 
+class LocalRegistrationCallbackObserver : public IServiceManager::LocalRegistrationCallback
+{
+
+public:
+
+    void onServiceRegistration( const String16& instance, const sp<IBinder>& binder )
+    {
+        int x = 0;
+        x = 90;
+    }
+
+};
+
 // Helper function to get a hold of the "Demo" service.
 sp<IDemo> getDemoServ()
 {
     sp<IServiceManager> sm = defaultServiceManager();
     ASSERT( sm != 0 );
+
+    bool r = sm->registerForNotifications( String16( "my.test.binder" ), sp<LocalRegistrationCallbackObserver>::make() );
+
+    system( "pause" );
+
     sp<IBinder> binder = sm->getService( String16( "Demo" ) );
+
     // TODO: If the "Demo" service is not running, getService times out and binder == 0.
     ASSERT( binder != 0 );
     sp<IDemo> demo = interface_cast< IDemo >( binder );

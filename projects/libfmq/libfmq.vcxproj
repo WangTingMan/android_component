@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/generated_files\include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/generated_files\include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\jsoncpp\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -134,7 +134,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>liblog.lib;libutils.lib;libbase.lib;libbinder.lib;libbinder_ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>liblog.lib;libutils.lib;libbase.lib;libbinder.lib;libbinder_ndk.lib;libjsoncpp.lib;libcutils.lib;libhidlbase.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

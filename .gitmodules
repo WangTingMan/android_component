@@ -100,3 +100,6 @@
 [submodule "system/libvintf"]
 	path = system/libvintf
 	url = https://github.com/WangTingMan/libvintf.git
+[submodule "system/external/abseil-cpp"]
+	path = system/external/abseil-cpp
+	url = https://github.com/WangTingMan/abseil-cpp.git
