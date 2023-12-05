@@ -9,7 +9,7 @@
 
 #include <cutils/properties.h>
 
-// #define USING_RANDOM_ID_START
+#define USING_RANDOM_ID_START
 
 namespace data_link
 {
@@ -57,6 +57,7 @@ void binder_ipc_message::fill_json_value( Json::Value& a_value )const noexcept
     a_value[s_target_connection_id_key.data()] = m_target_connection_id;
     a_value[s_debug_info_key.data()] = m_debug_info;
     a_value[s_tr_is_aidl_message_key.data()] = m_tr_is_aidl_message;
+    a_value[s_tr_source_pid_key.data()] = m_source_pid;
 }
 
 bool binder_ipc_message::parse_from_json( Json::Value& a_value )
@@ -103,6 +104,9 @@ bool binder_ipc_message::parse_from_json( Json::Value& a_value )
 
     value = a_value[static_cast<std::string>( s_target_connection_id_key )];
     m_target_connection_id = value.asString();
+
+    value = a_value[static_cast<std::string>( s_tr_source_pid_key )];
+    m_source_pid = value.asInt();
 
     return is_success;
 }
@@ -261,6 +265,7 @@ void binder_transaction_message::init_transaction_context( binder_transaction_da
     m_tr_service_name.assign( a_binder_transaction_data->service_name );
     set_aidl_message( a_binder_transaction_data->is_aidl_transaction );
     m_tr_init_connection_name = a_binder_transaction_data->source_connection_name;
+    m_source_pid = a_binder_transaction_data->sender_pid;
     set_id( a_binder_transaction_data->current_transaction_message_id );
 }
 
@@ -291,6 +296,7 @@ void binder_transaction_message::parse_transaction_context( binder_transaction_d
     }
 
     a_binder_transaction_data->current_transaction_message_id = get_id();
+    a_binder_transaction_data->sender_pid = m_source_pid;
 }
 
 std::shared_ptr<binder_ipc_message> create( binder_message_type a_msg_type, bool a_auto_incread_id )

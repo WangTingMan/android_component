@@ -83,7 +83,7 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
-    __log_format( level, "", file, "", line, logStr.c_str() );
+    __android_log_print_ext( level, "", file, line, logStr.c_str() );
 
     return true;
 }

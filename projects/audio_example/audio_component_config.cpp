@@ -11,6 +11,7 @@
 extern "C"
 {
     typedef void* (*get_audio_module_type)();
+    typedef int32_t( *load_android_audio_type )( );
 }
 
 audio_component_config& audio_component_config::get_instance()
@@ -22,7 +23,8 @@ audio_component_config& audio_component_config::get_instance()
 audio_component_config::audio_component_config()
 {
     m_observer.force_set( new BluetoothObserver );
-    MessageLooper::GetDefault().PostTask( std::bind(&audio_component_config::register_observer, this) );
+    MessageLooper::GetDefault().PostTask( std::bind( &audio_component_config::register_observer, this ) );
+    MessageLooper::GetDefault().PostTask( std::bind( &audio_component_config::load_android_bluetooth_audio, this ) );
 }
 
 void audio_component_config::register_observer()
@@ -37,6 +39,30 @@ void audio_component_config::register_observer()
 
     android::sp<IBluetoothService> iservice = interface_cast<IBluetoothService>( binder );
     iservice->RegisterObserver( m_observer );
+}
+
+void audio_component_config::load_android_bluetooth_audio()
+{
+    base::NativeLibraryLoadError error;
+    std::string lib_name{ "android.hardware.bluetooth.audio-impl.so" };
+    auto lib = base::LoadNativeLibrary( lib_name, &error);
+    if( lib == NULL )
+    {
+        LOG( ERROR ) << "Cannot load library: " << lib_name;
+        return;
+    }
+
+    load_android_audio_type factoryFunction;
+    factoryFunction = (load_android_audio_type)( base::GetFunctionPointerFromNativeLibrary
+        ( lib, "createIBluetoothAudioProviderFactory" ) );
+    if( factoryFunction )
+    {
+        factoryFunction();
+    }
+    else
+    {
+        LOG( ERROR ) << "Cannot load symbol: " << "createIBluetoothAudioProviderFactory";
+    }
 }
 
 void audio_component_config::load_all_component()
@@ -86,7 +112,10 @@ void audio_component_config::handle_active_device_changed( std::vector<uint8_t> 
     ret_value = m_audio_hw->open_output_stream( m_audio_hw, handle_, audio_device_, flags_, &audio_config_, &audio_out, device_address.c_str() );
 
     char buffer[12] = { 0 };
-    audio_out->write( audio_out, buffer, 10 );
+    if( audio_out )
+    {
+        audio_out->write( audio_out, buffer, 10 );
+    }
     m_audio_hw->dump( m_audio_hw, 20 );
 
     std::string parameters{ "audio_hw_if" };

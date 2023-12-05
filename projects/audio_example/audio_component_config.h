@@ -35,6 +35,8 @@ private:
 
     void register_observer();
 
+    void load_android_bluetooth_audio();
+
     std::vector<audio_component> m_components;
     audio_module* m_audio_module = nullptr;
     hw_module_t m_module;

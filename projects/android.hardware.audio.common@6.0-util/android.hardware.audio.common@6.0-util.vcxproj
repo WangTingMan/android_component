@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ae54bfed-1088-4952-bb1a-75e5c0b02f5f}</ProjectGuid>
-    <RootNamespace>liblog</RootNamespace>
+    <ProjectGuid>{28a6f6b4-4abe-4d82-ae1a-4f77f716aee3}</ProjectGuid>
+    <RootNamespace>androidhardwareaudiocommon60util</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,26 +70,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libbase\include;$(IncludePath)</IncludePath>
-    <TargetExt>.so</TargetExt>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\hardware\interfaces\audio;$(ProjectDir)..\..\hardware/interfaces/audio/common/all-versions/util/include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files/hidl;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libfmq\base;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREAUDIOCOMMON60UTIL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -106,7 +95,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREAUDIOCOMMON60UTIL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -123,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;LIBLOG_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREAUDIOCOMMON60UTIL_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -134,7 +123,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>liblog.lib;libutils.lib;libhidlbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,7 +132,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREAUDIOCOMMON60UTIL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -157,31 +146,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\logging\liblog\logger_name.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_read.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logprint.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_list.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\porting_log.cpp" />
-    <ClCompile Include="..\..\logging\liblog\properties.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtils.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtilsCommon.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\UuidUtils.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\logging\liblog\include\android\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\event_tag_map.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\liblog_export.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\logprint.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_event_list.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_id.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_main.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_properties.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_radio.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_read.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_safetynet.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_system.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_time.h" />
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtils.h" />
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\UuidUtils.h" />
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\VersionUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

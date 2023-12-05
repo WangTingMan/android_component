@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ae54bfed-1088-4952-bb1a-75e5c0b02f5f}</ProjectGuid>
-    <RootNamespace>liblog</RootNamespace>
+    <ProjectGuid>{18b28d08-6ed2-41c9-9d78-41c9ba8f5af2}</ProjectGuid>
+    <RootNamespace>androidhardwarebluetoothaudioimpl</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,26 +70,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libbase\include;$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -106,7 +96,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -123,18 +113,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;LIBLOG_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS_IMPL;_WINDOWS;_USRDLL;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libbinder_ndk.lib;libbinder.lib;libcutils.lib;libfmq.lib;liblog.lib;libChromeBase.lib;libbluetooth_audio_session_aidl.lib;android.hardware.bluetooth.audio-V2-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,7 +133,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -157,31 +147,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\logging\liblog\logger_name.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_read.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logprint.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_list.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\porting_log.cpp" />
-    <ClCompile Include="..\..\logging\liblog\properties.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpSoftwareAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProviderFactory.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HearingAidAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioOffloadAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioSoftwareAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\service.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\logging\liblog\include\android\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\event_tag_map.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\liblog_export.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\logprint.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_event_list.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_id.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_main.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_properties.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_radio.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_read.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_safetynet.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_system.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_time.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpSoftwareAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProviderFactory.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HearingAidAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioOffloadAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioSoftwareAudioProvider.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

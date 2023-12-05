@@ -14,7 +14,7 @@ void BluetoothObserver::A2dpConnectionStatusChanged( std::vector<uint8_t> a_addr
 
 void BluetoothObserver::A2dpActiveDeviceChanged( std::vector<uint8_t> a_addr )
 {
-    MessageLooper::GetDefault().PostTask(
+    MessageLooper::GetDefault().PostDelayTask(2000,
         std::bind( &audio_component_config::handle_active_device_changed,
                    std::ref( audio_component_config::get_instance() ),
                    a_addr ) );

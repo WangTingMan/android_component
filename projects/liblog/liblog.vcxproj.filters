@@ -9,34 +9,88 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="header files">
+    <Filter Include="header">
+      <UniqueIdentifier>{c7ff74fe-8205-4e1c-90b3-0634a6e86141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\log">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="header\Android">
+      <UniqueIdentifier>{7bf73c11-9050-4065-81fe-1315435a8cba}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\logging\liblog\porting_log.cc">
+    <ClCompile Include="..\..\logging\liblog\log_event_list.cpp">
       <Filter>source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\logging\liblog\android_porting_log.cc">
+    <ClCompile Include="..\..\logging\liblog\log_event_write.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\logger_name.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\logger_read.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\logger_write.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\logprint.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\properties.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\logging\liblog\porting_log.cpp">
       <Filter>source files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\logging\liblog\include\log\event_tag_map.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\logging\liblog\include\log\log.h">
-      <Filter>header files</Filter>
+      <Filter>header\log</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\logging\liblog\include\log\porting_log.h">
-      <Filter>header files</Filter>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_event_list.h">
+      <Filter>header\log</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\logging\liblog\include\android\android_porting_log.h">
-      <Filter>header files</Filter>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_id.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_main.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_properties.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_radio.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_read.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_safetynet.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_system.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\log_time.h">
+      <Filter>header\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\logprint.h">
+      <Filter>header\log</Filter>
     </ClInclude>
     <ClInclude Include="..\..\logging\liblog\include\android\log.h">
-      <Filter>header files</Filter>
+      <Filter>header\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\logging\liblog\include\log\liblog_export.h">
+      <Filter>header\log</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -147,9 +147,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\core\libbinderwrapper\binder_wrapper.cc" />
-    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_client.cpp" />
-    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_internal.cpp" />
-    <ClCompile Include="..\..\core\libbinderwrapper\common_binder_server.cpp" />
     <ClCompile Include="..\..\core\libbinderwrapper\observer.cpp" />
     <ClCompile Include="..\..\core\libbinderwrapper\real_binder_wrapper.cc" />
     <ClCompile Include="..\..\core\libbinderwrapper\server.cpp" />
@@ -157,10 +154,7 @@
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\core\libbinderwrapper\common_binder_internal.h" />
     <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\binder_wrapper.h" />
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\common_binder_client.h" />
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\common_binder_server.h" />
     <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\libbinderwrapper_export.h" />
     <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\observer.h" />
     <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\service.h" />

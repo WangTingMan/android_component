@@ -200,6 +200,7 @@ void binder_client_proxy::handle_request_message_read_come( bool ok )
         msg->set_id( m_read_msg.id() );
         msg->set_raw_buffer( std::move( m_read_msg.buffer() ) );
         msg->parse_from_message( m_read_msg.msg() );
+        ALOGI( "Read message done with ID: %d", m_read_msg.id() );
         m_message_callback( msg );
     }
 

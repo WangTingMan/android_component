@@ -71,76 +71,6 @@ int main()
     logging::SetLogMessageHandler( libchrome_logging_handler );
     __set_default_log_file_name( nullptr, false );
 
-    DataMQ::Descriptor desc_;
-    std::string desc_str = R"(
-        {
-         "GrantorDescriptor_key" : 
-         [
-          {
-           "GrantorDescriptor_extent_key" : 8,
-           "GrantorDescriptor_fdIndex_key" : 0,
-           "GrantorDescriptor_flags_key" : 0,
-           "GrantorDescriptor_offset_key" : 0
-          },
-          {
-           "GrantorDescriptor_extent_key" : 8,
-           "GrantorDescriptor_fdIndex_key" : 0,
-           "GrantorDescriptor_flags_key" : 0,
-           "GrantorDescriptor_offset_key" : 8
-          },
-          {
-           "GrantorDescriptor_extent_key" : 76800,
-           "GrantorDescriptor_fdIndex_key" : 0,
-           "GrantorDescriptor_flags_key" : 0,
-           "GrantorDescriptor_offset_key" : 16
-          },
-          {
-           "GrantorDescriptor_extent_key" : 4,
-           "GrantorDescriptor_fdIndex_key" : 0,
-           "GrantorDescriptor_flags_key" : 0,
-           "GrantorDescriptor_offset_key" : 7696
-          }
-         ],
-         "GrantorDescriptor_size_key" : 4,
-         "flags_key" : 1,
-         "name_key" : "A2dpSoftwareAudioProviderMemoryZone",
-         "numFds_key" : 1,
-         "numInts_key" : 0,
-         "quantum_key" : 1
-        }
-    )";
-
-    desc_.fromString( desc_str );
-    std::shared_ptr<DataMQ> mDataMQ;
-    mDataMQ.reset( new DataMQ( desc_ ) );
-
-    std::vector<char> msg;
-    msg.resize( 100 );
-    size_t read_size = 0;
-    std::vector<std::string> msgs;
-    while( true )
-    {
-        read_size = read_msg( mDataMQ, msg );
-        if( read_size == 100 )
-        {
-            //std::cout << msg.data();
-            msgs.push_back( msg.data() );
-            continue;
-        }
-
-        if( read_size < 1 )
-        {
-            continue;
-        }
-
-        if( read_size < 100 )
-        {
-            std::cout << "wrong\n";
-        }
-    }
-
-
-
     using android::hardware::bluetooth::V1_0::IBluetoothHci;
     using android::hardware::registerPassthroughServiceImplementation;
     using android::hardware::configureRpcThreadpool;
@@ -199,7 +129,7 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
-    __log_format( level, "", file, "", line, logStr.c_str() );
+    __android_log_print_ext( level, "", file, line, logStr.c_str() );
 
     return true;
 }

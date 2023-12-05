@@ -44,6 +44,7 @@ public:
     static constexpr std::string_view s_target_connection_id_key{ "target_connection_id" };
     static constexpr std::string_view s_debug_info_key{ "debug_info" };
     static constexpr std::string_view s_tr_is_aidl_message_key{ "tr_is_aidl_message" };
+    static constexpr std::string_view s_tr_source_pid_key{ "tr_source_pid" };
 
     binder_ipc_message( bool a_auto_incread_id = true );
 
@@ -160,6 +161,8 @@ protected:
     {
         m_type = a_type;
     }
+
+    int m_source_pid = 0;
 
 private:
 

@@ -18,39 +18,24 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\core\libbinderwrapper\binder_wrapper.cc">
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtils.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\core\libbinderwrapper\real_binder_wrapper.cc">
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtilsCommon.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\core\libbinderwrapper\stub_binder_wrapper.cc">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libbinderwrapper\observer.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libbinderwrapper\server.cpp">
+    <ClCompile Include="..\..\hardware\interfaces\audio\common\all-versions\default\UuidUtils.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\binder_wrapper.h">
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\HidlUtils.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\stub_binder_wrapper.h">
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\UuidUtils.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\core\libbinderwrapper\real_binder_wrapper.h">
-      <Filter>source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\libbinderwrapper_export.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\observer.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libbinderwrapper\include\binderwrapper\service.h">
+    <ClInclude Include="..\..\hardware\interfaces\audio\common\all-versions\default\VersionUtils.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

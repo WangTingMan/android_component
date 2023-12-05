@@ -1,23 +1,37 @@
 ﻿
-#include <iostream>
 #include <atomic>
+#include <base/logging.h>
+#include <fstream>
+#include <iostream>
 #include <thread>
 #include <vector>
-#include <base/logging.h>
 
 #include <fmq/MessageQueue.h>
+#include <fmq/system_porting.h>
 #include <log/log.h>
+#include <openssl/digest.h>
 #include <utils/RefBase.h>
 #include <utils/StrongPointer.h>
-#include <fmq/system_porting.h>
-#include <openssl/digest.h>
+
+#include <aidl\android\hardware\common\NativeHandle.h>
+#include <android\binder_auto_utils.h>
+#include <android-base\logging.h>
+#include <base\strings\stringprintf.h>
+#include <base\files\file_util.h>
+
+#include <audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h>
 
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;
 
-
 int main()
 {
+    ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_TEST_NOT_USE_DIRECTLY();
+
+    ::ndk::ScopedFileDescriptor des;
+    ::ndk::ScopedFileDescriptor aa = des;
+    aidl::android::hardware::common::NativeHandle handle;
+
     DataMQ mq( 76800, "A2dpSoftwareAudioProviderMemoryZone", true );
     auto desc = mq.getDesc();
     std::string name = desc->toString();

@@ -30,7 +30,11 @@ void gpr_log_func_( gpr_log_func_args* args )
         return;
     }
 
-    __log_format( severity, "", args->file, "", args->line, args->message );
+#ifdef __android_log_print_ext_defined
+    __android_log_print_ext( severity, "", args->file, args->line, args->message );
+#else
+    __android_log_print( severity, nullptr, args->message );
+#endif
 }
 
 struct runner_task_wrapper_control_block

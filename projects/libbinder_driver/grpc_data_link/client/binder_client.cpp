@@ -211,6 +211,7 @@ void binder_client::send_next_message()
     msg.set_type( msg_to_send->type );
     msg.set_msg( msg_to_send->message );
 
+    ALOGI( "send message with ID: %d", msg_to_send->id );
     m_message_sending = true;
     m_stream->Write( std::move(msg), (void*)( m_write_done_id ) );
     m_message_to_send.erase( m_message_to_send.begin() );
@@ -249,7 +250,7 @@ void binder_client::handle_message_read_done( bool ok )
         return;
     }
 
-    m_stream->Read( &m_message_from_server, (void*)( m_read_done_id ) );
+    ALOGI( "Received message id = %d", m_message_from_server.id() );
 
     std::shared_lock<std::shared_mutex> locker( m_mutex );
     if( m_callbacks.new_message_from_server )
@@ -275,6 +276,7 @@ void binder_client::handle_message_read_done( bool ok )
         m_callbacks.new_message_from_server( msg_from_server );
     }
 
+    m_stream->Read( &m_message_from_server, (void*)( m_read_done_id ) );
 }
 
 void binder_client::handle_message_write_done( bool ok )

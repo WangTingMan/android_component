@@ -3,6 +3,7 @@
 #include <hidl/Status.h>
 #include <log/log.h>
 #include <linux/MessageLooper.h>
+#include <hwbinder/IPCThreadState.h>
 
 using ::android::hardware::Return;
 using ::android::hardware::Void;
@@ -27,6 +28,18 @@ public:
     Return<void> initialize(
         const ::android::sp<IBluetoothHciCallbacks>& cb ) override
     {
+        auto currrent_ipc_state = android::hardware::IPCThreadState::self();
+        if( currrent_ipc_state )
+        {
+            pid_t calling_pid = currrent_ipc_state->getCallingPid();
+            const char* calling_sid = currrent_ipc_state->getCallingSid();
+            if( !calling_sid )
+            {
+                calling_sid = "No calling sid";
+            }
+            uid_t calling_uid = currrent_ipc_state->getCallingUid();
+        }
+
         ALOGI( "initialize" );
         ::android::hardware::Return<void> ret;
         ret = cb->initializationComplete( ::android::hardware::bluetooth::V1_0::Status::SUCCESS );
