@@ -42,6 +42,21 @@
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\service.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecAac.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecFactory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecSbc.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpOffloadAudioProvider.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpSoftwareAudioProvider.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadAudioProvider.h">
@@ -66,6 +81,21 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecAac.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecFactory.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecSbc.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpOffloadAudioProvider.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpSoftwareAudioProvider.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

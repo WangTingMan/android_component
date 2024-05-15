@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetExt>.so</TargetExt>
-    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder;$(IncludePath)</IncludePath>
+    <TargetExt>.dll</TargetExt>
+    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth.audio-V4-ndk;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -118,13 +118,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4068;4267;4715;4275;4244</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbase.lib;libbinder_ndk.lib;libbinder.lib;libcutils.lib;libfmq.lib;liblog.lib;libChromeBase.lib;libbluetooth_audio_session_aidl.lib;android.hardware.bluetooth.audio-V2-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libbinder_ndk.lib;libbinder.lib;libcutils.lib;libfmq.lib;liblog.lib;libChromeBase.lib;libbluetooth_audio_session_aidl.lib;android.hardware.bluetooth.audio-V4-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,10 +148,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecAac.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecFactory.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecSbc.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpSoftwareAudioProvider.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProvider.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProviderFactory.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HearingAidAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpOffloadAudioProvider.cpp" />
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpSoftwareAudioProvider.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioOffloadAudioProvider.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioSoftwareAudioProvider.cpp" />
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\service.cpp" />
@@ -159,11 +164,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecAac.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecFactory.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpOffloadCodecSbc.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\A2dpSoftwareAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\BluetoothAudioProviderFactory.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HearingAidAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpOffloadAudioProvider.h" />
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\HfpSoftwareAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioOffloadAudioProvider.h" />
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\aidl\default\LeAudioSoftwareAudioProvider.h" />
   </ItemGroup>

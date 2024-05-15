@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioAttributes.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioChannelLayout.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioConfig.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioConfigBase.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDevice.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDeviceAddress.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDeviceDescription.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioFormatDescription.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioGain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioGainConfig.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalAttributesGroup.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalCapCriterion.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalCapCriterionType.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalEngineConfig.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalProductStrategy.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalVolumeCurve.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalVolumeGroup.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioIoFlags.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioMMapPolicyInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioOffloadInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPlaybackRate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPort.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortConfig.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortDeviceExt.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortExt.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortMixExt.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortMixExtUseCase.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioProfile.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioUuid.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Boolean.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Byte.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Double.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\ExtraAudioDescriptor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Float.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Int.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Long.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\MicrophoneDynamicInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\MicrophoneInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Void.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioAttributes.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioChannelLayout.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioConfig.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioConfigBase.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioContentType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDevice.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDeviceAddress.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDeviceDescription.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDeviceType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioDualMonoMode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioEncapsulationMetadataType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioEncapsulationMode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioEncapsulationType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioFlag.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioFormatDescription.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioFormatType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioGain.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioGainConfig.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioGainMode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalAttributesGroup.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalCapCriterion.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalCapCriterionType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalEngineConfig.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalProductStrategy.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalVolumeCurve.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioHalVolumeGroup.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioInputFlags.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioIoFlags.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioLatencyMode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioMMapPolicy.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioMMapPolicyInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioMMapPolicyType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioMode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioOffloadInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioOutputFlags.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPlaybackRate.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPort.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortConfig.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortDeviceExt.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortExt.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortMixExt.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioPortMixExtUseCase.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioProductStrategyType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioProfile.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioSource.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioStandard.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioStreamType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioUsage.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\AudioUuid.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Boolean.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Byte.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Double.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\ExtraAudioDescriptor.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Float.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Int.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Long.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\MicrophoneDynamicInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\MicrophoneInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\PcmType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\Void.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.media.audio.common.types-V2-ndk\aidl\android\media\audio\common\ANDROIDMEDIAAUDIOCOMMONTYPESV2NDK_EXPORTS_.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

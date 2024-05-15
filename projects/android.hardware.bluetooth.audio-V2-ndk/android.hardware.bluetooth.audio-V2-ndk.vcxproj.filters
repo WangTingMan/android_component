@@ -15,264 +15,264 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AacCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AacCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AacConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AacConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxSinkBuffering.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxSinkBuffering.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AudioCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AudioCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AudioConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AudioConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BroadcastCapability.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BroadcastCapability.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\CodecCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\CodecCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\CodecConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\CodecConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioPort.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioPort.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProvider.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProvider.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\Lc3Capabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\Lc3Capabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\Lc3Configuration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\Lc3Configuration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioCodecConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioCodecConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\OpusCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\OpusCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\OpusConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\OpusConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PcmCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PcmCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PcmConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PcmConfiguration.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PresentationPosition.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PresentationPosition.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcCapabilities.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcCapabilities.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcConfiguration.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcConfiguration.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\UnicastCapability.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\UnicastCapability.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AacCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AacCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AacConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AacConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AacObjectType.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AacObjectType.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\ANDROIDHARDWAREBLUETOOTHAUDIOV2NDK_EXPORTS.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\ANDROIDHARDWAREBLUETOOTHAUDIOV2NDK_EXPORTS.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveChannelMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveChannelMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveInputMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveInputMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AptxSinkBuffering.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AptxSinkBuffering.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AudioCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AudioCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AudioConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AudioConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\AudioLocation.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\AudioLocation.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BluetoothAudioStatus.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BluetoothAudioStatus.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioPort.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioPort.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioProvider.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioProvider.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioProviderFactory.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BnBluetoothAudioProviderFactory.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioPort.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioPort.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioProvider.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioProvider.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioProviderFactory.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BpBluetoothAudioProviderFactory.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\BroadcastCapability.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\BroadcastCapability.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\ChannelMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\ChannelMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\CodecCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\CodecCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\CodecConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\CodecConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\CodecType.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\CodecType.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioPort.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioPort.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProvider.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProvider.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LatencyMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LatencyMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\Lc3Capabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\Lc3Capabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\Lc3Configuration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\Lc3Configuration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacChannelMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacChannelMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LdacQualityIndex.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LdacQualityIndex.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioCodecConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioCodecConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\LeAudioConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\LeAudioConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\OpusCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\OpusCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\OpusConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\OpusConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PcmCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PcmCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PcmConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PcmConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\PresentationPosition.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\PresentationPosition.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcAllocMethod.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcAllocMethod.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcCapabilities.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcCapabilities.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcChannelMode.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcChannelMode.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SbcConfiguration.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcConfiguration.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\SessionType.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SessionType.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\bluetooth\audio\UnicastCapability.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\UnicastCapability.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V4-ndk\aidl\android\hardware\bluetooth\audio\ANDROIDHARDWAREBLUETOOTHAUDIOV4NDK_EXPORTS.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

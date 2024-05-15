@@ -52,5 +52,19 @@ void import_properties(std::map<std::string, std::string> properties)
     g_properties.merge(std::move(properties));
 }
 
+void foreach_properties( foreach_fun a_fun, void* user_data )
+{
+    std::unique_lock<std::shared_mutex> locker( g_properties_mutex );
+    std::map<std::string, std::string> back_up = g_properties;
+    locker.unlock();
+
+    for( auto& ele : back_up )
+    {
+        auto key = ele.first.c_str();
+        auto value = ele.second.c_str();
+        a_fun( key, value, user_data );
+    }
+}
+
 }
 

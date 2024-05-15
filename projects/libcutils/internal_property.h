@@ -1,9 +1,12 @@
 #pragma once
+#include <functional>
 #include <map>
 #include <string>
 
 namespace property_internal
 {
+
+    using foreach_fun = std::function<void( const char* /*name*/, const char* /*value*/, void* /*cookie*/ )>;
 
 extern "C"
 {
@@ -12,7 +15,7 @@ extern "C"
 }
 
     void import_properties( std::map<std::string,std::string> properties );
-
+    void foreach_properties( foreach_fun a_fun, void* user_data );
 }
 
 

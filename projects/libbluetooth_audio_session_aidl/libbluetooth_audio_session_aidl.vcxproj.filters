@@ -13,6 +13,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="generated">
+      <UniqueIdentifier>{41b8b3b9-2547-4008-bffa-a1d0d0e011f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -26,6 +29,27 @@
     </ClCompile>
     <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\HidlToAidlMiddleware.cpp">
       <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothHfpCodecsProvider.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothLeAudioAseConfigurationSettingProvider.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothLeAudioCodecsProvider.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_hfp_setting.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_hfp_setting_enums.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_setting.cpp">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_setting_enums.cpp">
+      <Filter>generated</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +73,33 @@
     </ClInclude>
     <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\LIBBLUETOOTHAUDIOSESSIONAIDL_EXPORTS_.h">
       <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothHfpCodecsProvider.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothLeAudioAseConfigurationSettingProvider.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session\BluetoothLeAudioCodecsProvider.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_hfp_setting.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_hfp_setting_enums.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_setting.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\aidl_android_hardware_bluetooth_audio_setting_enums.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\audio_set_configurations_generated.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\hardware\interfaces\bluetooth\audio\utils\generated\audio_set_scenarios_generated.h">
+      <Filter>generated</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

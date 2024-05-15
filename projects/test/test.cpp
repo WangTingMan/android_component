@@ -21,11 +21,16 @@
 
 #include <audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h>
 
+#include <windows.h>
+#include <DbgHelp.h>
+#include <tchar.h>
+
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;
 
 int main()
 {
+
     ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_TEST_NOT_USE_DIRECTLY();
 
     ::ndk::ScopedFileDescriptor des;

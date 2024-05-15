@@ -18,57 +18,33 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\SinkMetadata.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SinkMetadata.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\SourceMetadata.cpp">
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SourceMetadata.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV1NDK_EXPORTS.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV1NDK_EXPORTS.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnPlaybackTrackMetadata.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnRecordTrackMetadata.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnSinkMetadata.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SinkMetadata.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnSourceMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpPlaybackTrackMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpRecordTrackMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpSinkMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpSourceMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\RecordTrackMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\SinkMetadata.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\SourceMetadata.h">
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SourceMetadata.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

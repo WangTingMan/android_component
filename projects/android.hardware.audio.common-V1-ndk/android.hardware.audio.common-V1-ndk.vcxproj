@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <TargetExt>.so</TargetExt>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V1-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V1-ndk;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <TargetExt>.dll</TargetExt>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -118,7 +118,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4068;4267;4715</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,26 +147,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\SinkMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\aidl\android\hardware\audio\common\SourceMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SinkMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SourceMetadata.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV1NDK_EXPORTS.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnPlaybackTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnRecordTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnSinkMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BnSourceMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpPlaybackTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpRecordTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpSinkMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\BpSourceMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\RecordTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\SinkMetadata.h" />
-    <ClInclude Include="..\..\generated_files\aidl\android\hardware\audio\common\SourceMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV1NDK_EXPORTS.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SinkMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V1-ndk\aidl\android\hardware\audio\common\SourceMetadata.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

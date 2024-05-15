@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{6b480a67-2544-47ef-826d-f6ba28d48e2a}</ProjectGuid>
+    <RootNamespace>vendormediatekhardwarebluetoothaudioV1ndk</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\generated_files/vendor.mediatek.hardware.bluetooth.audio-V1-ndk;$(ProjectDir)..\..\libfmq\generated_files\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;VENDORMEDIATEKHARDWAREBLUETOOTHAUDIOV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;VENDORMEDIATEKHARDWAREBLUETOOTHAUDIOV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;VENDORMEDIATEKHARDWAREBLUETOOTHAUDIOV1NDK_EXPORTS;_WINDOWS;_USRDLL;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <DisableSpecificWarnings>4251;4068;4267;4715</DisableSpecificWarnings>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.media.audio.common.types-V1-ndk.lib;android.hardware.audio.common-V3-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;VENDORMEDIATEKHARDWAREBLUETOOTHAUDIOV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AacCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AacConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxSinkBuffering.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AudioCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AudioConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BroadcastCapability.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\CodecCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\CodecConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\ConnParam.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioPort.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioProvider.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lc3Capabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lc3Configuration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioCodecConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Capabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Configuration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PcmCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PcmConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PresentationPosition.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcCapabilities.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcConfiguration.cpp" />
+    <ClCompile Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\UnicastCapability.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AacCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AacConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AacObjectType.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveChannelMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveInputMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxAdaptiveTimeToPlay.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AptxSinkBuffering.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AudioCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AudioConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\AudioLocation.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BluetoothAudioStatus.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BnBluetoothAudioPort.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BnBluetoothAudioProvider.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BnBluetoothAudioProviderFactory.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BpBluetoothAudioPort.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BpBluetoothAudioProvider.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BpBluetoothAudioProviderFactory.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\BroadcastCapability.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\ChannelMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\CodecCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\CodecConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\CodecType.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\ConnParam.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioPort.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioProvider.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LatencyMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lc3Capabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lc3Configuration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacChannelMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LdacQualityIndex.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioBroadcastConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioCodecCapabilitiesSetting.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioCodecConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LeAudioConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\LhdcLowLatencyEn.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Capabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Configuration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5DataInterval.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5FrameDuration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5QualityIndex.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Specific.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\Lhdcv5Version.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PcmCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PcmConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\PresentationPosition.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcAllocMethod.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcCapabilities.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcChannelMode.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SbcConfiguration.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\SessionType.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\UnicastCapability.h" />
+    <ClInclude Include="..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk\aidl\vendor\mediatek\hardware\bluetooth\audio\VENDORMEDIATEKHARDWAREBLUETOOTHAUDIOV1NDK_EXPORTS_.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
