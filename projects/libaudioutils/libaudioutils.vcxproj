@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -112,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;LIBAPTX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -144,10 +144,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\libopenaptx\openaptx.c" />
     <ClCompile Include="..\..\system\media\audio_utils\primitives.c" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\libopenaptx\openaptx.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\libaudioutils_export.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h" />
   </ItemGroup>
