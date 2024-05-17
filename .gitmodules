@@ -104,8 +104,14 @@
 	path = system/external/abseil-cpp
 	url = https://github.com/WangTingMan/abseil-cpp.git
 [submodule "system/external/liblc3"]
+	path = system/external/liblc3
 	url = https://github.com/WangTingMan/liblc3.git
 [submodule "system/server_configurable_flags"]
+	path = system/server_configurable_flags
 	url = https://github.com/WangTingMan/server_configurable_flags.git
 [submodule "system/tools/xsdc"]
+	path = system/tools/xsdc
 	url = https://github.com/WangTingMan/system_tools_xsdc.git
+[submodule "libopenaptx"]
+	path = libopenaptx
+	url = https://github.com/WangTingMan/libopenaptx.git

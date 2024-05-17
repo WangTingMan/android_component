@@ -7,6 +7,8 @@
 #include "../TestBinderServer/TestBinderService.h"
 #include <base/logging.h>
 
+#include <chrono>
+#include <iostream>
 #include <thread>
 using namespace android;
 
@@ -19,18 +21,26 @@ int main( int argc, char** argv )
     __set_default_log_file_name(nullptr, false );
 
     ALOGI( "binderclient" );
-    printf( "binderclient --\n" );
+    std::cout << "binderclient start to run--\n";
     int sum = 0;
     sp<ITestBinderService> mTestBinserService;
     if( mTestBinserService.get() == 0 )
     {
         sp<IServiceManager> sm = defaultServiceManager();
+        std::cout << "Success to communicate to service manager--\n";
         sp<IBinder> binder;
         do
         {
             binder = sm->getService( String16( "my.test.binder" ) );
             if( binder != 0 )
+            {
+                std::cout << "Success to communicate to my.test.binder--\n";
                 break;
+            }
+            else
+            {
+                std::cout << "Failed to communicate to my.test.binder--\n";
+            }
             ALOGI( "getService fail" );
             usleep( 500000 ); // 0.5 s
         } while( true );
@@ -41,6 +51,8 @@ int main( int argc, char** argv )
     for( int i = 0; i < 100; ++i )
     {
         sum = test->Add( 2, 4 + i );
+        std::cout << "2 + " << 4 + i << " = " << sum << ". binder calling success!\n";
+        std::this_thread::sleep_for( std::chrono::milliseconds( 10 ) );
         ALOGI( "sum = %d", sum );
     }
     system( "pause" );

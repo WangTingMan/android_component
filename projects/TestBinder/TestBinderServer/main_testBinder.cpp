@@ -5,6 +5,7 @@
 #include <utils/Log.h>
 
 #include <base/logging.h>
+#include <iostream>
 
 #include "TestBinderService.h"
 
@@ -18,8 +19,10 @@ int main(int argc, char** argv)
     logging::SetLogMessageHandler( libchrome_logging_handler );
     __set_default_log_file_name( nullptr, false );
 
+    std::cout << "HelloBinerService start to run--\n";
 	sp<ProcessState> proc(ProcessState::self());
-	sp<IServiceManager> sm = defaultServiceManager();
+    sp<IServiceManager> sm = defaultServiceManager();
+    std::cout << "Success to communicate to service manager--\n";
 	ALOGI("TestBinderService before");
 	TestBinderService::instantiate();
 	ALOGI("TestBinderService End");
@@ -66,7 +69,7 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
-    __log_format( level, "", file, "", line, logStr.c_str() );
+    __android_log_print_ext( level, "", file, line,"%s", logStr.c_str() );
 
     return true;
 }

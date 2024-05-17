@@ -15,7 +15,9 @@ namespace android {
 void TestBinderService::instantiate() {
     ALOGI( "Enter TestBinderService::instantiate" );
 	status_t st = defaultServiceManager()->addService(
-			String16("my.test.binder"), new TestBinderService());
+        String16( "my.test.binder" ), new TestBinderService() );
+    std::cout << "Success to register TestBinderService to service manager--status: "
+        << st << "\n";
 	ALOGD("ServiceManager addService ret=%d", st);
 	ALOGD("instantiate> end");
 }

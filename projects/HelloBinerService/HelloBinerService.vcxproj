@@ -84,7 +84,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhidl\base\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)..\..\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -128,7 +128,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;liblog.lib;libbinder.lib;libbinder_ndk.lib;libutils.lib;libcutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;liblog.lib;libbinder.lib;libbinder_ndk.lib;libutils.lib;libcutils.lib;libhidlbase.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
