@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32428.217
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.audio.common@5.0", "projects\android.hardware.audio.common@5.0\android.hardware.audio.common@5.0.vcxproj", "{F59A295D-ECBF-4977-B58E-F2BD08C96CD5}"
 EndProject
@@ -49,6 +49,17 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.media.audio.common.types-V2-ndk", "projects\android.media.audio.common.types-V2-ndk\android.media.audio.common.types-V2-ndk.vcxproj", "{30BF9486-4590-4FAA-8FBC-A4F705FA8CB1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbluetooth_audio_session_aidl", "projects\libbluetooth_audio_session_aidl\libbluetooth_audio_session_aidl.vcxproj", "{96C8D960-1825-4E0E-8998-6FD426A1AE11}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vendor.qti.hardware.bluetooth.audio-V1-ndk", "projects\vendor.qti.hardware.bluetooth.audio-V1-ndk\vendor.qti.hardware.bluetooth.audio-V1-ndk.vcxproj", "{0686B476-821E-4395-83B4-413733F95763}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vendor.qti.hardware.bluetooth_audio@2.1", "projects\vendor.qti.hardware.bluetooth_audio@2.1\vendor.qti.hardware.bluetooth_audio@2.1.vcxproj", "{2ECCB115-7001-4933-8159-92BCE08F4565}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53} = {DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vendor.qti.hardware.bluetooth_audio@2.0", "projects\vendor.qti.hardware.bluetooth_audio@2.0\vendor.qti.hardware.bluetooth_audio@2.0.vcxproj", "{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com.qualcomm.qti.bluetooth_audio@1.0", "projects\com.qualcomm.qti.bluetooth_audio@1.0\com.qualcomm.qti.bluetooth_audio@1.0.vcxproj", "{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -210,6 +221,38 @@ Global
 		{96C8D960-1825-4E0E-8998-6FD426A1AE11}.Release|x64.Build.0 = Release|x64
 		{96C8D960-1825-4E0E-8998-6FD426A1AE11}.Release|x86.ActiveCfg = Release|Win32
 		{96C8D960-1825-4E0E-8998-6FD426A1AE11}.Release|x86.Build.0 = Release|Win32
+		{0686B476-821E-4395-83B4-413733F95763}.Debug|x64.ActiveCfg = Debug|x64
+		{0686B476-821E-4395-83B4-413733F95763}.Debug|x64.Build.0 = Debug|x64
+		{0686B476-821E-4395-83B4-413733F95763}.Debug|x86.ActiveCfg = Debug|Win32
+		{0686B476-821E-4395-83B4-413733F95763}.Debug|x86.Build.0 = Debug|Win32
+		{0686B476-821E-4395-83B4-413733F95763}.Release|x64.ActiveCfg = Release|x64
+		{0686B476-821E-4395-83B4-413733F95763}.Release|x64.Build.0 = Release|x64
+		{0686B476-821E-4395-83B4-413733F95763}.Release|x86.ActiveCfg = Release|Win32
+		{0686B476-821E-4395-83B4-413733F95763}.Release|x86.Build.0 = Release|Win32
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Debug|x64.ActiveCfg = Debug|x64
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Debug|x64.Build.0 = Debug|x64
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Debug|x86.ActiveCfg = Debug|Win32
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Debug|x86.Build.0 = Debug|Win32
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Release|x64.ActiveCfg = Release|x64
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Release|x64.Build.0 = Release|x64
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Release|x86.ActiveCfg = Release|Win32
+		{2ECCB115-7001-4933-8159-92BCE08F4565}.Release|x86.Build.0 = Release|Win32
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Debug|x64.ActiveCfg = Debug|x64
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Debug|x64.Build.0 = Debug|x64
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Debug|x86.ActiveCfg = Debug|Win32
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Debug|x86.Build.0 = Debug|Win32
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Release|x64.ActiveCfg = Release|x64
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Release|x64.Build.0 = Release|x64
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Release|x86.ActiveCfg = Release|Win32
+		{DD65A47A-0C2E-4E5C-8C90-5959A26ABA53}.Release|x86.Build.0 = Release|Win32
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Debug|x64.ActiveCfg = Debug|x64
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Debug|x64.Build.0 = Debug|x64
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Debug|x86.ActiveCfg = Debug|Win32
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Debug|x86.Build.0 = Debug|Win32
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x64.ActiveCfg = Release|x64
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x64.Build.0 = Release|x64
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x86.ActiveCfg = Release|Win32
+		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
