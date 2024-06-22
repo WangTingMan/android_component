@@ -237,6 +237,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "liblc3", "system\external\l
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "btaudiohal_flags_c_lib", "projects\btaudiohal_flags_c_lib\btaudiohal_flags_c_lib.vcxproj", "{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libstatssocket", "projects\libstatssocket\libstatssocket.vcxproj", "{39ECCF74-4FC2-40A6-9B35-1703F0266859}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -1037,6 +1039,14 @@ Global
 		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x64.Build.0 = Release|x64
 		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x86.ActiveCfg = Release|Win32
 		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x86.Build.0 = Release|Win32
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Debug|x64.ActiveCfg = Debug|x64
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Debug|x64.Build.0 = Debug|x64
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Debug|x86.ActiveCfg = Debug|Win32
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Debug|x86.Build.0 = Debug|Win32
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Release|x64.ActiveCfg = Release|x64
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Release|x64.Build.0 = Release|x64
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Release|x86.ActiveCfg = Release|Win32
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1142,6 +1152,7 @@ Global
 		{FF72DF46-C13D-4338-83B5-2DC427CC12A8} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 		{72046972-9FC7-41DC-A24C-7D3FA5C220D0} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54} = {10AB76B5-C0C5-48C4-AE80-68506146314C}
+		{39ECCF74-4FC2-40A6-9B35-1703F0266859} = {E68D27FF-D86A-4673-A3B5-3687083A3D51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5CAD3F7-BD31-4D1A-B479-5B9995E1080E}

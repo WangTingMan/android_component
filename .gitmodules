@@ -115,3 +115,6 @@
 [submodule "libopenaptx"]
 	path = libopenaptx
 	url = https://github.com/WangTingMan/libopenaptx.git
+[submodule "packages/modules/StatsD"]
+	path = packages/modules/StatsD
+	url = https://github.com/WangTingMan/packages_modules_StatsD.git
