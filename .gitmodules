@@ -118,3 +118,6 @@
 [submodule "packages/modules/StatsD"]
 	path = packages/modules/StatsD
 	url = https://github.com/WangTingMan/packages_modules_StatsD.git
+[submodule "frameworks_proto_logging"]
+	path = frameworks_proto_logging
+	url = https://github.com/WangTingMan/frameworks_proto_logging.git

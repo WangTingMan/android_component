@@ -61,6 +61,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vendor.qti.hardware.bluetoo
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "com.qualcomm.qti.bluetooth_audio@1.0", "projects\com.qualcomm.qti.bluetooth_audio@1.0\com.qualcomm.qti.bluetooth_audio@1.0.vcxproj", "{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.audio.common-V2-ndk", "projects\android.hardware.audio.common-V2-ndk\android.hardware.audio.common-V2-ndk.vcxproj", "{7D02D9B2-06DC-4533-81CA-A934D587E01D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{30BF9486-4590-4FAA-8FBC-A4F705FA8CB1} = {30BF9486-4590-4FAA-8FBC-A4F705FA8CB1}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -253,6 +258,14 @@ Global
 		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x64.Build.0 = Release|x64
 		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x86.ActiveCfg = Release|Win32
 		{A78C2478-2CE1-40A1-B8A2-BA644C2F3B98}.Release|x86.Build.0 = Release|Win32
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Debug|x64.ActiveCfg = Debug|x64
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Debug|x64.Build.0 = Debug|x64
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Debug|x86.ActiveCfg = Debug|Win32
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Debug|x86.Build.0 = Debug|Win32
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Release|x64.ActiveCfg = Release|x64
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Release|x64.Build.0 = Release|x64
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Release|x86.ActiveCfg = Release|Win32
+		{7D02D9B2-06DC-4533-81CA-A934D587E01D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,12 +18,17 @@
 #include <android-base\logging.h>
 #include <base\strings\stringprintf.h>
 #include <base\files\file_util.h>
+#include <base\callback.h>
+#include <base\callback_forward.h>
+#include <base\bind.h>
+#include <base\bind_helpers.h>
 
 #include <audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h>
 
 #include <windows.h>
 #include <DbgHelp.h>
 #include <tchar.h>
+#include <type_traits>
 
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;

@@ -18,27 +18,18 @@
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\system\media\audio_utils\primitives.c">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libopenaptx\openaptx.c">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\system\media\audio_utils\porting_aaudio.cpp">
+    <ClCompile Include="..\..\frameworks_av\media\libaaudio\src\core\AAudioAudio.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h">
+    <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudio.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\libaudioutils_export.h">
+    <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudioTesting.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\libopenaptx\openaptx.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\porting_aaudio.h">
+    <ClInclude Include="internal_implement.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

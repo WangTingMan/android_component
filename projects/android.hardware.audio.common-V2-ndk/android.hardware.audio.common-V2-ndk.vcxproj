@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ebc3782d-a819-4eee-bdb6-998ac1de362b}</ProjectGuid>
-    <RootNamespace>libaudioutils</RootNamespace>
+    <ProjectGuid>{7d02d9b2-06dc-4533-81ca-a934d587e01d}</ProjectGuid>
+    <RootNamespace>androidhardwareaudiocommonV2ndk</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,14 +71,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
-    <TargetExt>.so</TargetExt>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V2-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V2-ndk;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREAUDIOCOMMONV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -95,7 +95,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREAUDIOCOMMONV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -112,16 +112,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;LIBAPTX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREAUDIOCOMMONV2NDK_EXPORTS;_WINDOWS;_USRDLL;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251;4068;4267;4715;4250</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.media.audio.common.types-V2-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,7 +132,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREAUDIOCOMMONV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -144,16 +146,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\libopenaptx\openaptx.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\porting_aaudio.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\primitives.c" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\AudioOffloadMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\SinkMetadata.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\SourceMetadata.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\libopenaptx\openaptx.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\libaudioutils_export.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\porting_aaudio.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV2NDK_EXPORTS_.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\AudioOffloadMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\SinkMetadata.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V2-ndk\aidl\android\hardware\audio\common\SourceMetadata.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
