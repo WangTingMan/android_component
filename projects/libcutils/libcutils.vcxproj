@@ -159,12 +159,14 @@
     <ClCompile Include="..\..\core\libcutils\ashmem-host.cpp" />
     <ClCompile Include="..\..\core\libcutils\config_utils.cpp" />
     <ClCompile Include="..\..\core\libcutils\getopt.c" />
+    <ClCompile Include="..\..\core\libcutils\hashmap.cpp" />
     <ClCompile Include="..\..\core\libcutils\iosched_policy.cpp" />
     <ClCompile Include="..\..\core\libcutils\load_file.cpp" />
     <ClCompile Include="..\..\core\libcutils\multiuser.cpp" />
     <ClCompile Include="..\..\core\libcutils\native_handle.cpp" />
     <ClCompile Include="..\..\core\libcutils\properties.cpp" />
     <ClCompile Include="..\..\core\libcutils\record_stream.cpp" />
+    <ClCompile Include="..\..\core\libcutils\sockets.cpp" />
     <ClCompile Include="..\..\core\libcutils\sockets_windows.cpp" />
     <ClCompile Include="..\..\core\libcutils\socket_inaddr_any_server_windows.cpp" />
     <ClCompile Include="..\..\core\libcutils\socket_local_server_windows.cpp" />
@@ -183,9 +185,12 @@
     <ClInclude Include="..\..\core\libcutils\include\cutils\atomic.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\cutils_export.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\fs.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\getopt.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\hashmap.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\iosched_policy.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\memory.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\misc.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\multiuser.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\native_handle.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\properties.h" />

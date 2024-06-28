@@ -84,11 +84,14 @@
     <ClCompile Include="..\..\core\libcutils\multiuser.cpp">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\hashmap.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\sockets.cpp">
+      <Filter>libcutils_sockets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h">
-      <Filter>libcutils_sockets</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
       <Filter>header files</Filter>
     </ClInclude>
@@ -138,6 +141,18 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\multiuser.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\fs.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\hashmap.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\misc.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>
