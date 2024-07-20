@@ -121,3 +121,6 @@
 [submodule "frameworks_proto_logging"]
 	path = frameworks_proto_logging
 	url = https://github.com/WangTingMan/frameworks_proto_logging.git
+[submodule "system/external/bzip2"]
+	path = system/external/bzip2
+	url = https://github.com/WangTingMan/bzip2.git
