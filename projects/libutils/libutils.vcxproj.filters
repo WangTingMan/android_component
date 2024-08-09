@@ -87,15 +87,6 @@
     <ClCompile Include="..\..\core\libutils\ExtendableRingBuffer.cpp">
       <Filter>source files</Filter>
     </ClCompile>
-    <ClCompile Include="porting_timer.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="timer_event.cpp">
-      <Filter>internal</Filter>
-    </ClCompile>
-    <ClCompile Include="event_pool.cpp">
-      <Filter>internal</Filter>
-    </ClCompile>
     <ClCompile Include="timer_manager.cpp">
       <Filter>internal</Filter>
     </ClCompile>
@@ -181,12 +172,6 @@
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\ExtendableRingBuffer.h">
       <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="event_pool.h">
-      <Filter>internal</Filter>
-    </ClInclude>
-    <ClInclude Include="time_event.h">
-      <Filter>internal</Filter>
     </ClInclude>
     <ClInclude Include="timer_manager.h">
       <Filter>internal</Filter>

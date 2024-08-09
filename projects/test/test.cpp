@@ -15,13 +15,13 @@
 
 #include <aidl\android\hardware\common\NativeHandle.h>
 #include <android\binder_auto_utils.h>
-#include <android-base\logging.h>
 #include <base\strings\stringprintf.h>
 #include <base\files\file_util.h>
 #include <base\callback.h>
 #include <base\callback_forward.h>
 #include <base\bind.h>
 #include <base\bind_helpers.h>
+#include <base\logging.h>
 
 #include <audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h>
 
@@ -33,8 +33,20 @@
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;
 
+bool LogMessageHandlerFunctionS(int severity,
+    const char* file, int line, size_t message_start, const std::string& str)
+{
+    LOG(ERROR) << "here!";
+    return true;
+}
+
 int main()
 {
+
+    logging::SetLogMessageHandler(LogMessageHandlerFunctionS);
+    LOG(ERROR) << "hh\n";
+
+    system("pause");
 
     ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_TEST_NOT_USE_DIRECTLY();
 

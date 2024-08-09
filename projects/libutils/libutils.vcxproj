@@ -183,10 +183,7 @@
     <ClCompile Include="..\..\core\libutils\Unicode.cpp" />
     <ClCompile Include="..\..\core\libutils\VectorImpl.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="event_pool.cpp" />
     <ClCompile Include="gettimeofday_ms.cpp" />
-    <ClCompile Include="porting_timer.cpp" />
-    <ClCompile Include="timer_event.cpp" />
     <ClCompile Include="timer_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -218,9 +215,7 @@
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Vector.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\VectorImpl.h" />
-    <ClInclude Include="event_pool.h" />
     <ClInclude Include="timer_manager.h" />
-    <ClInclude Include="time_event.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

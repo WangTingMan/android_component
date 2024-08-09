@@ -1,9 +1,26 @@
 #pragma once
 
-#include "event_pool.h"
+#include <atomic>
+#include <list>
+#include <map>
 #include <mutex>
+#include <future>
+
+#include <base/message_loop/message_loop.h>
+#include <base/cancelable_callback.h>
+#include <base/timer/timer.h>
 
 typedef void (*alarm_callback_t)(void* data);
+
+struct TimerControlBlock
+{
+    std::string m_name;
+    uint32_t m_id{ 0 };
+    uint32_t m_intervalms{ 0 };
+    bool m_periodic{ false };
+    base::RepeatingTimer m_timer;
+    std::function<void()> m_callback;
+};
 
 class TimerManager
 {
@@ -11,6 +28,8 @@ class TimerManager
 public:
 
     TimerManager();
+
+    ~TimerManager();
 
     static TimerManager& GetInstance();
 
@@ -67,10 +86,58 @@ public:
 
 private:
 
-    std::shared_ptr<EventPool::TimeEvent> FindTimer( uint32_t a_alarm );
+    void Quit();
 
-    EventPool::EventPool m_pool;
+    void Run( std::promise<void> a_start_up_promise );
+
+    void MakeNewAlarmInternal
+        (
+        std::shared_ptr<std::promise<uint32_t>> a_promised_id,
+        std::string&& a_ame,
+        std::function<void()> a_callBack,
+        bool a_periodic = false
+        );
+
+    void DeleteAlarmInternal( uint32_t a_alarm );
+
+    void SetAlarmInternal
+        (
+        uint32_t a_alarm,
+        uint64_t a_interval_ms,
+        std::function<void()> a_callback
+        );
+
+    void SetAlarmInterval
+        (
+        uint32_t a_alarm,
+        uint64_t a_interval_ms
+        );
+
+    void StopAlarmInternal( uint32_t a_alarm );
+
+    void TimerEvent( uint32_t id );
+
+    void IsScheduledInternal
+        (
+        std::shared_ptr<std::promise<bool>> a_running,
+        uint32_t const a_larm 
+        );
+
+    void GetRemainingMsInternal
+        (
+        std::shared_ptr<std::promise<uint32_t>> a_remain_time,
+        uint32_t const a_larm
+        );
+
+    std::shared_ptr<TimerControlBlock> FindTimer( uint32_t a_alarm );
+
+    std::atomic_uint32_t m_current_id;
+
     std::recursive_mutex m_mutex;
-    std::vector<std::shared_ptr<EventPool::TimeEvent>> m_timers;
+    std::promise<void> m_quit_promise;
+    std::shared_ptr<base::MessageLoop> m_message_loop;
+    std::shared_ptr<base::RunLoop> m_run_loop;
+    std::list<std::shared_ptr<TimerControlBlock>> m_timers;
+    std::thread m_running_thread;
 };
 

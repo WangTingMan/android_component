@@ -258,8 +258,6 @@ sp<IDemo> getDemoServ()
 
     bool r = sm->registerForNotifications( String16( "my.test.binder" ), sp<LocalRegistrationCallbackObserver>::make() );
 
-    system( "pause" );
-
     sp<IBinder> binder = sm->getService( String16( "Demo" ) );
 
     // TODO: If the "Demo" service is not running, getService times out and binder == 0.
@@ -277,8 +275,11 @@ int main( int argc, char** argv )
     logging::SetLogMessageHandler( libchrome_logging_handler );
     __set_default_log_file_name( nullptr, true );
 
-    argc = 2;
-    if( argc == 1 )
+    bool running_as_service = true;
+#ifdef BINDER_DEMO_CLIENT_BUILD
+    running_as_service = false;
+#endif
+    if( running_as_service )
     {
         ALOGD( "We're the service" );
 
@@ -288,9 +289,9 @@ int main( int argc, char** argv )
         IPCThreadState::self()->joinThreadPool();
         ALOGD( "Demo service thread joined" );
     }
-    else if( argc == 2 )
+    else
     {
-        INFO( "We're the client: %s", argv[1] );
+        INFO( "We're the client." );
 
         int v = 9;
 
@@ -345,7 +346,7 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
-    __log_format( level, "", file, "", line, logStr.c_str() );
+    __android_log_print_ext( level, "", file, line, logStr.c_str() );
 
     return true;
 }
