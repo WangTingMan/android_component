@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hidl_demo_server", "project
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth@1.0-impl", "projects\HidlDemo\android.hardware.bluetooth@1.0-impl\android.hardware.bluetooth@1.0-impl.vcxproj", "{6667A9EA-7254-4D33-9242-BE164757911A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth-service", "projects\android.hardware.bluetooth-service\android.hardware.bluetooth-service.vcxproj", "{00E56190-7B06-4357-8F87-B155BA1A5CBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{6667A9EA-7254-4D33-9242-BE164757911A}.Release|x64.Build.0 = Release|x64
 		{6667A9EA-7254-4D33-9242-BE164757911A}.Release|x86.ActiveCfg = Release|Win32
 		{6667A9EA-7254-4D33-9242-BE164757911A}.Release|x86.Build.0 = Release|Win32
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Debug|x64.ActiveCfg = Debug|x64
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Debug|x64.Build.0 = Debug|x64
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Debug|x86.ActiveCfg = Debug|Win32
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Debug|x86.Build.0 = Debug|Win32
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Release|x64.ActiveCfg = Release|x64
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Release|x64.Build.0 = Release|x64
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Release|x86.ActiveCfg = Release|Win32
+		{00E56190-7B06-4357-8F87-B155BA1A5CBD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

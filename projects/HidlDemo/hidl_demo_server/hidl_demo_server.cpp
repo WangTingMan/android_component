@@ -69,7 +69,9 @@ int main()
     property_set( "persist.message.id.start", "100" );
 
     logging::SetLogMessageHandler( libchrome_logging_handler );
+#ifdef __set_default_log_file_name_defined
     __set_default_log_file_name( nullptr, false );
+#endif
 
     using android::hardware::bluetooth::V1_0::IBluetoothHci;
     using android::hardware::registerPassthroughServiceImplementation;
@@ -129,7 +131,10 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
+#ifdef __android_log_print_ext_defined
     __android_log_print_ext( level, "", file, line, logStr.c_str() );
-
+#else
+    __android_log_print( level, "", logStr.c_str() );
+#endif
     return true;
 }

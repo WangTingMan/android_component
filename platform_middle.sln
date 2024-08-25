@@ -68,6 +68,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.audio.comm
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth.ranging-V1-ndk", "projects\android.hardware.bluetooth.ranging-V1-ndk\android.hardware.bluetooth.ranging-V1-ndk.vcxproj", "{591D482C-64BD-4C81-8F43-4C9E8FEF37A4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth-V1-ndk", "projects\android.hardware.bluetooth-V1-ndk\android.hardware.bluetooth-V1-ndk.vcxproj", "{CF8D87ED-7717-43F4-B232-608C8430B7AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -276,6 +278,14 @@ Global
 		{591D482C-64BD-4C81-8F43-4C9E8FEF37A4}.Release|x64.Build.0 = Release|x64
 		{591D482C-64BD-4C81-8F43-4C9E8FEF37A4}.Release|x86.ActiveCfg = Release|Win32
 		{591D482C-64BD-4C81-8F43-4C9E8FEF37A4}.Release|x86.Build.0 = Release|Win32
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Debug|x64.ActiveCfg = Debug|x64
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Debug|x64.Build.0 = Debug|x64
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Debug|x86.ActiveCfg = Debug|Win32
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Debug|x86.Build.0 = Debug|Win32
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Release|x64.ActiveCfg = Release|x64
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Release|x64.Build.0 = Release|x64
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Release|x86.ActiveCfg = Release|Win32
+		{CF8D87ED-7717-43F4-B232-608C8430B7AF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

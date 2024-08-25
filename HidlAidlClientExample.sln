@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinderDemoClient", "project
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hidl_demo_client", "projects\HidlDemo\hidl_demo_client\hidl_demo_client.vcxproj", "{B1143B4B-D587-47BA-9688-BFDB91D65001}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth-client", "projects\android.hardware.bluetooth-client\android.hardware.bluetooth-client.vcxproj", "{05A9340B-7C36-43A1-99C2-1801B4EA3702}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Release|x64.Build.0 = Release|x64
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Release|x86.ActiveCfg = Release|Win32
 		{B1143B4B-D587-47BA-9688-BFDB91D65001}.Release|x86.Build.0 = Release|Win32
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Debug|x64.ActiveCfg = Debug|x64
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Debug|x64.Build.0 = Debug|x64
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Debug|x86.ActiveCfg = Debug|Win32
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Debug|x86.Build.0 = Debug|Win32
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Release|x64.ActiveCfg = Release|x64
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Release|x64.Build.0 = Release|x64
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Release|x86.ActiveCfg = Release|Win32
+		{05A9340B-7C36-43A1-99C2-1801B4EA3702}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

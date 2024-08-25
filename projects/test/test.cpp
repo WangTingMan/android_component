@@ -22,6 +22,7 @@
 #include <base\bind.h>
 #include <base\bind_helpers.h>
 #include <base\logging.h>
+#include "base/memory/singleton.h"
 
 #include <audio\aidl\default\ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_EXPORTS.h>
 
@@ -33,19 +34,11 @@
 using DataMQ = ::android::hardware::MessageQueue<
     uint8_t, ::android::hardware::kSynchronizedReadWrite>;
 
-bool LogMessageHandlerFunctionS(int severity,
-    const char* file, int line, size_t message_start, const std::string& str)
-{
-    LOG(ERROR) << "here!";
-    return true;
-}
-
 int main()
 {
 
-    logging::SetLogMessageHandler(LogMessageHandlerFunctionS);
     LOG(ERROR) << "hh\n";
-
+    return 0;
     system("pause");
 
     ANDROIDHARDWAREBLUETOOTHAUDIOIMPL_TEST_NOT_USE_DIRECTLY();

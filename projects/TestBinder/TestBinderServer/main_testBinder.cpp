@@ -17,7 +17,9 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
 int main(int argc, char** argv)
 {
     logging::SetLogMessageHandler( libchrome_logging_handler );
+#ifdef __set_default_log_file_name_defined
     __set_default_log_file_name( nullptr, false );
+#endif
 
     std::cout << "HelloBinerService start to run--\n";
 	sp<ProcessState> proc(ProcessState::self());
@@ -69,7 +71,11 @@ bool libchrome_logging_handler( int levelIn, const char* file, int line,
     {
         logStr = str.substr( message_start );
     }
-    __android_log_print_ext( level, "", file, line,"%s", logStr.c_str() );
+#ifdef __android_log_print_ext_defined
+    __android_log_print_ext( level, "", file, line, logStr.c_str() );
+#else
+    __android_log_print( level, "", logStr.c_str() );
+#endif
 
     return true;
 }
