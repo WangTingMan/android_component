@@ -124,3 +124,6 @@
 [submodule "system/external/bzip2"]
 	path = system/external/bzip2
 	url = https://github.com/WangTingMan/bzip2.git
+[submodule "Zhen"]
+	path = Zhen
+	url = https://github.com/WangTingMan/Zhen

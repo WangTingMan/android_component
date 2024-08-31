@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{f6e83569-1190-429b-ace9-284887e9d8ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module">
+      <UniqueIdentifier>{5712ccb7-edbd-4f64-bdda-eba3b16b1772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\mtk">
+      <UniqueIdentifier>{3a5861e9-b4c6-4985-b76d-fbce56b85e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\qcom">
+      <UniqueIdentifier>{c633abfb-874a-47c1-a3f5-20fe5084da83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\header">
+      <UniqueIdentifier>{dd3f8950-4df7-4622-b780-2f8663245483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="module\source">
+      <UniqueIdentifier>{76c5c284-d20c-4813-9e50-7688f1c7ce78}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="view\HomePage.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="module\mtk\AidlBluetoothAudioProviderFactory.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
+    <ClCompile Include="module\mtk\AidlBluetoothAudioProvider.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
+    <ClCompile Include="module\abstract_module.cpp">
+      <Filter>module\source</Filter>
+    </ClCompile>
+    <ClCompile Include="module\BluetoothAudioPortClient.cpp">
+      <Filter>module\source</Filter>
+    </ClCompile>
+    <ClCompile Include="module\ipc_manager.cpp">
+      <Filter>module\source</Filter>
+    </ClCompile>
+    <ClCompile Include="module\module_manager.cpp">
+      <Filter>module\source</Filter>
+    </ClCompile>
+    <ClCompile Include="module\mtk\mtk_aidl_local_service.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="view\HomePage.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\AidlBluetoothAudioProviderFactory.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\AidlBluetoothAudioProvider.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\abstract_module.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\audio_types.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\BluetoothAudioPortClient.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\ipc_manager.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\module_manager.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\mtk_aidl_local_service.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
