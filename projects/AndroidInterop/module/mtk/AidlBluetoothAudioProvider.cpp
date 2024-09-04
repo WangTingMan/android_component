@@ -1,6 +1,10 @@
 #include "AidlBluetoothAudioProvider.h"
 #include "../module_manager.h"
 #include "mtk_aidl_local_service.h"
+#include "utils.h"
+
+#include <Zhen/PageManager.h>
+#include <Zhen/ExecutbleEvent.h>
 
 namespace aidl::vendor::mediatek::hardware::bluetooth::audio {
 
@@ -38,11 +42,23 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::streamStarted( BluetoothAudioStatus in_status )
 {
+    auto mtk_module = module_manager::get_instance()
+        ->get_module<mtk_aidl_local_service>(mtk_aidl_local_service::s_module_name);
+    std::function<void()> fun;
+    bluetooth_module::a2dp_stream_status status = convert(in_status);
+    fun = std::bind(&mtk_aidl_local_service::handle_audio_stream_started, mtk_module, status);
+    PageManager::GetInstance().PostEvent(std::make_shared<ExecutbleEvent>(fun));
     return ndk::ScopedAStatus::ok();
 }
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::streamSuspended( BluetoothAudioStatus in_status )
 {
+    auto mtk_module = module_manager::get_instance()
+        ->get_module<mtk_aidl_local_service>(mtk_aidl_local_service::s_module_name);
+    std::function<void()> fun;
+    bluetooth_module::a2dp_stream_status status = convert(in_status);
+    fun = std::bind(&mtk_aidl_local_service::handle_audio_stream_suspended, mtk_module, status);
+    PageManager::GetInstance().PostEvent(std::make_shared<ExecutbleEvent>(fun));
     return ndk::ScopedAStatus::ok();
 }
 

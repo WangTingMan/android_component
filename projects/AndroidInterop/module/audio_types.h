@@ -7,15 +7,6 @@
 
 namespace bluetooth_module {
 
-struct presentation_position
-{
-    int64_t remote_device_audio_delay = 0;
-    int64_t transmitteed_bytes = 0;
-
-    int64_t seconds = 0;
-    int64_t nanoseconds_part = 0;
-};
-
 enum class audio_usage
 {
     invalid = -1,
@@ -54,6 +45,30 @@ enum class latency_mode
     dynamic_spatial_audio_hardware = 4
 };
 
+enum class audio_source
+{
+    default_source = 0,
+    mic = 1,
+};
+
+enum class a2dp_stream_status
+{
+    unknown = 0,
+    success = 1,
+    unsupported_codec_configuration = 2,
+    failure = 3,
+    reconfiguration = 4
+};
+
+struct presentation_position
+{
+    int64_t remote_device_audio_delay = 0;
+    int64_t transmitteed_bytes = 0;
+
+    int64_t seconds = 0;
+    int64_t nanoseconds_part = 0;
+};
+
 struct playback_track_metadata
 {
     audio_usage usage;
@@ -62,12 +77,6 @@ struct playback_track_metadata
     audio_channel_layout channel_mask;
     std::optional<audio_device_type> source_device;
     std::vector<std::string> tags;
-};
-
-enum class audio_source
-{
-    default_source = 0,
-    mic = 1,
 };
 
 struct audio_device_description
@@ -95,5 +104,7 @@ struct record_track_metadata
     audio_channel_layout channel_mask;
     std::vector<std::string> tags;
 };
+
+std::string to_string(a2dp_stream_status const& a_status);
 
 }

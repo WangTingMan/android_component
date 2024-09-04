@@ -60,6 +60,12 @@
     <ClCompile Include="module\mtk\mtk_aidl_local_service.cpp">
       <Filter>module\mtk</Filter>
     </ClCompile>
+    <ClCompile Include="module\mtk\utils.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
+    <ClCompile Include="module\audio_types.cpp">
+      <Filter>module\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="view\HomePage.h">
@@ -87,6 +93,9 @@
       <Filter>module\header</Filter>
     </ClInclude>
     <ClInclude Include="module\mtk\mtk_aidl_local_service.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\utils.h">
       <Filter>module\mtk</Filter>
     </ClInclude>
   </ItemGroup>

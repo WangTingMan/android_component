@@ -51,3 +51,13 @@ void mtk_aidl_local_service::update_bluetooth_audio_port(std::shared_ptr<IBlueto
     m_bluetooth_audio_port = a_bluetoothAudioPort;
 }
 
+void mtk_aidl_local_service::handle_audio_stream_started(bluetooth_module::a2dp_stream_status a_status)
+{
+    LogDebug() << "handle_audio_stream_started: " << to_string(a_status);
+}
+
+void mtk_aidl_local_service::handle_audio_stream_suspended(bluetooth_module::a2dp_stream_status a_status)
+{
+    LogDebug() << "handle_audio_stream_suspended: " << to_string(a_status);
+}
+
