@@ -38,6 +38,8 @@ public:
 
 private:
 
+    void handleAudioSessionChanged( const AudioConfiguration& in_audioConfig );
+
 };
 
 }

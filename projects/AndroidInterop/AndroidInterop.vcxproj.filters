@@ -31,6 +31,9 @@
     <Filter Include="module\source">
       <UniqueIdentifier>{76c5c284-d20c-4813-9e50-7688f1c7ce78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="module\aosp">
+      <UniqueIdentifier>{51c73917-e167-44f7-a9de-5f8da0af7f6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,9 +51,6 @@
     <ClCompile Include="module\abstract_module.cpp">
       <Filter>module\source</Filter>
     </ClCompile>
-    <ClCompile Include="module\BluetoothAudioPortClient.cpp">
-      <Filter>module\source</Filter>
-    </ClCompile>
     <ClCompile Include="module\ipc_manager.cpp">
       <Filter>module\source</Filter>
     </ClCompile>
@@ -65,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="module\audio_types.cpp">
       <Filter>module\source</Filter>
+    </ClCompile>
+    <ClCompile Include="module\aosp\aosp_aidl_local_service.cpp">
+      <Filter>module\aosp</Filter>
+    </ClCompile>
+    <ClCompile Include="module\aosp\AospAidlBluetoothAudioProviderFactory.cpp">
+      <Filter>module\aosp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +89,6 @@
     <ClInclude Include="module\audio_types.h">
       <Filter>module\header</Filter>
     </ClInclude>
-    <ClInclude Include="module\BluetoothAudioPortClient.h">
-      <Filter>module\header</Filter>
-    </ClInclude>
     <ClInclude Include="module\ipc_manager.h">
       <Filter>module\header</Filter>
     </ClInclude>
@@ -97,6 +100,18 @@
     </ClInclude>
     <ClInclude Include="module\mtk\utils.h">
       <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\aosp\aosp_aidl_local_service.h">
+      <Filter>module\aosp</Filter>
+    </ClInclude>
+    <ClInclude Include="module\aosp\AospAidlBluetoothAudioProviderFactory.h">
+      <Filter>module\aosp</Filter>
+    </ClInclude>
+    <ClInclude Include="module\common_types.h">
+      <Filter>module\header</Filter>
+    </ClInclude>
+    <ClInclude Include="module\local_audio_service.h">
+      <Filter>module\header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

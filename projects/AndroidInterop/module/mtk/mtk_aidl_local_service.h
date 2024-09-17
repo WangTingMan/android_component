@@ -2,16 +2,18 @@
 
 #include "../abstract_module.h"
 #include "module/audio_types.h"
+#include "module/common_types.h"
+#include "module/local_audio_service.h"
 #include "AidlBluetoothAudioProviderFactory.h"
 #include <aidl/vendor/mediatek/hardware/bluetooth/audio/IBluetoothAudioProvider.h>
 
-#include <mutex>
+#include <boost/signals2.hpp>
 
 namespace aidl::vendor::mediatek::hardware::bluetooth::audio {
     class AidlBluetoothAudioProvider;
 }
 
-class mtk_aidl_local_service : public abstract_module
+class mtk_aidl_local_service : public local_audio_service
 {
 
 public:
@@ -35,6 +37,12 @@ public:
 
     void update_bluetooth_audio_port(std::shared_ptr<IBluetoothAudioPort> a_bluetoothAudioPort);
 
+    void start_stream();
+
+    void stop_stream();
+
+    void suspend_stream();
+
 private:
 
     friend class AidlBluetoothAudioProvider;
@@ -45,9 +53,14 @@ private:
 
 private:
 
+    /**
+     * Init low layer connection.
+     * This function should be executed in binder looper thread.
+     */
     void init_detail();
 
-    std::recursive_mutex m_mutex;
+    void handle_initialization_completed(std::shared_ptr<BluetoothAudioProviderFactory> a_service);
+
     std::shared_ptr<BluetoothAudioProviderFactory> m_service;
     std::shared_ptr<IBluetoothAudioPort> m_bluetooth_audio_port;
 };

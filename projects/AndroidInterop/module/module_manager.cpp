@@ -86,7 +86,7 @@ std::shared_ptr<abstract_module> module_manager::get_module( uint8_t a_type )
 bool module_manager::add_new_module( std::shared_ptr<abstract_module> a_module )
 {
     std::lock_guard locker(m_mutex);
-    m_modules.insert_or_assign( a_module->get_module_name(), a_module );
+    m_modules.insert_or_assign(a_module->get_module_name(), std::move(a_module));
     return true;
 }
 

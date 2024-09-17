@@ -16,6 +16,14 @@ public:
 
 private:
 
+    void StartStream();
+
+    void StopStream();
+
+    void SuspendStream();
+
     std::shared_ptr<OptionContent> m_content;
+    std::size_t m_init_option_id;
+    std::size_t m_start_stream_option_id;
 };
 

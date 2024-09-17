@@ -3,6 +3,7 @@
 #include "grpc_data_link/io_runner.h"
 
 #include <log/log.h>
+#include <ipc_connection_token.h>
 
 namespace data_link
 {
@@ -103,7 +104,10 @@ void binder_client::connect()
 
 void binder_client::disconnect()
 {
-    m_client_context.TryCancel();
+    if( m_client_context )
+    {
+        m_client_context->TryCancel();
+    }
 }
 
 void binder_client::create_tag_handler()
@@ -150,6 +154,11 @@ void binder_client::connect_internal()
 {
     if( connection_status::disconnected == m_connection_status )
     {
+        if( !m_client_context )
+        {
+            m_client_context = std::make_shared<grpc::ClientContext>();
+        }
+
         if( !m_channel )
         {
             m_channel = grpc::CreateChannel( m_server_address, grpc::InsecureChannelCredentials() );
@@ -163,7 +172,7 @@ void binder_client::connect_internal()
         auto cq = io_runner::get_default_instance().get_detail_queue();
         if( !m_stream )
         {
-            m_stream = m_stub->AsyncBidirectionalStreamMessages( &m_client_context,
+            m_stream = m_stub->AsyncBidirectionalStreamMessages( m_client_context.get(),
                 cq, ( void* )( m_connect_done_id ) );
         }
         change_to_new_status( connection_status::connecting );
@@ -211,7 +220,11 @@ void binder_client::send_next_message()
     msg.set_type( msg_to_send->type );
     msg.set_msg( msg_to_send->message );
 
-    ALOGI( "send message with ID: %d", msg_to_send->id );
+    if (android::ipc_connection_token_mgr::get_instance().get_debug_enabled())
+    {
+        ALOGI("send message with ID: %d", msg_to_send->id);
+    }
+
     m_message_sending = true;
     m_stream->Write( std::move(msg), (void*)( m_write_done_id ) );
     m_message_to_send.erase( m_message_to_send.begin() );
@@ -228,9 +241,15 @@ void binder_client::handle_connected( bool ok )
     }
     else
     {
-        ALOGD( "Connect server failed." );
-        // since grpc will start connect after connect failed automatically,
-        // so we cannot change the connection status to disconnected here.
+        ALOGD( "Connect server failed. then we try to start new one" );
+        m_stream.reset();
+        change_to_new_status(connection_status::disconnected);
+        if( m_client_context )
+        {
+            m_client_context->TryCancel();
+        }
+        m_client_context.reset();
+        connect();
     }
 }
 
@@ -250,7 +269,10 @@ void binder_client::handle_message_read_done( bool ok )
         return;
     }
 
-    ALOGI( "Received message id = %d", m_message_from_server.id() );
+    if (android::ipc_connection_token_mgr::get_instance().get_debug_enabled())
+    {
+        ALOGI("Received message id = %d", m_message_from_server.id());
+    }
 
     std::shared_lock<std::shared_mutex> locker( m_mutex );
     if( m_callbacks.new_message_from_server )
@@ -308,8 +330,11 @@ void binder_client::change_to_new_status( connection_status a_status )
     case connection_status::connecting:
         break;
     case connection_status::disconnected:
-        m_client_context.TryCancel();
-        ALOGD( "cancel server context." );
+        if( m_client_context )
+        {
+            m_client_context->TryCancel();
+            ALOGD("cancel server context.");
+        }
         break;
     case connection_status::disconnecting:
         break;

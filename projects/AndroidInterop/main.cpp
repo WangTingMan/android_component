@@ -5,15 +5,19 @@
 #include "view/HomePage.h"
 #include "Zhen/logging.h"
 #include <log/log.h>
+#include <base/logging.h>
 
 bool zhen_logger(const char* /*FILE*/, int/*line*/,
     Zhen::LogLevel, std::string const&/*tag*/, std::string const&);
+bool base_logging_hooker( int levelIn, const char* file, int line,
+                         size_t message_start, const std::string& str );
 
 int main()
 {
     Zhen::SetLogCallBack(std::bind(&zhen_logger,
         std::placeholders::_1, std::placeholders::_2,
         std::placeholders::_3, std::placeholders::_4, std::placeholders::_5));
+    logging::SetLogMessageHandler( base_logging_hooker );
     LogDebug() << "Start to run.";
 
     KeyboardReader reader;
@@ -64,3 +68,49 @@ bool zhen_logger
     return false;
 }
 
+bool base_logging_hooker(int levelIn, const char* file, int line,
+                        size_t message_start, const std::string& str)
+{
+    android_LogPriority level = ANDROID_LOG_DEBUG;
+    switch (levelIn) {
+#ifdef BASE_LOG_DEBUG_LEVEL_DEFINED
+        case logging::LOG_DEBUG:
+            level = LogKeeper::LogLevel::Debug;
+        break;
+#endif
+
+#ifdef LOG_VERBOSE
+#undef LOG_VERBOSE
+#endif
+        case logging::LOG_VERBOSE:
+            level = ANDROID_LOG_VERBOSE;
+            break;
+        case logging::LOG_INFO:
+            level = ANDROID_LOG_INFO;
+            break;
+        case logging::LOG_WARNING:
+            level = ANDROID_LOG_WARN;
+            break;
+        case logging::LOG_ERROR:
+            level = ANDROID_LOG_ERROR;
+            break;
+        case logging::LOG_FATAL:
+            level = ANDROID_LOG_FATAL;
+            break;
+        case logging::LOG_NUM_SEVERITIES:
+            level = ANDROID_LOG_VERBOSE;
+            break;
+        default:
+            break;
+    }
+
+    std::string logStr;
+    if( str.size() > message_start )
+    {
+        logStr = str.substr( message_start );
+    }
+    __android_log_print_ext( level, NULL, file,
+                             line, logStr.c_str() );
+
+    return true;
+}

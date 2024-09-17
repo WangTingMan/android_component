@@ -22,6 +22,7 @@ BluetoothAudioProviderFactory::BluetoothAudioProviderFactory()
     std::vector<AudioCapabilities>* _aidl_return
     )
 {
+    LOG( INFO ) << __func__ << " - SessionType=" << toString( in_sessionType );
     *_aidl_return = audioCapabilities_;
     return ::ndk::ScopedAStatus( AStatus_newOk() );
 }

@@ -89,7 +89,7 @@ private:
 
     void change_to_new_status( connection_status a_status );
 
-    grpc::ClientContext m_client_context;
+    std::shared_ptr<grpc::ClientContext> m_client_context;
     std::shared_ptr<grpc::Channel> m_channel;
     std::unique_ptr<BinderDriverDataLink::BinderDriverService::Stub> m_stub;
     std::unique_ptr<grpc::ClientAsyncReaderWriter

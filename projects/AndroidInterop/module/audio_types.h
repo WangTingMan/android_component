@@ -60,6 +60,20 @@ enum class a2dp_stream_status
     reconfiguration = 4
 };
 
+enum class channel_mode : int8_t
+{
+    unknown = 0,
+    mono = 1,
+    stereo = 2
+};
+
+struct pcm_configuration
+{
+    int32_t sample_rate_hz = 0;
+    channel_mode channel_type;
+    int8_t bits_per_sample;
+};
+
 struct presentation_position
 {
     int64_t remote_device_audio_delay = 0;
