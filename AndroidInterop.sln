@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libZhen", "Zhen\ms_build\li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AndroidInterop", "projects\AndroidInterop\AndroidInterop.vcxproj", "{556879EF-20BF-4F4B-B103-D0E796EC0064}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vendor.mediatek.hardware.bluetooth.audio@2.2-impl", "projects\vendor.mediatek.hardware.bluetooth.audio@2.2-impl\vendor.mediatek.hardware.bluetooth.audio@2.2-impl.vcxproj", "{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{556879EF-20BF-4F4B-B103-D0E796EC0064}.Release|x64.Build.0 = Release|x64
 		{556879EF-20BF-4F4B-B103-D0E796EC0064}.Release|x86.ActiveCfg = Release|Win32
 		{556879EF-20BF-4F4B-B103-D0E796EC0064}.Release|x86.Build.0 = Release|Win32
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Debug|x64.ActiveCfg = Debug|x64
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Debug|x64.Build.0 = Debug|x64
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Debug|x86.ActiveCfg = Debug|Win32
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Debug|x86.Build.0 = Debug|Win32
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Release|x64.ActiveCfg = Release|x64
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Release|x64.Build.0 = Release|x64
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Release|x86.ActiveCfg = Release|Win32
+		{64E17A4B-7EFB-41B3-B82E-B0B0EF9B3629}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,6 +3,7 @@
 
 #include <Zhen/logging.h>
 #include "mtk/mtk_aidl_local_service.h"
+#include "mtk/mtk_hidl_local_service.h"
 #include "aosp/aosp_aidl_local_service.h"
 #include "module_manager.h"
 
@@ -79,6 +80,9 @@ int ipc_manager::init()
     auto aosp_aidl_service = std::make_shared<aosp_aidl_local_service>();
     module_manager::get_instance()->add_new_module(aosp_aidl_service);
     m_aidl_services.emplace_back(std::move(aosp_aidl_service));
+
+    auto mtk_hidl_service = std::make_shared<mtk_hidl_local_service>();
+    module_manager::get_instance()->add_new_module(mtk_hidl_service);
 
     set_init_status(bluetooth_module::init_status::initialized);
     return 0;

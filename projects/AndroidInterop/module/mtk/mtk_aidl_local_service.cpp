@@ -56,8 +56,8 @@ void mtk_aidl_local_service::init_detail()
 
 void mtk_aidl_local_service::handle_initialization_completed(std::shared_ptr<BluetoothAudioProviderFactory> a_service)
 {
-    m_service = std::move(a_service);
-    set_init_status(bluetooth_module::init_status::initialized);
+    m_service = std::move(a_service);        set_init_status(bluetooth_module::init_status::initialized);
+    
 }
 
 void mtk_aidl_local_service::update_bluetooth_audio_port(std::shared_ptr<IBluetoothAudioPort> a_bluetoothAudioPort)
