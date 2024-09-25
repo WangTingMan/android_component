@@ -11,6 +11,8 @@
 #include <fmq/AidlMessageQueue.h>
 #include <aidl/android/hardware/common/fmq/MQDescriptor.h>
 
+#include <cutils/properties.h>
+
 // Here the buffer size is based on SBC
 static constexpr uint32_t kPcmFrameSize = 4;  // 16 bits per sample / stereo
 // SBC is 128, and here we choose the LCM of 16, 24, and 32
@@ -31,6 +33,9 @@ using MqDataType = int8_t;
 using MqDataMode = SynchronizedReadWrite;
 using DataMQ = AidlMessageQueue<MqDataType, MqDataMode>;
 using DataMQDesc = MQDescriptor<MqDataType, MqDataMode>;
+
+#define MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_aidl_audio_local_service_enabled"
+#define MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_hidl_audio_local_service_enabled"
 
 class ipc_manager_impl
 {
@@ -59,6 +64,12 @@ ipc_manager::ipc_manager()
 {
     set_module_name(s_module_name);
     m_impl = std::make_shared<ipc_manager_impl>();
+
+    bluetooth_module::pcm_configuration pcm_capabilities;
+    pcm_capabilities.bits_per_sample = 16;
+    pcm_capabilities.channel_type = bluetooth_module::channel_mode::stereo;
+    pcm_capabilities.sample_rate_hz = 44100;
+    m_local_psm_capabilities.push_back( pcm_capabilities );
 }
 
 int ipc_manager::init()
@@ -68,6 +79,8 @@ int ipc_manager::init()
         LogError() << "Not deinitialized stauts.";
         return 0;
     }
+
+    load_config();
 
     m_impl->init();
 
@@ -83,6 +96,7 @@ int ipc_manager::init()
 
     auto mtk_hidl_service = std::make_shared<mtk_hidl_local_service>();
     module_manager::get_instance()->add_new_module(mtk_hidl_service);
+    m_hidl_services.emplace_back( std::move( mtk_hidl_service ) );
 
     set_init_status(bluetooth_module::init_status::initialized);
     return 0;
@@ -121,7 +135,7 @@ std::string ipc_manager::get_fmq_json_descriptor()
     return m_impl->get_fmq_json_descriptor();
 }
 
-void ipc_manager::set_pcm_configuration(bluetooth_module::pcm_configuration a_pcm_config)
+void ipc_manager::set_selected_pcm_configuration(bluetooth_module::pcm_configuration a_pcm_config)
 {
     m_pcm_config = a_pcm_config;
 }
@@ -131,6 +145,14 @@ void ipc_manager::start_stream()
     for (auto& ele : m_aidl_services)
     {
         if (ele)
+        {
+            ele->start_stream();
+        }
+    }
+
+    for( auto& ele : m_hidl_services )
+    {
+        if( ele )
         {
             ele->start_stream();
         }
@@ -146,6 +168,14 @@ void ipc_manager::stop_stream()
             ele->stop_stream();
         }
     }
+
+    for( auto& ele : m_hidl_services )
+    {
+        if( ele )
+        {
+            ele->start_stream();
+        }
+    }
 }
 
 void ipc_manager::suspend_stream()
@@ -158,3 +188,10 @@ void ipc_manager::suspend_stream()
         }
     }
 }
+
+void ipc_manager::load_config()
+{
+    property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
+    property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+}
+

@@ -7,6 +7,10 @@
 #include <Zhen/logging.h>
 #include <Zhen/PageManager.h>
 
+#include <cutils/properties.h>
+
+#define MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_aidl_audio_local_service_enabled"
+
 mtk_aidl_local_service::mtk_aidl_local_service()
 {
     set_module_name(s_module_name);
@@ -41,12 +45,16 @@ void mtk_aidl_local_service::release()
 void mtk_aidl_local_service::init_detail()
 {
     std::shared_ptr<BluetoothAudioProviderFactory> service;
-    service = ndk::SharedRefBase::make<BluetoothAudioProviderFactory>();
-    std::string instance = BluetoothAudioProviderFactory::descriptor;
-    instance += "/default";
-    auto result =
-        AServiceManager_addService(service->asBinder().get(), instance.c_str());
-    LogDebug() << instance << " registered";
+    int8_t enabled = property_get_bool( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, 0);
+    if( 1 == enabled )
+    {
+        service = ndk::SharedRefBase::make<BluetoothAudioProviderFactory>();
+        std::string instance = BluetoothAudioProviderFactory::descriptor;
+        instance += "/default";
+        auto result =
+            AServiceManager_addService( service->asBinder().get(), instance.c_str() );
+        LogDebug() << instance << " registered";
+    }
     auto thiz = std::dynamic_pointer_cast<mtk_aidl_local_service>(shared_from_this());
     std::function<void()> fun;
     fun = std::bind(&mtk_aidl_local_service::handle_initialization_completed, thiz,
@@ -56,8 +64,8 @@ void mtk_aidl_local_service::init_detail()
 
 void mtk_aidl_local_service::handle_initialization_completed(std::shared_ptr<BluetoothAudioProviderFactory> a_service)
 {
-    m_service = std::move(a_service);        set_init_status(bluetooth_module::init_status::initialized);
-    
+    m_service = std::move(a_service);
+    set_init_status(bluetooth_module::init_status::initialized);
 }
 
 void mtk_aidl_local_service::update_bluetooth_audio_port(std::shared_ptr<IBluetoothAudioPort> a_bluetoothAudioPort)

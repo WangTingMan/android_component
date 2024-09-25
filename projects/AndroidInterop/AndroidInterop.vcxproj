@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -143,6 +143,8 @@
     <ClCompile Include="module\module_manager.cpp" />
     <ClCompile Include="module\mtk\AidlBluetoothAudioProvider.cpp" />
     <ClCompile Include="module\mtk\AidlBluetoothAudioProviderFactory.cpp" />
+    <ClCompile Include="module\mtk\HidlBluetoothAudioProvider.cpp" />
+    <ClCompile Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.cpp" />
     <ClCompile Include="module\mtk\mtk_aidl_local_service.cpp" />
     <ClCompile Include="module\mtk\mtk_hidl_local_service.cpp" />
     <ClCompile Include="module\mtk\utils.cpp" />
@@ -159,6 +161,8 @@
     <ClInclude Include="module\module_manager.h" />
     <ClInclude Include="module\mtk\AidlBluetoothAudioProvider.h" />
     <ClInclude Include="module\mtk\AidlBluetoothAudioProviderFactory.h" />
+    <ClInclude Include="module\mtk\HidlBluetoothAudioProvider.h" />
+    <ClInclude Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.h" />
     <ClInclude Include="module\mtk\mtk_aidl_local_service.h" />
     <ClInclude Include="module\mtk\mtk_hidl_local_service.h" />
     <ClInclude Include="module\mtk\utils.h" />

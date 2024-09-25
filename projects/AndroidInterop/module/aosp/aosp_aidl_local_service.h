@@ -39,6 +39,8 @@ private:
 
     void init_detail();
 
+    void handle_initialization_completed();
+
     std::recursive_mutex m_mutex;
 };
 

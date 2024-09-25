@@ -67,6 +67,13 @@ enum class channel_mode : int8_t
     stereo = 2
 };
 
+enum class session_type : int8_t
+{
+    a2dp_software_encoding,
+    a2dp_hardware_encoding,
+    hearing_aid_software_encoding
+};
+
 struct pcm_configuration
 {
     int32_t sample_rate_hz = 0;

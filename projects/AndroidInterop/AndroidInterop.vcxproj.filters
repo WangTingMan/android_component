@@ -75,6 +75,12 @@
     <ClCompile Include="module\mtk\mtk_hidl_local_service.cpp">
       <Filter>module\mtk</Filter>
     </ClCompile>
+    <ClCompile Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
+    <ClCompile Include="module\mtk\HidlBluetoothAudioProvider.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="view\HomePage.h">
@@ -117,6 +123,12 @@
       <Filter>module\header</Filter>
     </ClInclude>
     <ClInclude Include="module\mtk\mtk_hidl_local_service.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.h">
+      <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\HidlBluetoothAudioProvider.h">
       <Filter>module\mtk</Filter>
     </ClInclude>
   </ItemGroup>

@@ -88,9 +88,9 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
         in_hostIf);
     PageManager::GetInstance().PostEvent(std::make_shared<ExecutbleEvent>(fun));
 
-    auto icp_manager = module_manager::get_instance()
+    auto ipc_manager_ = module_manager::get_instance()
         ->get_module<ipc_manager>( ipc_manager::s_module_name );
-    std::string json_fmq = icp_manager->get_fmq_json_descriptor();
+    std::string json_fmq = ipc_manager_->get_fmq_json_descriptor();
     _aidl_return->json_decriptor = json_fmq;
     std::vector<::android::hardware::GrantorDescriptor> grantors;
     native_handle_t handle;
@@ -195,9 +195,8 @@ void AidlBluetoothAudioProvider::handleAudioSessionChanged( const AudioConfigura
                 break;
             }
             std::function<void()> fun;
-            fun = std::bind(&ipc_manager::set_pcm_configuration, icp_manager, pcm_config);
+            fun = std::bind(&ipc_manager::set_selected_pcm_configuration, icp_manager, pcm_config);
             PageManager::GetInstance().PostEvent(std::make_shared<ExecutbleEvent>(fun));
-            icp_manager->set_pcm_configuration(pcm_config);
             return;
         }
         break;

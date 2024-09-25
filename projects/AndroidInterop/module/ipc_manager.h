@@ -4,6 +4,7 @@
 #include <memory>
 #include <string>
 #include <thread>
+#include <vector>
 
 #include "abstract_module.h"
 #include "module/audio_types.h"
@@ -38,9 +39,14 @@ public:
 
     void suspend_stream();
 
+    std::vector<bluetooth_module::pcm_configuration> get_local_supported_pcm_capabilities()
+    {
+        return m_local_psm_capabilities;
+    }
+
 public:
 
-    void set_pcm_configuration(bluetooth_module::pcm_configuration a_pcm_config);
+    void set_selected_pcm_configuration(bluetooth_module::pcm_configuration a_pcm_config);
 
 private:
 
@@ -48,10 +54,14 @@ private:
 
     void run_detail(std::shared_ptr<std::promise<void>> a_promise);
 
+    void load_config();
+
     std::thread m_running_thread;
     std::shared_ptr<ipc_manager_impl> m_impl;
     std::list<std::shared_ptr<local_audio_service>> m_aidl_services;
+    std::list<std::shared_ptr<local_audio_service>> m_hidl_services;
 
     bluetooth_module::pcm_configuration m_pcm_config;
+    std::vector<bluetooth_module::pcm_configuration> m_local_psm_capabilities;
 };
 
