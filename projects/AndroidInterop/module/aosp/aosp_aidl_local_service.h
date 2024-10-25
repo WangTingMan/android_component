@@ -27,6 +27,8 @@ public:
 
     void suspend_stream();
 
+    void request_presentaion_delay();
+
 private:
 
     friend class AidlBluetoothAudioProvider;

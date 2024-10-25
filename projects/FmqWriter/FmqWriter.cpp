@@ -29,7 +29,7 @@ int main()
     using DataMQDesc = MQDescriptor<MqDataType, MqDataMode>;
 
     std::unique_ptr<DataMQ> data_mq(
-        new DataMQ(kDataMqSize, /* EventFlag */ true));
+        new DataMQ(kDataMqSize, "android_fmq_test_shared_memory", /* EventFlag */ true));
 
     auto desc = data_mq->dupeDesc();
     std::string json_descriptor = desc.json_decriptor;

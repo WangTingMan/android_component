@@ -81,6 +81,15 @@
     <ClCompile Include="module\mtk\HidlBluetoothAudioProvider.cpp">
       <Filter>module\mtk</Filter>
     </ClCompile>
+    <ClCompile Include="module\qcom\qcom_hidl_local_service.cpp">
+      <Filter>module\qcom</Filter>
+    </ClCompile>
+    <ClCompile Include="module\qcom\HidlBluetoothAudioProvider.cpp">
+      <Filter>module\qcom</Filter>
+    </ClCompile>
+    <ClCompile Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.cpp">
+      <Filter>module\qcom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="view\HomePage.h">
@@ -130,6 +139,15 @@
     </ClInclude>
     <ClInclude Include="module\mtk\HidlBluetoothAudioProvider.h">
       <Filter>module\mtk</Filter>
+    </ClInclude>
+    <ClInclude Include="module\qcom\qcom_hidl_local_service.h">
+      <Filter>module\qcom</Filter>
+    </ClInclude>
+    <ClInclude Include="module\qcom\HidlBluetoothAudioProvider.h">
+      <Filter>module\qcom</Filter>
+    </ClInclude>
+    <ClInclude Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.h">
+      <Filter>module\qcom</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

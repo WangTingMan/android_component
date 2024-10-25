@@ -3,22 +3,24 @@
 #include "module/audio_types.h"
 #include "module/local_audio_service.h"
 
-#include <vendor/mediatek/hardware/bluetooth/audio/2.1/IBluetoothAudioProvider.h>
-#include <vendor/mediatek/hardware/bluetooth/audio/2.1/IBluetoothAudioPort.h>
+#include <vendor/qti/hardware/bluetooth_audio/2.1/IBluetoothAudioProvidersFactory.h>
+#include <vendor/qti/hardware/bluetooth_audio/2.1/IBluetoothAudioPort.h>
 #include <mutex>
 
-class mtk_hidl_local_service : public local_audio_service
+class qcom_hidl_local_service : public local_audio_service
 {
 
 public:
 
-    using IBluetoothAudioProvider = ::vendor::mediatek::hardware::bluetooth::audio::V2_1::IBluetoothAudioProvider;
+    using IBluetoothAudioProvider = ::vendor::qti::hardware::bluetooth_audio::V2_1::IBluetoothAudioProvider;
 
-    using IBluetoothAudioPort = ::vendor::mediatek::hardware::bluetooth::audio::V2_1::IBluetoothAudioPort;
+    using IBluetoothAudioPort = ::vendor::qti::hardware::bluetooth_audio::V2_0::IBluetoothAudioPort;
 
-    static inline constexpr const char* s_module_name = "mtk_hidl_local_service";
+    using IBluetoothAudioPortV21 = ::vendor::qti::hardware::bluetooth_audio::V2_1::IBluetoothAudioPort;
 
-    mtk_hidl_local_service();
+    static inline constexpr const char* s_module_name = "qcom_hidl_local_service";
+
+    qcom_hidl_local_service();
 
     int init();
 
@@ -42,6 +44,8 @@ public:
 
     void handle_update_bluetooth_port_interface( ::android::sp<IBluetoothAudioPort> a_bluetooth_audio_port );
 
+    void handle_update_bluetooth_port_interface_v21( ::android::sp<IBluetoothAudioPortV21> a_bluetooth_audio_port );
+
     void handle_bluetooth_audio_session_end();
 
 private:
@@ -55,15 +59,16 @@ private:
      */
     void presentation_updated
         (
-        ::vendor::mediatek::hardware::bluetooth::audio::V2_1::Status status,
+        ::vendor::qti::hardware::bluetooth_audio::V2_0::Status status,
         uint64_t remoteDeviceAudioDelayNanos,
         uint64_t transmittedOctets,
-        const ::vendor::mediatek::hardware::bluetooth::audio::V2_1::TimeSpec& transmittedOctetsTimeStamp
+        const ::vendor::qti::hardware::bluetooth_audio::V2_0::TimeSpec& transmittedOctetsTimeStamp
         );
 
     void handle_initialization_completed( ::android::sp<IBluetoothAudioProvider> a_provider );
 
     ::android::sp<IBluetoothAudioPort> m_bluetooth_audio_port;
+    ::android::sp<IBluetoothAudioPortV21> m_bluetooth_audio_port_v2_1;
 
     std::mutex m_mutex;
     ::android::sp<IBluetoothAudioProvider> m_bluetooth_audio_provider;

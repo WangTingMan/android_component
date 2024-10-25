@@ -27,7 +27,7 @@ HidlBluetoothAudioProvider::HidlBluetoothAudioProvider()
     auto hidl_local_service = module_manager::get_instance()
         ->get_module<mtk_hidl_local_service>( mtk_hidl_local_service::s_module_name );
     std::function<void()> fun;
-    fun = std::bind( &mtk_hidl_local_service::update_bluetooth_port_interface, hidl_local_service,
+    fun = std::bind( &mtk_hidl_local_service::handle_update_bluetooth_port_interface, hidl_local_service,
                      hostIf );
     PageManager::GetInstance().PostEvent( std::make_shared<ExecutbleEvent>( fun ) );
 
@@ -108,16 +108,50 @@ HidlBluetoothAudioProvider::HidlBluetoothAudioProvider()
 
 ::android::hardware::Return<void> HidlBluetoothAudioProvider::streamStarted( Status status )
 {
+    if( status == Status::SUCCESS )
+    {
+        LogDebug() << "bluetooth stream started.";
+        auto hidl_local_service = module_manager::get_instance()
+            ->get_module<mtk_hidl_local_service>( mtk_hidl_local_service::s_module_name );
+        std::function<void()> fun;
+        fun = std::bind( &mtk_hidl_local_service::trigger_stream_started_signal, hidl_local_service );
+        PageManager::GetInstance().PostEvent( std::make_shared<ExecutbleEvent>( fun ) );
+    }
+    else
+    {
+        LogDebug() << "bluetooth stream not started, status: " << toString( status );
+    }
+
     return ::android::hardware::Void();
 }
 
 ::android::hardware::Return<void> HidlBluetoothAudioProvider::streamSuspended( Status status )
 {
+    if( status == Status::SUCCESS )
+    {
+        LogDebug() << "bluetooth stream suspended.";
+        auto hidl_local_service = module_manager::get_instance()
+            ->get_module<mtk_hidl_local_service>( mtk_hidl_local_service::s_module_name );
+        std::function<void()> fun;
+        fun = std::bind( &mtk_hidl_local_service::trigger_stream_suspend_signal, hidl_local_service );
+        PageManager::GetInstance().PostEvent( std::make_shared<ExecutbleEvent>( fun ) );
+    }
+    else
+    {
+        LogDebug() << "bluetooth stream not suspended, status: " << toString( status );
+    }
     return ::android::hardware::Void();
 }
 
 ::android::hardware::Return<void> HidlBluetoothAudioProvider::endSession()
 {
+    LogDebug() << "bluetooth audio session end";
+    auto hidl_local_service = module_manager::get_instance()
+        ->get_module<mtk_hidl_local_service>( mtk_hidl_local_service::s_module_name );
+    std::function<void()> fun;
+    fun = std::bind( &mtk_hidl_local_service::handle_bluetooth_audio_session_end, hidl_local_service );
+    PageManager::GetInstance().PostEvent( std::make_shared<ExecutbleEvent>( fun ) );
+
     return ::android::hardware::Void();
 }
 

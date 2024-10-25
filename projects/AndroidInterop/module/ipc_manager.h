@@ -39,6 +39,8 @@ public:
 
     void suspend_stream();
 
+    void request_presentaion_delay();
+
     std::vector<bluetooth_module::pcm_configuration> get_local_supported_pcm_capabilities()
     {
         return m_local_psm_capabilities;
@@ -58,8 +60,7 @@ private:
 
     std::thread m_running_thread;
     std::shared_ptr<ipc_manager_impl> m_impl;
-    std::list<std::shared_ptr<local_audio_service>> m_aidl_services;
-    std::list<std::shared_ptr<local_audio_service>> m_hidl_services;
+    std::list<std::shared_ptr<local_audio_service>> m_audio_services;
 
     bluetooth_module::pcm_configuration m_pcm_config;
     std::vector<bluetooth_module::pcm_configuration> m_local_psm_capabilities;

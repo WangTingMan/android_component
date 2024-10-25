@@ -77,9 +77,19 @@ void mtk_hidl_local_service::suspend_stream()
     m_bluetooth_audio_port->suspendStream();
 }
 
-void mtk_hidl_local_service::update_bluetooth_port_interface( ::android::sp<IBluetoothAudioPort> a_bluetooth_audio_port )
+void mtk_hidl_local_service::request_presentaion_delay()
+{
+    get_presentation();
+}
+
+void mtk_hidl_local_service::handle_update_bluetooth_port_interface( ::android::sp<IBluetoothAudioPort> a_bluetooth_audio_port )
 {
     m_bluetooth_audio_port = a_bluetooth_audio_port;
+}
+
+void mtk_hidl_local_service::handle_bluetooth_audio_session_end()
+{
+    m_bluetooth_audio_port.clear();
 }
 
 void mtk_hidl_local_service::get_presentation()

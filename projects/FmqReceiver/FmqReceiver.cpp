@@ -49,7 +49,7 @@ int main()
  ],
  "GrantorDescriptor_size_key" : 4,
  "flags_key" : 1,
- "name_key" : "random_message_queue_name_",
+ "name_key" : "android_fmq_test_shared_memory",
  "numFds_key" : 1,
  "numInts_key" : 0,
  "quantum_key" : 1
@@ -74,10 +74,12 @@ int main()
         size_t avail_to_read = data_mq_->availableToRead();;
         if (avail_to_read > 0)
         {
-            size_t read_size = data_mq_->read((MqDataType*)buffer.data(), avail_to_read);
-            if (read_size > 0)
+            std::size_t size_to_read = ( avail_to_read < 1024 ? avail_to_read : 1023 );
+            bool read_status = data_mq_->read((MqDataType*)buffer.data(), size_to_read );
+            if ( read_status )
             {
                 std::cout << "read: " << buffer.data() << std::endl;
+                memset( buffer.data(), 0x00, size_to_read );
             }
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(30));

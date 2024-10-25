@@ -21,8 +21,8 @@ public:
     */
     ::ndk::ScopedAStatus getProviderCapabilities
         (
-        ::aidl::vendor::mediatek::hardware::bluetooth::audio::SessionType in_sessionType,
-        std::vector<::aidl::vendor::mediatek::hardware::bluetooth::audio::AudioCapabilities>* _aidl_return
+        SessionType in_sessionType,
+        std::vector<AudioCapabilities>* _aidl_return
         )override;
 
     /*
@@ -34,15 +34,15 @@ public:
     */
     ::ndk::ScopedAStatus openProvider
         (
-        ::aidl::vendor::mediatek::hardware::bluetooth::audio::SessionType in_sessionType,
-        std::shared_ptr<::aidl::vendor::mediatek::hardware::bluetooth::audio::IBluetoothAudioProvider>* _aidl_return
+        SessionType in_sessionType,
+        std::shared_ptr<IBluetoothAudioProvider>* _aidl_return
         )override;
 
 private:
 
     void init();
 
-    std::vector<::aidl::vendor::mediatek::hardware::bluetooth::audio::AudioCapabilities> audioCapabilities_;
+    std::vector<AudioCapabilities> audioCapabilities_;
 };
 
 }

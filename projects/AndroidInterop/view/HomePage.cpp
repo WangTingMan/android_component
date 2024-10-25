@@ -20,7 +20,10 @@ HomePage::HomePage()
             this));
     content->AddOption("Request Suspend Stream",
         std::bind(&HomePage::SuspendStream,
-            this));
+                   this ) );
+    content->AddOption( "Request Presentation Delay",
+        std::bind( &HomePage::RequestPresentationDelay,
+                   this ) );
 
     m_content = content;
 }
@@ -63,3 +66,9 @@ void HomePage::SuspendStream()
     ipc->suspend_stream();
 }
 
+void HomePage::RequestPresentationDelay()
+{
+    auto ipc = module_manager::get_instance()->
+        get_module<ipc_manager>( ipc_manager::s_module_name );
+    ipc->request_presentaion_delay();
+}

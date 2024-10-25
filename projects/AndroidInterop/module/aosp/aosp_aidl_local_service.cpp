@@ -57,6 +57,11 @@ void aosp_aidl_local_service::suspend_stream()
 
 }
 
+void aosp_aidl_local_service::request_presentaion_delay()
+{
+
+}
+
 void aosp_aidl_local_service::handle_audio_stream_started( bluetooth_module::a2dp_stream_status a_status )
 {
 

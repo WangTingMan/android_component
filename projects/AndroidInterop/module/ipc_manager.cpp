@@ -4,6 +4,7 @@
 #include <Zhen/logging.h>
 #include "mtk/mtk_aidl_local_service.h"
 #include "mtk/mtk_hidl_local_service.h"
+#include "qcom/qcom_hidl_local_service.h"
 #include "aosp/aosp_aidl_local_service.h"
 #include "module_manager.h"
 
@@ -36,6 +37,8 @@ using DataMQDesc = MQDescriptor<MqDataType, MqDataMode>;
 
 #define MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_aidl_audio_local_service_enabled"
 #define MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_hidl_audio_local_service_enabled"
+#define AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.aospaidl_audio_local_service_enabled"
+#define QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.qcom_hidl_audio_local_service_enabled"
 
 class ipc_manager_impl
 {
@@ -88,15 +91,19 @@ int ipc_manager::init()
 
     auto mtk_aidl_service = std::make_shared<mtk_aidl_local_service>();
     module_manager::get_instance()->add_new_module(mtk_aidl_service);
-    m_aidl_services.emplace_back(std::move(mtk_aidl_service));
+    m_audio_services.emplace_back(std::move(mtk_aidl_service));
 
     auto aosp_aidl_service = std::make_shared<aosp_aidl_local_service>();
     module_manager::get_instance()->add_new_module(aosp_aidl_service);
-    m_aidl_services.emplace_back(std::move(aosp_aidl_service));
+    m_audio_services.emplace_back(std::move(aosp_aidl_service));
 
     auto mtk_hidl_service = std::make_shared<mtk_hidl_local_service>();
     module_manager::get_instance()->add_new_module(mtk_hidl_service);
-    m_hidl_services.emplace_back( std::move( mtk_hidl_service ) );
+    m_audio_services.emplace_back( std::move( mtk_hidl_service ) );
+
+    auto qcom_hidl_service = std::make_shared<qcom_hidl_local_service>();
+    module_manager::get_instance()->add_new_module( qcom_hidl_service );
+    m_audio_services.emplace_back( std::move( qcom_hidl_service ) );
 
     set_init_status(bluetooth_module::init_status::initialized);
     return 0;
@@ -142,17 +149,9 @@ void ipc_manager::set_selected_pcm_configuration(bluetooth_module::pcm_configura
 
 void ipc_manager::start_stream()
 {
-    for (auto& ele : m_aidl_services)
+    for (auto& ele : m_audio_services )
     {
         if (ele)
-        {
-            ele->start_stream();
-        }
-    }
-
-    for( auto& ele : m_hidl_services )
-    {
-        if( ele )
         {
             ele->start_stream();
         }
@@ -161,26 +160,18 @@ void ipc_manager::start_stream()
 
 void ipc_manager::stop_stream()
 {
-    for (auto& ele : m_aidl_services)
+    for (auto& ele : m_audio_services )
     {
         if (ele)
         {
             ele->stop_stream();
         }
     }
-
-    for( auto& ele : m_hidl_services )
-    {
-        if( ele )
-        {
-            ele->start_stream();
-        }
-    }
 }
 
 void ipc_manager::suspend_stream()
 {
-    for (auto& ele : m_aidl_services)
+    for (auto& ele : m_audio_services )
     {
         if (ele)
         {
@@ -189,9 +180,22 @@ void ipc_manager::suspend_stream()
     }
 }
 
+void ipc_manager::request_presentaion_delay()
+{
+    for( auto& ele : m_audio_services )
+    {
+        if( ele )
+        {
+            ele->request_presentaion_delay();
+        }
+    }
+}
+
 void ipc_manager::load_config()
 {
-    property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
-    property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+    property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+    property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
+    property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
+    property_set( QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 }
 

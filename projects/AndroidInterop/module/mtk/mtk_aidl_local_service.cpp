@@ -97,6 +97,15 @@ void mtk_aidl_local_service::suspend_stream()
     }
 }
 
+void mtk_aidl_local_service::request_presentaion_delay()
+{
+    if( m_bluetooth_audio_port )
+    {
+        ::aidl::vendor::mediatek::hardware::bluetooth::audio::PresentationPosition _aidl_return;
+        m_bluetooth_audio_port->getPresentationPositionDetail( &_aidl_return );
+    }
+}
+
 void mtk_aidl_local_service::handle_audio_stream_started(bluetooth_module::a2dp_stream_status a_status)
 {
     LogDebug() << "handle_audio_stream_started: " << to_string(a_status);
