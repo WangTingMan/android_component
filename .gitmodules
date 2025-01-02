@@ -127,3 +127,6 @@
 [submodule "Zhen"]
 	path = Zhen
 	url = https://github.com/WangTingMan/Zhen
+[submodule "test/vts"]
+	path = test/vts
+	url = https://github.com/WangTingMan/platform_test_vts.git

@@ -76,6 +76,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "audio_example", "projects\a
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth.finder-V1-ndk", "projects\android.hardware.bluetooth.finder-V1-ndk\android.hardware.bluetooth.finder-V1-ndk.vcxproj", "{55B97B83-5BE0-4C13-8774-9A07EB815E81}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VtsHalBluetoothTargetTest", "projects\VtsHalBluetoothTargetTest\VtsHalBluetoothTargetTest.vcxproj", "{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VtsHalHidlTestUtils", "projects\VtsHalHidlTestUtils\VtsHalHidlTestUtils.vcxproj", "{C0702C0C-1810-4D05-981C-0F24264F863E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VTS", "VTS", "{3849BE90-5703-4609-94F8-B1C37D09E3BB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libaidlvintf_gtest_helper", "projects\libaidlvintf_gtest_helper\libaidlvintf_gtest_helper.vcxproj", "{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -316,9 +324,38 @@ Global
 		{55B97B83-5BE0-4C13-8774-9A07EB815E81}.Release|x64.Build.0 = Release|x64
 		{55B97B83-5BE0-4C13-8774-9A07EB815E81}.Release|x86.ActiveCfg = Release|Win32
 		{55B97B83-5BE0-4C13-8774-9A07EB815E81}.Release|x86.Build.0 = Release|Win32
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Debug|x64.ActiveCfg = Debug|x64
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Debug|x64.Build.0 = Debug|x64
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Debug|x86.Build.0 = Debug|Win32
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Release|x64.ActiveCfg = Release|x64
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Release|x64.Build.0 = Release|x64
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Release|x86.ActiveCfg = Release|Win32
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4}.Release|x86.Build.0 = Release|Win32
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Debug|x64.ActiveCfg = Debug|x64
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Debug|x64.Build.0 = Debug|x64
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Debug|x86.ActiveCfg = Debug|Win32
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Debug|x86.Build.0 = Debug|Win32
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Release|x64.ActiveCfg = Release|x64
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Release|x64.Build.0 = Release|x64
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Release|x86.ActiveCfg = Release|Win32
+		{C0702C0C-1810-4D05-981C-0F24264F863E}.Release|x86.Build.0 = Release|Win32
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Debug|x64.ActiveCfg = Debug|x64
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Debug|x64.Build.0 = Debug|x64
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Debug|x86.ActiveCfg = Debug|Win32
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Debug|x86.Build.0 = Debug|Win32
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x64.ActiveCfg = Release|x64
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x64.Build.0 = Release|x64
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x86.ActiveCfg = Release|Win32
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{38AA8883-A9E4-4412-BED6-F9B6B66FBEF4} = {3849BE90-5703-4609-94F8-B1C37D09E3BB}
+		{C0702C0C-1810-4D05-981C-0F24264F863E} = {3849BE90-5703-4609-94F8-B1C37D09E3BB}
+		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414} = {3849BE90-5703-4609-94F8-B1C37D09E3BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DDB4183-ED8D-4223-9C72-C301268F92B8}
