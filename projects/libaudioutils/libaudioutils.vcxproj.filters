@@ -27,6 +27,60 @@
     <ClCompile Include="..\..\system\media\audio_utils\porting_aaudio.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\Balance.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\ErrorLog.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\MelAggregator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\MelProcessor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\Metadata.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\PowerLog.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\channels.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\fifo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\fifo_index.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\fifo_writer_T.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\format.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\hal_smoothness.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\minifloat.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\mono_blend.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\power.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\roundup.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\sample.c">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\limiter.c">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h">
@@ -39,6 +93,57 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\porting_aaudio.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\Balance.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\ErrorLog.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\MelAggregator.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\MelProcessor.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\Metadata.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\PowerLog.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\channels.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo_index.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo_writer_T.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\format.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\hal_smoothness.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\minifloat.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mono_blend.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\power.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\roundup.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\sample.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

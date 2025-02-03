@@ -130,3 +130,6 @@
 [submodule "test/vts"]
 	path = test/vts
 	url = https://github.com/WangTingMan/platform_test_vts.git
+[submodule "frameworks_av"]
+	path = frameworks_av
+	url = https://github.com/WangTingMan/frameworks_av.git

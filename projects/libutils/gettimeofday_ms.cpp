@@ -87,9 +87,10 @@ int gettimeofday(struct timeval* p, struct timezone* z)
 }
 
 #if defined(_MSC_VER)
-static void localtime_r( const time_t* secs, struct tm* time )
+static struct tm* localtime_r( const time_t* secs, struct tm* time )
 {
     (void)localtime_s( time, secs );
+    return time;
 }
 #endif
 
