@@ -203,6 +203,7 @@
     <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Printer.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\RefBase.h" />
+    <ClInclude Include="..\..\core\libutils\include\utils\shared_timed_recursive_mutex.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\StopWatch.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\String16.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\String8.h" />

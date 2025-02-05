@@ -191,5 +191,8 @@
     <ClInclude Include="..\..\core\libutils\include\utils\direct.h">
       <Filter>header files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\core\libutils\include\utils\shared_timed_recursive_mutex.h">
+      <Filter>header files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
