@@ -113,7 +113,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;LIBAPTX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;LIBAPTX_EXPORTS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -162,12 +162,14 @@
     <ClCompile Include="..\..\system\media\audio_utils\Metadata.cpp" />
     <ClCompile Include="..\..\system\media\audio_utils\minifloat.c" />
     <ClCompile Include="..\..\system\media\audio_utils\mono_blend.cpp" />
+    <ClCompile Include="..\..\system\media\audio_utils\mutex.cpp" />
     <ClCompile Include="..\..\system\media\audio_utils\porting_aaudio.cpp" />
     <ClCompile Include="..\..\system\media\audio_utils\power.cpp" />
     <ClCompile Include="..\..\system\media\audio_utils\PowerLog.cpp" />
     <ClCompile Include="..\..\system\media\audio_utils\primitives.c" />
     <ClCompile Include="..\..\system\media\audio_utils\roundup.c" />
     <ClCompile Include="..\..\system\media\audio_utils\sample.c" />
+    <ClCompile Include="..\..\system\media\audio_utils\threads.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,12 +188,14 @@
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\Metadata.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\minifloat.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mono_blend.h" />
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mutex.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\power.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\PowerLog.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\porting_aaudio.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\roundup.h" />
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\sample.h" />
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\threads.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

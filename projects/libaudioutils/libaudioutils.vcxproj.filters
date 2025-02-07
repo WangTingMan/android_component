@@ -81,6 +81,12 @@
     <ClCompile Include="..\..\system\media\audio_utils\limiter.c">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\mutex.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\system\media\audio_utils\threads.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h">
@@ -144,6 +150,12 @@
       <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\sample.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mutex.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\threads.h">
       <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>

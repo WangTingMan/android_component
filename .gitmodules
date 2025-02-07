@@ -133,3 +133,6 @@
 [submodule "frameworks_av"]
 	path = frameworks_av
 	url = https://github.com/WangTingMan/frameworks_av.git
+[submodule "system/external/expat"]
+	path = system/external/expat
+	url = https://github.com/WangTingMan/expat.git
