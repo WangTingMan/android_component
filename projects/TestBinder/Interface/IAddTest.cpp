@@ -49,6 +49,6 @@ int BpAddTest::Add(int a, int b) {
     remote()->transact(TRANSACTION_Add, data, &reply);
     int sum = reply.readInt32();
     ALOGI("BpAddTest sum=%d", sum);
-    return a + b;
+    return sum;
 }
 }
