@@ -136,3 +136,12 @@
 [submodule "system/external/expat"]
 	path = system/external/expat
 	url = https://github.com/WangTingMan/expat.git
+[submodule "asio"]
+	path = asio
+	url = https://github.com/WangTingMan/asio.git
+[submodule "boost_signals2"]
+	path = boost_signals2
+	url = https://github.com/WangTingMan/boost_signals2.git
+[submodule "system/external/perfetto"]
+	path = system/external/perfetto
+	url = https://github.com/WangTingMan/perfetto.git
