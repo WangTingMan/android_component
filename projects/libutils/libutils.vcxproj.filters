@@ -16,12 +16,12 @@
     <Filter Include="internal">
       <UniqueIdentifier>{168eb071-a386-4dc0-89d3-fdefebcce415}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libutils_binder">
+      <UniqueIdentifier>{a405c9b3-fd00-47c7-8244-e8c73cb9592f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\Errors.cpp">
       <Filter>source files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\core\libutils\FileMap.cpp">
@@ -42,22 +42,7 @@
     <ClCompile Include="..\..\core\libutils\Printer.cpp">
       <Filter>source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\core\libutils\RefBase.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\SharedBuffer.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\core\libutils\StopWatch.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\String8.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\String16.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\StrongPointer.cpp">
       <Filter>source files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\core\libutils\SystemClock.cpp">
@@ -72,28 +57,13 @@
     <ClCompile Include="..\..\core\libutils\Tokenizer.cpp">
       <Filter>source files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\core\libutils\Unicode.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\VectorImpl.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
     <ClCompile Include="gettimeofday_ms.cpp">
       <Filter>internal</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\CallStack.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\ExtendableRingBuffer.cpp">
-      <Filter>source files</Filter>
     </ClCompile>
     <ClCompile Include="timer_manager.cpp">
       <Filter>internal</Filter>
     </ClCompile>
     <ClCompile Include="..\..\core\libutils\executing_time.cpp">
-      <Filter>source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\core\libutils\Looper.cpp">
       <Filter>source files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\core\libutils\direct.cpp">
@@ -104,12 +74,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\core\libutils\include\utils\CallStack.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\Errors.h">
-      <Filter>header files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h">
       <Filter>header files</Filter>
     </ClInclude>
@@ -125,19 +89,7 @@
     <ClInclude Include="..\..\core\libutils\include\utils\Printer.h">
       <Filter>header files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\RefBase.h">
-      <Filter>header files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\StopWatch.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\String8.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\String16.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\StrongPointer.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\SystemClock.h">
@@ -152,25 +104,13 @@
     <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h">
       <Filter>header files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\Unicode.h">
-      <Filter>header files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\Vector.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\VectorImpl.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\AndroidThreads.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\misc.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\ExtendableRingBuffer.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="timer_manager.h">
@@ -183,9 +123,6 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\Looper.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\direct.h">

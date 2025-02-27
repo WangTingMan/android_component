@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/include;$(ProjectDir)..\..\core/libcutils/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging/liblog/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/include;$(ProjectDir)..\..\core/libcutils/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging/liblog/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -113,7 +113,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBBINDERNDK_EXPORTS;_WINDOWS;_USRDLL;LIBBINDER_NDK_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBBINDERNDK_EXPORTS;_WINDOWS;_USRDLL;NOMINMAX;LIBBINDER_NDK_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -124,7 +124,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbinder.lib;libutils.lib;libcutils.lib;liblog.lib;libbase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder.lib;libutils.lib;libcutils.lib;liblog.lib;libbase.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\ibinder.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\libbinder.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\parcel.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\process.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\service_manager.cpp" />

@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -128,13 +128,13 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;liblog.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcutils.lib;libutils_binder_sdk.lib;liblog.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,31 +157,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\core\libutils\CallStack.cpp" />
     <ClCompile Include="..\..\core\libutils\direct.cpp" />
     <ClCompile Include="..\..\core\libutils\direct_ext.cpp" />
-    <ClCompile Include="..\..\core\libutils\Errors.cpp" />
     <ClCompile Include="..\..\core\libutils\executing_time.cpp" />
-    <ClCompile Include="..\..\core\libutils\ExtendableRingBuffer.cpp" />
     <ClCompile Include="..\..\core\libutils\FileMap.cpp" />
     <ClCompile Include="..\..\core\libutils\JenkinsHash.cpp" />
     <ClCompile Include="..\..\core\libutils\LightRefBase.cpp" />
-    <ClCompile Include="..\..\core\libutils\Looper.cpp" />
     <ClCompile Include="..\..\core\libutils\misc.cpp" />
     <ClCompile Include="..\..\core\libutils\NativeHandle.cpp" />
     <ClCompile Include="..\..\core\libutils\Printer.cpp" />
-    <ClCompile Include="..\..\core\libutils\RefBase.cpp" />
-    <ClCompile Include="..\..\core\libutils\SharedBuffer.cpp" />
     <ClCompile Include="..\..\core\libutils\StopWatch.cpp" />
-    <ClCompile Include="..\..\core\libutils\String16.cpp" />
-    <ClCompile Include="..\..\core\libutils\String8.cpp" />
-    <ClCompile Include="..\..\core\libutils\StrongPointer.cpp" />
     <ClCompile Include="..\..\core\libutils\SystemClock.cpp" />
     <ClCompile Include="..\..\core\libutils\Threads.cpp" />
     <ClCompile Include="..\..\core\libutils\Timers.cpp" />
     <ClCompile Include="..\..\core\libutils\Tokenizer.cpp" />
-    <ClCompile Include="..\..\core\libutils\Unicode.cpp" />
-    <ClCompile Include="..\..\core\libutils\VectorImpl.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="gettimeofday_ms.cpp" />
     <ClCompile Include="timer_manager.cpp" />
@@ -189,33 +178,22 @@
   <ItemGroup>
     <ClInclude Include="..\..\core\libutils\include\utils\AndroidThreads.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\CallStack.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\direct.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Errors.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\executing_time.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\ExtendableRingBuffer.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\JenkinsHash.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\LightRefBase.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Looper.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\LruCache.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\misc.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Printer.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\RefBase.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\shared_timed_recursive_mutex.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\StopWatch.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\String16.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\String8.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\StrongPointer.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\SystemClock.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Thread.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Timers.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Unicode.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Vector.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\VectorImpl.h" />
     <ClInclude Include="timer_manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -19,6 +19,8 @@ void load_hw_service_manager()
         return;
     }
 
+    LOG( INFO ) << "open " << hw_manager_lib << " success.";
+
     auto p_fun = ::base::GetFunctionPointerFromNativeLibrary( handle, fun_name );
     if( p_fun == nullptr )
     {

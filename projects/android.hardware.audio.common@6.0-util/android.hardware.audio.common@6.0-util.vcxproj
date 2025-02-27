@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\hardware\interfaces\audio;$(ProjectDir)..\..\hardware/interfaces/audio/common/all-versions/util/include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files/hidl;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libfmq\base;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\hardware\interfaces\audio;$(ProjectDir)..\..\hardware/interfaces/audio/common/all-versions/util/include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files/hidl;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libfmq\base;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

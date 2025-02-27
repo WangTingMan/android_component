@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\system\libvintf\include\vintf;$(ProjectDir)..\..\system\libvintf;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\system/external/fmtlib/include;$(ProjectDir)..\..\system\libvintf\include;$(ProjectDir)..\..\system/tools/hidl/metadata/include;$(ProjectDir)..\..\system\external\tinyxml2;$(ProjectDir)..\..\packages/modules/Gki/libkver/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\system\libvintf\include\vintf;$(ProjectDir)..\..\system\libvintf;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\system/external/fmtlib/include;$(ProjectDir)..\..\system\libvintf\include;$(ProjectDir)..\..\system/tools/hidl/metadata/include;$(ProjectDir)..\..\system\external\tinyxml2;$(ProjectDir)..\..\packages/modules/Gki/libkver/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +133,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbase.lib;libutils.lib;fmtlib.lib;libtinyxml2.lib;libkver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libutils.lib;fmtlib.lib;libtinyxml2.lib;libkver.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

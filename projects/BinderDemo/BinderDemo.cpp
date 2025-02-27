@@ -113,12 +113,10 @@ public:
         data.writeInt32( push_data );
 
         aout << "BpDemo::push parcel to be sent:\n";
-        data.print( PLOG ); endl( PLOG );
 
         remote()->transact( PUSH, data, &reply );
 
         aout << "BpDemo::push parcel reply:\n";
-        reply.print( PLOG ); endl( PLOG );
 
         ALOGD( "BpDemo::push(%i)", push_data );
     }
@@ -139,10 +137,8 @@ public:
         data.writeInt32( v1 );
         data.writeInt32( v2 );
         aout << "BpDemo::add parcel to be sent:\n";
-        data.print( PLOG ); endl( PLOG );
         remote()->transact( ADD, data, &reply );
         ALOGD( "BpDemo::add transact reply" );
-        reply.print( PLOG ); endl( PLOG );
 
         int32_t res;
         status_t status = reply.readInt32( &res );
@@ -185,7 +181,6 @@ status_t BnDemo::onTransact( uint32_t code, const Parcel& data, Parcel* reply, u
 {
     ALOGD( "BnDemo::onTransact(%i) %i", code, flags );
     data.checkInterface( this );
-    data.print( PLOG ); endl( PLOG );
 
     switch( code )
     {
@@ -200,7 +195,6 @@ status_t BnDemo::onTransact( uint32_t code, const Parcel& data, Parcel* reply, u
         ALOGD( "BnDemo::onTransact got %i", inData );
         push( inData );
         ASSERT( reply != 0 );
-        reply->print( PLOG ); endl( PLOG );
         return NO_ERROR;
     } break;
     case ADD:
@@ -210,7 +204,6 @@ status_t BnDemo::onTransact( uint32_t code, const Parcel& data, Parcel* reply, u
         int32_t sum = add( inV1, inV2 );
         ALOGD( "BnDemo::onTransact add(%i, %i) = %i", inV1, inV2, sum );
         ASSERT( reply != 0 );
-        reply->print( PLOG ); endl( PLOG );
         reply->writeInt32( sum );
         return NO_ERROR;
     } break;

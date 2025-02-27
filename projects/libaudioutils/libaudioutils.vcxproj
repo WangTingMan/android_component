@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -124,7 +124,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libutils.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils.lib;liblog.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

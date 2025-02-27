@@ -87,9 +87,6 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder\IResultReceiver.cpp">
       <Filter>libbinder_defaults</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\frameworks_native\libs\binder\OS.cpp">
-      <Filter>libbinder_defaults</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder\Parcel.cpp">
       <Filter>libbinder_defaults</Filter>
     </ClCompile>
@@ -179,6 +176,27 @@
     </ClCompile>
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.cpp">
       <Filter>compitable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IAccessor.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\Service.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceWithMetadata.cpp">
+      <Filter>generated_files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS_android.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS_unix_base.cpp">
+      <Filter>libbinder_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BackendUnifiedServiceManager.cpp">
+      <Filter>libbinder_kernel_defaults</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RecordedTransaction.cpp">
+      <Filter>libbinder_defaults</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -359,14 +377,35 @@
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h">
       <Filter>compitable</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h">
-      <Filter>compitable</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h">
-      <Filter>compitable</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h">
       <Filter>compitable</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnAccessor.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnServiceManager.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpAccessor.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpClientCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpServiceCallback.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpServiceManager.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IAccessor.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\Service.h">
+      <Filter>generated_files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceWithMetadata.h">
+      <Filter>generated_files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

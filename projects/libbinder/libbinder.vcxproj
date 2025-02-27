@@ -78,7 +78,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\frameworks_native\libs;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\frameworks_native\cmds;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\frameworks_native\libs;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\frameworks_native\cmds;$(ProjectDir)..\..\system/external/perfetto/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <TargetExt>.so</TargetExt>
   </PropertyGroup>
@@ -128,14 +128,15 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4275</DisableSpecificWarnings>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <AdditionalOptions>/Zc:preprocessor /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libutils.lib;liblog.lib;libbase.lib;libhidlbase.lib;libcutils.lib;libChromeBase.lib;libbinder_driver.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils.lib;liblog.lib;libbase.lib;libhidlbase.lib;libcutils.lib;libChromeBase.lib;libbinder_driver.lib;libutils_binder_sdk.lib;libperfetto_c.lib;Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -161,16 +162,20 @@
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\Access.cpp" />
     <ClCompile Include="..\..\frameworks_native\cmds\servicemanager\ServiceManager.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\atomic_porting_header.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\BackendUnifiedServiceManager.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\Binder.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\BpBinder.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\Debug.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\FdTrigger.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IAccessor.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\Service.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceWithMetadata.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\IInterface.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\IMemory.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\internal\selinux\android.cpp" />
@@ -185,7 +190,8 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryDealer.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\MemoryHeapBase.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.cpp" />
-    <ClCompile Include="..\..\frameworks_native\libs\binder\OS.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS_android.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\OS_unix_base.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\Parcel.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelableHolder.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ParcelFileDescriptor.cpp" />
@@ -194,6 +200,7 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder\PermissionController.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\PersistableBundle.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\ProcessState.cpp" />
+    <ClCompile Include="..\..\frameworks_native\libs\binder\RecordedTransaction.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\RpcServer.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\RpcSession.cpp" />
     <ClCompile Include="..\..\frameworks_native\libs\binder\RpcState.cpp" />
@@ -214,13 +221,22 @@
     <ClInclude Include="..\..\frameworks_native\libs\binder\BufferedTextOutput.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\Debug.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\FdTrigger.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnAccessor.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnClientCallback.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnServiceCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BnServiceManager.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpAccessor.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpClientCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpServiceCallback.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\BpServiceManager.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ConnectionInfo.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IAccessor.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IClientCallback.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceCallback.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\IServiceManager.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\Service.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceDebugInfo.h" />
+    <ClInclude Include="..\..\frameworks_native\libs\binder\generated_files\gen\aidl\Android\os\ServiceWithMetadata.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\atomic_porting_header.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\Binder.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\BinderService.h" />
@@ -262,8 +278,6 @@
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\TextOutput.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\include\binder\windows_porting.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\android.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\selinux\avc.h" />
-    <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\constants.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\internal\vintf\VintfObject.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\native_binder_operator_win.h" />
     <ClInclude Include="..\..\frameworks_native\libs\binder\OS.h" />

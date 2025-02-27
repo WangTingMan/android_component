@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\system\tools\hidl\utils\include;$(ProjectDir)..\..\system/libvintf/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\system\tools\hidl\metadata\include;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\boringssl/src/include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\system\tools\hidl\utils\include;$(ProjectDir)..\..\system/libvintf/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\system\tools\hidl\metadata\include;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\boringssl/src/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -123,7 +123,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libcrypto_d.lib;libbinder_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libcrypto_d.lib;libbinder_driver.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -45,6 +45,9 @@
     <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\status.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\frameworks_native\libs\binder\ndk\libbinder.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_native\libs\binder\ndk\ibinder_internal.h">
