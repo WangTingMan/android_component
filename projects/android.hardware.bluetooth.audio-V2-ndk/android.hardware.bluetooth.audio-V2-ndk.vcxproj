@@ -234,7 +234,6 @@
     <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SbcConfiguration.h" />
     <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\SessionType.h" />
     <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\UnicastCapability.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V4-ndk\aidl\android\hardware\bluetooth\audio\ANDROIDHARDWAREBLUETOOTHAUDIOV4NDK_EXPORTS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

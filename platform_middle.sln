@@ -84,6 +84,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VTS", "VTS", "{3849BE90-570
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libaidlvintf_gtest_helper", "projects\libaidlvintf_gtest_helper\libaidlvintf_gtest_helper.vcxproj", "{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.bluetooth.audio-V5-ndk", "projects\android.hardware.bluetooth.audio-V5-ndk\android.hardware.bluetooth.audio-V5-ndk.vcxproj", "{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "btaudiohal_flags_c_lib", "projects\btaudiohal_flags_c_lib\btaudiohal_flags_c_lib.vcxproj", "{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.media.audio.common.types-V4-ndk", "projects\android.media.audio.common.types-V4-ndk\android.media.audio.common.types-V4-ndk.vcxproj", "{EB797248-9D93-48A2-98A4-58C7A026737D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "android.hardware.audio.common-V4-ndk", "projects\android.hardware.audio.common-V4-ndk\android.hardware.audio.common-V4-ndk.vcxproj", "{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -348,6 +356,38 @@ Global
 		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x64.Build.0 = Release|x64
 		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x86.ActiveCfg = Release|Win32
 		{EFEB47F7-D17E-40DA-A75C-CA4234CA4414}.Release|x86.Build.0 = Release|Win32
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Debug|x64.ActiveCfg = Debug|x64
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Debug|x64.Build.0 = Debug|x64
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Debug|x86.ActiveCfg = Debug|Win32
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Debug|x86.Build.0 = Debug|Win32
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Release|x64.ActiveCfg = Release|x64
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Release|x64.Build.0 = Release|x64
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Release|x86.ActiveCfg = Release|Win32
+		{9C2BA9B3-80BE-4274-B1DB-909B8A02562D}.Release|x86.Build.0 = Release|Win32
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Debug|x64.ActiveCfg = Debug|x64
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Debug|x64.Build.0 = Debug|x64
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Debug|x86.ActiveCfg = Debug|Win32
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Debug|x86.Build.0 = Debug|Win32
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x64.ActiveCfg = Release|x64
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x64.Build.0 = Release|x64
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x86.ActiveCfg = Release|Win32
+		{0F205D6F-BF48-4612-8FF8-59DBD6ECCD54}.Release|x86.Build.0 = Release|Win32
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Debug|x64.ActiveCfg = Debug|x64
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Debug|x64.Build.0 = Debug|x64
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Debug|x86.ActiveCfg = Debug|Win32
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Debug|x86.Build.0 = Debug|Win32
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Release|x64.ActiveCfg = Release|x64
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Release|x64.Build.0 = Release|x64
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Release|x86.ActiveCfg = Release|Win32
+		{EB797248-9D93-48A2-98A4-58C7A026737D}.Release|x86.Build.0 = Release|Win32
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Debug|x64.ActiveCfg = Debug|x64
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Debug|x64.Build.0 = Debug|x64
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Debug|x86.ActiveCfg = Debug|Win32
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Debug|x86.Build.0 = Debug|Win32
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Release|x64.ActiveCfg = Release|x64
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Release|x64.Build.0 = Release|x64
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Release|x86.ActiveCfg = Release|Win32
+		{92BCFA5F-D2C0-4735-AB63-1559EFF10BB6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

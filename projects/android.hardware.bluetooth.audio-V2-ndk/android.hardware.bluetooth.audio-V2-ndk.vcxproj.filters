@@ -272,8 +272,5 @@
     <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V2-ndk\aidl\android\hardware\bluetooth\audio\UnicastCapability.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.audio-V4-ndk\aidl\android\hardware\bluetooth\audio\ANDROIDHARDWAREBLUETOOTHAUDIOV4NDK_EXPORTS.h">
-      <Filter>header</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
