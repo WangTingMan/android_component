@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6667a9ea-7254-4d33-9242-be164757911a}</ProjectGuid>
-    <RootNamespace>androidhardwarebluetooth10impl</RootNamespace>
+    <ProjectGuid>{4067f398-320d-4402-af4d-8e23d89e21c1}</ProjectGuid>
+    <RootNamespace>androidhardwarebluetoothlmpeventV1ndk</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,15 +71,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <TargetExt>.so</TargetExt>
-    <IncludePath>$(ProjectDir)..\..\..\hardware\interfaces\bluetooth\audio\utils\session;$(ProjectDir)..\..\..\generated_files;$(ProjectDir)..\..\..\generated_files\hidl;$(ProjectDir)..\..\..\libhidl\base\include;$(ProjectDir)..\..\..\libhidl\transport\include;$(ProjectDir)..\..\..\libhwbinder\include;$(ProjectDir)..\..\..\core\libcutils\include;$(ProjectDir)..\..\..\core\libutils\include;$(ProjectDir)..\..\..\core\libutils\binder\include;$(ProjectDir)..\..\..\libfmq\base;$(ProjectDir)..\..\..\libfmq\include;$(ProjectDir)..\..\..\libbase\include;$(ProjectDir)..\..\..\logging\liblog\include;$(ProjectDir)..\..\..\libhardware\include;$(ProjectDir)..\..\..\system\media\audio\include;$(ProjectDir)..\..\..\chromebase;$(ProjectDir)..\..\..\frameworks_native\libs\binder_driver;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq/generated_files/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREBLUETOOTH10IMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREBLUETOOTHLMPEVENTV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -96,7 +95,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREBLUETOOTH10IMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREBLUETOOTHLMPEVENTV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -113,18 +112,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREBLUETOOTH10IMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREBLUETOOTHLMPEVENTV1NDK_EXPORTS_IMPL;_WINDOWS;_USRDLL;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.bluetooth@1.0.lib;android.hardware.bluetooth@1.1.lib;libbinder_driver.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,7 +131,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREBLUETOOTH10IMPL_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREBLUETOOTHLMPEVENTV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -147,8 +145,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\IBluetoothLmpEvent.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\IBluetoothLmpEventCallback.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\Timestamp.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="android_hardware_bluetooth_1_0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\AddressType.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\ANDROIDHARDWAREBLUETOOTHLMPEVENTV1NDK_EXPORTS_.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\BnBluetoothLmpEvent.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\BnBluetoothLmpEventCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\BpBluetoothLmpEvent.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\BpBluetoothLmpEventCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\Direction.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\IBluetoothLmpEvent.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\IBluetoothLmpEventCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\LmpEventId.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.lmp_event-V1-ndk\aidl\android\hardware\bluetooth\lmp_event\Timestamp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ContextHubInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ContextHubMessage.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\EndpointId.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\EndpointInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\HostEndpointInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\HubInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IContextHub.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IContextHubCallback.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IEndpointCallback.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IEndpointCommunication.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Message.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\MessageDeliveryStatus.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappBinary.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappRpcService.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanSessionRequest.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanSessionStateUpdate.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Service.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\VendorHubInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\AsyncEventType.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BnContextHub.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BnContextHubCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BnEndpointCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BnEndpointCommunication.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BpContextHub.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BpContextHubCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BpEndpointCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\BpEndpointCommunication.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ContextHubInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ContextHubMessage.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\EndpointId.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\EndpointInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ErrorCode.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\HostEndpointInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\HubInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IContextHub.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IContextHubCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IEndpointCallback.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\IEndpointCommunication.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Message.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\MessageDeliveryStatus.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappBinary.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanoappRpcService.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanSessionRequest.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\NanSessionStateUpdate.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Reason.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Service.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\Setting.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\VendorHubInfo.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.contexthub-V4-ndk\aidl\android\hardware\contexthub\ANDROIDHARDWARECONTEXTHUBV4NDK_EXPORTS_.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
