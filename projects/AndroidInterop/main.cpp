@@ -6,11 +6,13 @@
 #include "Zhen/logging.h"
 #include <log/log.h>
 #include <base/logging.h>
+#include <perfetto/base/logging.h>
 
 bool zhen_logger(const char* /*FILE*/, int/*line*/,
     Zhen::LogLevel, std::string const&/*tag*/, std::string const&);
 bool base_logging_hooker( int levelIn, const char* file, int line,
                          size_t message_start, const std::string& str );
+void PerfettoLogMessageCallback( ::perfetto::base::LogMessageCallbackArgs perfetto_log );
 
 int main()
 {
@@ -18,6 +20,10 @@ int main()
         std::placeholders::_1, std::placeholders::_2,
         std::placeholders::_3, std::placeholders::_4, std::placeholders::_5));
     logging::SetLogMessageHandler( base_logging_hooker );
+    ::perfetto::base::SetLogMessageCallback( PerfettoLogMessageCallback );
+
+    __set_default_log_file_name( nullptr, false );
+
     LogDebug() << "Start to run.";
 
     KeyboardReader reader;
@@ -113,4 +119,32 @@ bool base_logging_hooker(int levelIn, const char* file, int line,
                              line, logStr.c_str() );
 
     return true;
+}
+
+void PerfettoLogMessageCallback( ::perfetto::base::LogMessageCallbackArgs perfetto_log )
+{
+    android_LogPriority level = android_LogPriority::ANDROID_LOG_DEFAULT;
+    switch( perfetto_log.level )
+    {
+    case perfetto::base::kLogDebug:
+        level = ANDROID_LOG_DEBUG;
+        break;
+    case perfetto::base::kLogError:
+        level = ANDROID_LOG_ERROR;
+        break;
+    case perfetto::base::kLogImportant:
+        level = ANDROID_LOG_WARN;
+        break;
+    case perfetto::base::kLogInfo:
+        level = ANDROID_LOG_INFO;
+        break;
+    default:
+        break;
+    }
+
+#ifdef __android_log_print_ext_defined
+    __android_log_print_ext( level, nullptr, perfetto_log.filename, perfetto_log.line, perfetto_log.message );
+#else
+    __android_log_print( level, nullptr, perfetto_log.message );
+#endif
 }

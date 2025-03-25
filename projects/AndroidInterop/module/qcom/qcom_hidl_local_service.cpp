@@ -131,7 +131,7 @@ void qcom_hidl_local_service::init_detail()
         android::status_t status;
         status = registerPassthroughServiceImplementation<IBluetoothAudioProvidersFactory>();
         LogDebug() << "vendor::qti::hardware::bluetooth_audio::V2_1::IBluetoothAudioProvidersFactory"
-            " registered with status: " << status;
+            " registered with status: " << android::statusToString(status);
     }
 
     auto thiz = std::dynamic_pointer_cast<qcom_hidl_local_service>( shared_from_this() );

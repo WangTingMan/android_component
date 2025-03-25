@@ -145,3 +145,6 @@
 [submodule "system/external/perfetto"]
 	path = system/external/perfetto
 	url = https://github.com/WangTingMan/perfetto.git
+[submodule "system/external/libsrtp2"]
+	path = system/external/libsrtp2
+	url = https://github.com/WangTingMan/libsrtp2.git
