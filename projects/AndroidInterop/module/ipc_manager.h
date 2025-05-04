@@ -2,6 +2,7 @@
 #include <future>
 #include <list>
 #include <memory>
+#include <mutex>
 #include <string>
 #include <thread>
 #include <vector>
@@ -43,6 +44,7 @@ public:
 
     std::vector<bluetooth_module::pcm_configuration> get_local_supported_pcm_capabilities()
     {
+        std::lock_guard locker(m_mutex);
         return m_local_psm_capabilities;
     }
 
@@ -62,6 +64,7 @@ private:
     std::shared_ptr<ipc_manager_impl> m_impl;
     std::list<std::shared_ptr<local_audio_service>> m_audio_services;
 
+    std::mutex m_mutex;
     bluetooth_module::pcm_configuration m_pcm_config;
     std::vector<bluetooth_module::pcm_configuration> m_local_psm_capabilities;
 };

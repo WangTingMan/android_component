@@ -193,10 +193,10 @@ void ipc_manager::request_presentaion_delay()
 
 void ipc_manager::load_config()
 {
-    property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
-    property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
+    property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+    property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 
-    property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
+    property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 
     property_set( QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 }

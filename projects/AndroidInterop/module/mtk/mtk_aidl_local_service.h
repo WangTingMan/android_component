@@ -7,8 +7,6 @@
 #include "AidlBluetoothAudioProviderFactory.h"
 #include <aidl/vendor/mediatek/hardware/bluetooth/audio/IBluetoothAudioProvider.h>
 
-#include <boost/signals2.hpp>
-
 namespace aidl::vendor::mediatek::hardware::bluetooth::audio {
     class AidlBluetoothAudioProvider;
 }
@@ -44,6 +42,11 @@ public:
     void suspend_stream();
 
     void request_presentaion_delay();
+
+    bool is_enabled()
+    {
+        return static_cast<bool>(m_service);
+    }
 
 private:
 

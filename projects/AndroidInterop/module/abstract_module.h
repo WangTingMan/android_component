@@ -2,7 +2,7 @@
 #include <string>
 #include <memory>
 
-#include <boost/signals2.hpp>
+#include <Zhen/global.h>
 
 #include "module/common_types.h"
 
@@ -63,6 +63,6 @@ private:
     std::string m_name{ "NULL" };
     uint8_t m_type = 0x00;
     bluetooth_module::init_status m_init_status;
-    boost::signals2::signal<void(bluetooth_module::init_status)> m_init_status_signal;
+    boost_ns::signals2::signal<void(bluetooth_module::init_status)> m_init_status_signal;
 };
 

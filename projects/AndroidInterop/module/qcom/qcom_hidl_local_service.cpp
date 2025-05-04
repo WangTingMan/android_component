@@ -48,32 +48,41 @@ void qcom_hidl_local_service::release()
 
 void qcom_hidl_local_service::start_stream()
 {
-    if( !m_bluetooth_audio_port )
+    if( m_bluetooth_audio_port )
     {
-        return;
+        m_bluetooth_audio_port->startStream();
     }
 
-    m_bluetooth_audio_port->startStream();
+    if (m_bluetooth_audio_port_v2_1)
+    {
+        m_bluetooth_audio_port_v2_1->startStream();
+    }
 }
 
 void qcom_hidl_local_service::stop_stream()
 {
-    if( !m_bluetooth_audio_port )
+    if( m_bluetooth_audio_port )
     {
-        return;
+        m_bluetooth_audio_port->stopStream();
     }
 
-    m_bluetooth_audio_port->stopStream();
+    if (m_bluetooth_audio_port_v2_1)
+    {
+        m_bluetooth_audio_port_v2_1->stopStream();
+    }
 }
 
 void qcom_hidl_local_service::suspend_stream()
 {
-    if( !m_bluetooth_audio_port )
+    if( m_bluetooth_audio_port )
     {
-        return;
+        m_bluetooth_audio_port->suspendStream();
     }
 
-    m_bluetooth_audio_port->suspendStream();
+    if (m_bluetooth_audio_port_v2_1)
+    {
+        m_bluetooth_audio_port_v2_1->suspendStream();
+    }
 }
 
 void qcom_hidl_local_service::request_presentaion_delay()
@@ -98,23 +107,36 @@ void qcom_hidl_local_service::handle_bluetooth_audio_session_end()
 
 void qcom_hidl_local_service::get_presentation()
 {
-    if( !m_bluetooth_audio_port )
+    if( m_bluetooth_audio_port )
     {
-        return;
+        using namespace ::vendor::qti::hardware::bluetooth_audio::V2_1;
+        using namespace ::vendor::qti::hardware::bluetooth_audio::V2_0;
+        std::function<void(Status, uint64_t, uint64_t, const TimeSpec&)> presentation_cb;
+        auto thiz = shared_from_this();
+        presentation_cb = std::bind(&qcom_hidl_local_service::presentation_updated,
+            std::dynamic_pointer_cast<qcom_hidl_local_service>(thiz),
+            std::placeholders::_1,
+            std::placeholders::_2,
+            std::placeholders::_3,
+            std::placeholders::_4
+            );
+        m_bluetooth_audio_port->getPresentationPosition(presentation_cb);
     }
 
-    using namespace ::vendor::qti::hardware::bluetooth_audio::V2_1;
-    using namespace ::vendor::qti::hardware::bluetooth_audio::V2_0;
-    std::function<void( Status, uint64_t, uint64_t, const TimeSpec& )> presentation_cb;
-    auto thiz = shared_from_this();
-    presentation_cb = std::bind( &qcom_hidl_local_service::presentation_updated,
-                                 std::dynamic_pointer_cast<qcom_hidl_local_service>( thiz ),
-                                 std::placeholders::_1,
-                                 std::placeholders::_2,
-                                 std::placeholders::_3,
-                                 std::placeholders::_4
-    );
-    m_bluetooth_audio_port->getPresentationPosition( presentation_cb );
+    if (m_bluetooth_audio_port_v2_1)
+    {
+        using namespace ::vendor::qti::hardware::bluetooth_audio::V2_0;
+        std::function<void(Status, uint64_t, uint64_t, const TimeSpec&)> presentation_cb;
+        auto thiz = shared_from_this();
+        presentation_cb = std::bind(&qcom_hidl_local_service::presentation_updated,
+            std::dynamic_pointer_cast<qcom_hidl_local_service>(thiz),
+            std::placeholders::_1,
+            std::placeholders::_2,
+            std::placeholders::_3,
+            std::placeholders::_4
+            );
+        m_bluetooth_audio_port_v2_1->getPresentationPosition(presentation_cb);
+    }
 
 }
 

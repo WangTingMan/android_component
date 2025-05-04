@@ -123,7 +123,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBCUTILS_EXPORTS;_WINDOWS;_USRDLL;CUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;EXPORTS_GETOPT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBCUTILS_EXPORTS;_WINDOWS;_USRDLL;CUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;EXPORTS_GETOPT;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -173,6 +173,7 @@
     <ClCompile Include="..\..\core\libcutils\socket_local_server_windows.cpp" />
     <ClCompile Include="..\..\core\libcutils\socket_network_client_windows.cpp" />
     <ClCompile Include="..\..\core\libcutils\strlcpy.cpp" />
+    <ClCompile Include="..\..\core\libcutils\str_parms.cpp" />
     <ClCompile Include="..\..\core\libcutils\threads.cpp" />
     <ClCompile Include="..\..\core\libcutils\trace-host.cpp" />
     <ClCompile Include="dictionary.c" />
@@ -197,6 +198,7 @@
     <ClInclude Include="..\..\core\libcutils\include\cutils\properties.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\record_stream.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\str_parms.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\threads.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\trace.h" />
     <ClInclude Include="dictionary.h" />

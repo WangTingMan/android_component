@@ -1,4 +1,5 @@
 #include "AospAidlBluetoothAudioProviderFactory.h"
+#include "AospBluetoothAudioProvider.h"
 
 #include <module/ipc_manager.h>
 #include <module/module_manager.h>
@@ -26,6 +27,42 @@ AospAidlBluetoothAudioProviderFactory::AospAidlBluetoothAudioProviderFactory()
     std::vector<AudioCapabilities>* _aidl_return
     )
 {
+    if (!_aidl_return)
+    {
+        LOG(ERROR) << "got empty with _aidl_return";
+        return ::ndk::ScopedAStatus(
+            AStatus_fromExceptionCodeWithMessage(
+                EX_NULL_POINTER, "_aidl_return is empty!"));
+    }
+
+    auto ipc_manager_ = module_manager::get_instance()
+        ->get_module<ipc_manager>(ipc_manager::s_module_name);
+    auto local_pcm_capabilities = ipc_manager_->get_local_supported_pcm_capabilities();
+    for (auto& capability : local_pcm_capabilities)
+    {
+        AudioCapabilities audio_cap;
+        ::aidl::android::hardware::bluetooth::audio::PcmCapabilities pcm_cap;
+        ::aidl::android::hardware::bluetooth::audio::ChannelMode ch_mode = ChannelMode::UNKNOWN;
+        switch (capability.channel_type)
+        {
+        case bluetooth_module::channel_mode::mono:
+            ch_mode = ChannelMode::MONO;
+            break;
+        case bluetooth_module::channel_mode::stereo:
+            ch_mode = ChannelMode::STEREO;
+            break;
+        default:
+            break;
+        }
+
+        pcm_cap.bitsPerSample.push_back(capability.bits_per_sample);
+        pcm_cap.channelMode.push_back(ch_mode);
+        pcm_cap.sampleRateHz.push_back(capability.sample_rate_hz);
+
+        audio_cap.set<AudioCapabilities::Tag::pcmCapabilities>(pcm_cap);
+        _aidl_return->push_back(audio_cap);
+    }
+
     return ::ndk::ScopedAStatus( AStatus_newOk() );
 }
 
@@ -36,7 +73,10 @@ AospAidlBluetoothAudioProviderFactory::AospAidlBluetoothAudioProviderFactory()
     )
 {
     LOG( INFO ) << __func__ << " - SessionType=" << toString( in_sessionType );
+    std::shared_ptr<AospBluetoothAudioProvider> provider = nullptr;
+    provider = ndk::SharedRefBase::make<AospBluetoothAudioProvider>();
 
+    *_aidl_return = provider;
 
     return ::ndk::ScopedAStatus( AStatus_newOk() );
 }

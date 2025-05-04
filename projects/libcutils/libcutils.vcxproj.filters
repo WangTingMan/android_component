@@ -90,6 +90,9 @@
     <ClCompile Include="..\..\core\libcutils\sockets.cpp">
       <Filter>libcutils_sockets</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\str_parms.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
@@ -153,6 +156,9 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\sockets.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\str_parms.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>

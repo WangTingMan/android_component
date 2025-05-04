@@ -44,17 +44,26 @@ void aosp_aidl_local_service::release()
 
 void aosp_aidl_local_service::start_stream()
 {
-
+    if (m_stack_bt_interface)
+    {
+        m_stack_bt_interface->m_startStream(false);
+    }
 }
 
 void aosp_aidl_local_service::stop_stream()
 {
-
+    if (m_stack_bt_interface)
+    {
+        m_stack_bt_interface->m_stopStream();
+    }
 }
 
 void aosp_aidl_local_service::suspend_stream()
 {
-
+    if (m_stack_bt_interface)
+    {
+        m_stack_bt_interface->m_suspendStream();
+    }
 }
 
 void aosp_aidl_local_service::request_presentaion_delay()
@@ -89,11 +98,12 @@ void aosp_aidl_local_service::init_detail()
 
     auto thiz = std::dynamic_pointer_cast<aosp_aidl_local_service>( shared_from_this() );
     std::function<void()> fun;
-    fun = std::bind(&aosp_aidl_local_service::handle_initialization_completed, thiz);
+    fun = std::bind(&aosp_aidl_local_service::handle_initialization_completed, thiz, service);
     PageManager::GetInstance().PostEvent( std::make_shared<ExecutbleEvent>( fun ) );
 }
 
-void aosp_aidl_local_service::handle_initialization_completed()
+void aosp_aidl_local_service::handle_initialization_completed(std::shared_ptr<AospAidlBluetoothAudioProviderFactory> a_service)
 {
+    m_service = a_service;
     set_init_status( bluetooth_module::init_status::initialized );
 }

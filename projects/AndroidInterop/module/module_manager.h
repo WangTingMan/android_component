@@ -6,6 +6,7 @@
 #include <string>
 #include <type_traits>
 #include <unordered_map>
+#include <vector>
 
 class module_manager : public abstract_module
 {
@@ -33,6 +34,22 @@ public:
     {
         auto module_ = get_module(a_name);
         return std::dynamic_pointer_cast<ModuleType>(module_);
+    }
+
+    template<typename ModuleType>
+    auto get_modules() -> std::vector<std::shared_ptr<ModuleType>>
+    {
+        std::vector<std::shared_ptr<ModuleType>> modules;
+        std::lock_guard locker(m_mutex);
+        for (auto& ele : m_modules)
+        {
+            auto module_ = std::dynamic_pointer_cast<ModuleType>( ele.second );
+            if (module_)
+            {
+                modules.push_back(module_);
+            }
+        }
+        return modules;
     }
 
     bool add_new_module( std::shared_ptr<abstract_module> a_module );

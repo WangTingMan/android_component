@@ -48,6 +48,11 @@ public:
 
     void handle_bluetooth_audio_session_end();
 
+    bool is_enabled()
+    {
+        return static_cast<bool>(m_bluetooth_audio_provider);
+    }
+
 private:
 
     void get_presentation();

@@ -3,6 +3,7 @@
 #include "Zhen/OptionContent.h"
 #include "module/ipc_manager.h"
 #include "module/module_manager.h"
+#include "module/local_audio_service.h"
 
 HomePage::HomePage()
 {
@@ -24,6 +25,10 @@ HomePage::HomePage()
     content->AddOption( "Request Presentation Delay",
         std::bind( &HomePage::RequestPresentationDelay,
                    this ) );
+
+    content->AddOption("Show status",
+        std::bind(&HomePage::ShowStatus,
+            this));
 
     m_content = content;
 }
@@ -72,3 +77,32 @@ void HomePage::RequestPresentationDelay()
         get_module<ipc_manager>( ipc_manager::s_module_name );
     ipc->request_presentaion_delay();
 }
+
+void HomePage::ShowStatus()
+{
+    if (!m_status_page)
+    {
+        m_status_page = std::make_shared<BasePromptedPage>();
+    }
+
+    std::string status;
+
+    auto audio_modules = module_manager::get_instance()->get_modules<local_audio_service>();
+    status.append("Registered audio modules:\n");
+    for (auto& module_ : audio_modules)
+    {
+        if (module_->get_init_status() == bluetooth_module::init_status::initialized)
+        {
+            if( module_->is_enabled())
+            {
+                status.append(module_->get_module_name());
+                status.append("\n");
+            }
+        }
+    }
+
+    m_status_page->SetContentString(status);
+
+    PageManager::GetInstance().PushPage(m_status_page);
+}
+
