@@ -48,6 +48,11 @@ public:
         return m_local_psm_capabilities;
     }
 
+    void register_audio_service(std::shared_ptr<local_audio_service> a_audio)
+    {
+        m_audio_services.push_back(a_audio);
+    }
+
 public:
 
     void set_selected_pcm_configuration(bluetooth_module::pcm_configuration a_pcm_config);

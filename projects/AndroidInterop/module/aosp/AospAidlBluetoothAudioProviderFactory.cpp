@@ -4,6 +4,8 @@
 #include <module/ipc_manager.h>
 #include <module/module_manager.h>
 
+#include <Zhen/logging.h>
+
 namespace aidl::android::hardware::bluetooth::audio {
 
 AospAidlBluetoothAudioProviderFactory::AospAidlBluetoothAudioProviderFactory()
@@ -29,7 +31,7 @@ AospAidlBluetoothAudioProviderFactory::AospAidlBluetoothAudioProviderFactory()
 {
     if (!_aidl_return)
     {
-        LOG(ERROR) << "got empty with _aidl_return";
+        LogError() << "got empty with _aidl_return";
         return ::ndk::ScopedAStatus(
             AStatus_fromExceptionCodeWithMessage(
                 EX_NULL_POINTER, "_aidl_return is empty!"));
@@ -72,7 +74,7 @@ AospAidlBluetoothAudioProviderFactory::AospAidlBluetoothAudioProviderFactory()
     std::shared_ptr<IBluetoothAudioProvider>* _aidl_return
     )
 {
-    LOG( INFO ) << __func__ << " - SessionType=" << toString( in_sessionType );
+    LogInfo() << __func__ << " - SessionType=" << toString( in_sessionType );
     std::shared_ptr<AospBluetoothAudioProvider> provider = nullptr;
     provider = ndk::SharedRefBase::make<AospBluetoothAudioProvider>();
 

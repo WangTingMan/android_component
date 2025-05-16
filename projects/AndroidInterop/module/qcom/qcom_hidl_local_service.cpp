@@ -1,4 +1,6 @@
 #include "qcom_hidl_local_service.h"
+#include "qcom_platform_audio_service.h"
+#include "module/module_manager.h"
 
 #include <linux/MessageLooper.h>
 
@@ -21,6 +23,14 @@ qcom_hidl_local_service::qcom_hidl_local_service()
 
 int qcom_hidl_local_service::init()
 {
+    auto platform_module = module_manager::get_instance()
+        ->get_module<qcom_platform_audio_service>(qcom_platform_audio_service::s_module_name);
+    if (platform_module->get_init_status() != bluetooth_module::init_status::deinitialized)
+    {
+        LogDebug() << qcom_platform_audio_service::s_module_name << " may can work. so ignore this service";
+        return 0;
+    }
+
     if( get_init_status() != bluetooth_module::init_status::deinitialized )
     {
         LogDebug() << "init status is not deinitialized.";

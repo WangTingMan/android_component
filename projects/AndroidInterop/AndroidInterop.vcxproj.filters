@@ -93,6 +93,9 @@
     <ClCompile Include="module\aosp\AospBluetoothAudioProvider.cpp">
       <Filter>module\aosp</Filter>
     </ClCompile>
+    <ClCompile Include="module\qcom\qcom_platform_audio_service.cpp">
+      <Filter>module\qcom</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="view\HomePage.h">
@@ -154,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="module\aosp\AospBluetoothAudioProvider.h">
       <Filter>module\aosp</Filter>
+    </ClInclude>
+    <ClInclude Include="module\qcom\qcom_platform_audio_service.h">
+      <Filter>module\qcom</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

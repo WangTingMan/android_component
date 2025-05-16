@@ -4,7 +4,7 @@
 #include <Zhen/logging.h>
 #include "mtk/mtk_aidl_local_service.h"
 #include "mtk/mtk_hidl_local_service.h"
-#include "qcom/qcom_hidl_local_service.h"
+#include "qcom/qcom_platform_audio_service.h"
 #include "aosp/aosp_aidl_local_service.h"
 #include "module_manager.h"
 
@@ -101,9 +101,9 @@ int ipc_manager::init()
     module_manager::get_instance()->add_new_module(mtk_hidl_service);
     m_audio_services.emplace_back( std::move( mtk_hidl_service ) );
 
-    auto qcom_hidl_service = std::make_shared<qcom_hidl_local_service>();
-    module_manager::get_instance()->add_new_module( qcom_hidl_service );
-    m_audio_services.emplace_back( std::move( qcom_hidl_service ) );
+    auto qcom_platform_service = std::make_shared<qcom_platform_audio_service>();
+    module_manager::get_instance()->add_new_module(qcom_platform_service);
+    m_audio_services.emplace_back(std::move(qcom_platform_service));
 
     set_init_status(bluetooth_module::init_status::initialized);
     return 0;
@@ -196,7 +196,7 @@ void ipc_manager::load_config()
     property_set( MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
     property_set( MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 
-    property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+    property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
 
     property_set( QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
 }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{556879ef-20bf-4f4b-b103-d0e796ec0064}</ProjectGuid>
-    <RootNamespace>AndroidInterop</RootNamespace>
+    <ProjectGuid>{2ad951bf-66c4-44d4-a639-9f1fc53b88b6}</ProjectGuid>
+    <RootNamespace>AidlWithDifferentCallbackService</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\hardware\interfaces\bluetooth\platform\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\frameworks_native\libs;$(ProjectDir)..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio-V1-ndk;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth-V1-ndk;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth.audio-V4-ndk;$(ProjectDir)..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio@2.2;$(ProjectDir)..\..\generated_files\vendor.mediatek.hardware.bluetooth.audio@2.1;$(ProjectDir)..\..\generated_files\vendor.qti.hardware.bluetooth_audio@2.1;$(ProjectDir)..\..\generated_files\vendor.qti.hardware.bluetooth_audio@2.0;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\Zhen;$(ProjectDir)..\..\system\external\perfetto\include;$(ProjectDir)../../boost_signals2;$(ProjectDir);E:\local\boost_1_97_0;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files/android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.bluetooth.audio-V4-ndk;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq/generated_files/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -109,13 +109,12 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251;4068;4275</DisableSpecificWarnings>
-      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;libutils_binder_sdk.lib;liblog.lib;libfmq.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;libbinder_ndk.lib;libhidlbase.lib;android.hardware.bluetooth-V1-ndk.lib;libZhen.lib;libperfetto_c.lib;vendor.mediatek.hardware.bluetooth.audio-V1-ndk.lib;vendor.mediatek.hardware.bluetooth.audio@2.2.lib;vendor.mediatek.hardware.bluetooth.audio@2.1.lib;android.hardware.bluetooth.audio-V4-ndk.lib;vendor.qti.hardware.bluetooth_audio@2.1.lib;vendor.qti.hardware.bluetooth_audio@2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;libbinder_ndk.lib;android.hardware.bluetooth.audio-V4-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,49 +134,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AospAidlBluetoothAudioProviderFactory.cpp" />
+    <ClCompile Include="AospBluetoothAudioProvider.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="module\abstract_module.cpp" />
-    <ClCompile Include="module\aosp\AospAidlBluetoothAudioProviderFactory.cpp" />
-    <ClCompile Include="module\aosp\aosp_aidl_local_service.cpp" />
-    <ClCompile Include="module\aosp\AospBluetoothAudioProvider.cpp" />
-    <ClCompile Include="module\audio_types.cpp" />
-    <ClCompile Include="module\ipc_manager.cpp" />
-    <ClCompile Include="module\module_manager.cpp" />
-    <ClCompile Include="module\mtk\AidlBluetoothAudioProvider.cpp" />
-    <ClCompile Include="module\mtk\AidlBluetoothAudioProviderFactory.cpp" />
-    <ClCompile Include="module\mtk\HidlBluetoothAudioProvider.cpp" />
-    <ClCompile Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.cpp" />
-    <ClCompile Include="module\mtk\mtk_aidl_local_service.cpp" />
-    <ClCompile Include="module\mtk\mtk_hidl_local_service.cpp" />
-    <ClCompile Include="module\mtk\utils.cpp" />
-    <ClCompile Include="module\qcom\HidlBluetoothAudioProvider.cpp" />
-    <ClCompile Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.cpp" />
-    <ClCompile Include="module\qcom\qcom_hidl_local_service.cpp" />
-    <ClCompile Include="module\qcom\qcom_platform_audio_service.cpp" />
-    <ClCompile Include="view\HomePage.cpp" />
+    <ClCompile Include="Service.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="module\abstract_module.h" />
-    <ClInclude Include="module\aosp\AospAidlBluetoothAudioProviderFactory.h" />
-    <ClInclude Include="module\aosp\AospBluetoothAudioProvider.h" />
-    <ClInclude Include="module\aosp\aosp_aidl_local_service.h" />
-    <ClInclude Include="module\audio_types.h" />
-    <ClInclude Include="module\common_types.h" />
-    <ClInclude Include="module\ipc_manager.h" />
-    <ClInclude Include="module\local_audio_service.h" />
-    <ClInclude Include="module\module_manager.h" />
-    <ClInclude Include="module\mtk\AidlBluetoothAudioProvider.h" />
-    <ClInclude Include="module\mtk\AidlBluetoothAudioProviderFactory.h" />
-    <ClInclude Include="module\mtk\HidlBluetoothAudioProvider.h" />
-    <ClInclude Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.h" />
-    <ClInclude Include="module\mtk\mtk_aidl_local_service.h" />
-    <ClInclude Include="module\mtk\mtk_hidl_local_service.h" />
-    <ClInclude Include="module\mtk\utils.h" />
-    <ClInclude Include="module\qcom\HidlBluetoothAudioProvider.h" />
-    <ClInclude Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.h" />
-    <ClInclude Include="module\qcom\qcom_hidl_local_service.h" />
-    <ClInclude Include="module\qcom\qcom_platform_audio_service.h" />
-    <ClInclude Include="view\HomePage.h" />
+    <ClInclude Include="AospAidlBluetoothAudioProviderFactory.h" />
+    <ClInclude Include="AospBluetoothAudioProvider.h" />
+    <ClInclude Include="Service.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

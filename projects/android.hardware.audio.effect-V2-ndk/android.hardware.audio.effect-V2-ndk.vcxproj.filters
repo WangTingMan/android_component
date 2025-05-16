@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AcousticEchoCanceler.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV1.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV2.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BassBoost.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Capability.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DefaultExtension.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Descriptor.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Downmix.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DynamicsProcessing.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\EnvironmentalReverb.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Equalizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Flags.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\HapticGenerator.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IEffect.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IFactory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\LoudnessEnhancer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\NoiseSuppression.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Parameter.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\PresetReverb.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Processing.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Range.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Spatializer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\VendorExtension.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Virtualizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Visualizer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Volume.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AcousticEchoCanceler.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV1.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV2.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BassBoost.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BnEffect.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BnFactory.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BpEffect.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BpFactory.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Capability.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\CommandId.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DefaultExtension.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Descriptor.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Downmix.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DynamicsProcessing.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\EnvironmentalReverb.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Equalizer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Flags.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Volume.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Visualizer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Virtualizer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\VendorExtension.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\State.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Spatializer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Range.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Processing.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\PresetReverb.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Parameter.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\NoiseSuppression.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\LoudnessEnhancer.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IFactory.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IEffect.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\HapticGenerator.h">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS_.h">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

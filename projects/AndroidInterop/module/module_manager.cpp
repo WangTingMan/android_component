@@ -18,9 +18,11 @@ module_manager::module_manager()
 
 int module_manager::init()
 {
+    std::size_t previous_module_count = 0;
     std::unique_lock locker(m_mutex);
     std::unordered_map<std::string, std::shared_ptr<abstract_module>> modules;
-    modules = std::move(m_modules);
+    previous_module_count = m_modules.size();
+    modules = m_modules;
     locker.unlock();
     for( auto it = modules.begin(); it != modules.end(); ++it )
     {
@@ -28,17 +30,14 @@ int module_manager::init()
     }
 
     locker.lock();
-    if (!m_modules.empty())
+    bool need_trigger_init_again = false;
+    need_trigger_init_again = previous_module_count < m_modules.size();
+    locker.unlock();
+
+    if (need_trigger_init_again)
     {
-        locker.unlock();
         init();
     }
-
-    if( !locker.owns_lock() )
-    {
-        locker.lock();
-    }
-    m_modules.merge(modules);
     return 0;
 }
 

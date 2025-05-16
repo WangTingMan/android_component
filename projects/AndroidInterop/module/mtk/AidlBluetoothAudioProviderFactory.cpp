@@ -4,6 +4,8 @@
 #include <module/ipc_manager.h>
 #include <module/module_manager.h>
 
+#include <Zhen/logging.h>
+
 namespace aidl::vendor::mediatek::hardware::bluetooth::audio {
 
 BluetoothAudioProviderFactory::BluetoothAudioProviderFactory()
@@ -25,7 +27,7 @@ BluetoothAudioProviderFactory::BluetoothAudioProviderFactory()
     std::vector<AudioCapabilities>* _aidl_return
     )
 {
-    LOG( INFO ) << __func__ << " - SessionType=" << toString( in_sessionType );
+    LogInfo() << __func__ << " - SessionType=" << toString( in_sessionType );
     *_aidl_return = audioCapabilities_;
     return ::ndk::ScopedAStatus( AStatus_newOk() );
 }
@@ -36,7 +38,7 @@ BluetoothAudioProviderFactory::BluetoothAudioProviderFactory()
     std::shared_ptr<IBluetoothAudioProvider>* _aidl_return
     )
 {
-    LOG( INFO ) << __func__ << " - SessionType=" << toString( in_sessionType );
+    LogInfo() << __func__ << " - SessionType=" << toString( in_sessionType );
     std::shared_ptr<AidlBluetoothAudioProvider> provider = nullptr;
     provider = ndk::SharedRefBase::make<AidlBluetoothAudioProvider>();
     *_aidl_return = provider;

@@ -6,6 +6,7 @@
 
 #include <Zhen/PageManager.h>
 #include <Zhen/ExecutbleEvent.h>
+#include <Zhen/logging.h>
 
 #include <fmq/system_porting.h>
 
@@ -61,7 +62,7 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::endSession()
 {
-    LOG(INFO) << "request end audio session";
+    LogInfo() << "request end audio session";
     return ndk::ScopedAStatus::ok();
 }
 
@@ -78,7 +79,7 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
     {
         latency_mode.append(toString(ele));
     }
-    LOG( INFO ) << __func__ << " bluetooth service request start session. "
+    LogInfo() << __func__ << " bluetooth service request start session. "
         << "latency_mode: " << latency_mode;
 
     auto mtk_module = module_manager::get_instance()
@@ -117,7 +118,7 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::streamStarted( BluetoothAudioStatus in_status )
 {
-    LOG( INFO ) << __func__ << " with " << toString(in_status);
+    LogInfo() << __func__ << " with " << toString(in_status);
     auto mtk_module = module_manager::get_instance()
         ->get_module<mtk_aidl_local_service>(mtk_aidl_local_service::s_module_name);
     std::function<void()> fun;
@@ -129,7 +130,7 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::streamSuspended( BluetoothAudioStatus in_status )
 {
-    LOG( INFO ) << __func__ << " with " << toString( in_status );
+    LogInfo() << __func__ << " with " << toString( in_status );
     auto mtk_module = module_manager::get_instance()
         ->get_module<mtk_aidl_local_service>(mtk_aidl_local_service::s_module_name);
     std::function<void()> fun;
@@ -141,26 +142,26 @@ AidlBluetoothAudioProvider::AidlBluetoothAudioProvider()
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::updateAudioConfiguration( const AudioConfiguration& in_audioConfig )
 {
-    LOG( INFO ) << __func__;
+    LogInfo() << __func__;
     handleAudioSessionChanged(in_audioConfig);
     return ndk::ScopedAStatus::ok();
 }
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::setLowLatencyModeAllowed( bool in_allowed )
 {
-    LOG( INFO ) << __func__ << std::boolalpha << ": " << in_allowed;
+    LogInfo() << __func__ << std::boolalpha << ": " << in_allowed;
     return ndk::ScopedAStatus::ok();
 }
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::enterGameMode( int8_t in_enter )
 {
-    LOG( INFO ) << __func__ << ": " << in_enter;
+    LogInfo() << __func__ << ": " << in_enter;
     return ndk::ScopedAStatus::ok();
 }
 
 ::ndk::ScopedAStatus AidlBluetoothAudioProvider::updataConnParam( const ConnParam& in_connPrameter )
 {
-    LOG( INFO ) << __func__;
+    LogInfo() << __func__;
     return ndk::ScopedAStatus::ok();
 }
 
@@ -172,7 +173,7 @@ void AidlBluetoothAudioProvider::handleAudioSessionChanged( const AudioConfigura
     case AudioConfiguration::Tag::pcmConfig:
         {
             PcmConfiguration pcm = in_audioConfig.get<AudioConfiguration::Tag::pcmConfig>();
-            LOG(INFO) << "Bluetooth service notify that PCM configuration.";
+            LogInfo() << "Bluetooth service notify that PCM configuration.";
 
             auto icp_manager = module_manager::get_instance()
                 ->get_module<ipc_manager>(ipc_manager::s_module_name);
@@ -203,26 +204,26 @@ void AidlBluetoothAudioProvider::handleAudioSessionChanged( const AudioConfigura
     case AudioConfiguration::Tag::a2dpConfig:
         {
             CodecConfiguration codec = in_audioConfig.get<AudioConfiguration::Tag::a2dpConfig>();
-            LOG(INFO) << "Bluetooth service notify that codec configuration. Usually this is for offload";
+            LogInfo() << "Bluetooth service notify that codec configuration. Usually this is for offload";
             return;
         }
         break;
     case AudioConfiguration::Tag::leAudioConfig:
         {
             LeAudioConfiguration le_aduio = in_audioConfig.get<AudioConfiguration::Tag::leAudioConfig>();
-            LOG(INFO) << "Bluetooth service notify that LE codec configuration. Usually this is for offload";
+            LogInfo() << "Bluetooth service notify that LE codec configuration. Usually this is for offload";
             return;
         }
         break;
     case AudioConfiguration::Tag::leAudioBroadcastConfig:
         {
             LeAudioBroadcastConfiguration le_broadcast = in_audioConfig.get<AudioConfiguration::Tag::leAudioBroadcastConfig>();
-            LOG(INFO) << "Bluetooth service notify that LE broadcast configuration. Usually this is for offload";
+            LogInfo() << "Bluetooth service notify that LE broadcast configuration. Usually this is for offload";
             return;
         }
         break;
     default:
-        LOG(INFO) << "Bluetooth service notify that code configuration that we unknown";
+        LogInfo() << "Bluetooth service notify that code configuration that we unknown";
         break;
     }
 

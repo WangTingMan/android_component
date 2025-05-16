@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{7fc7bd07-cb3e-480e-9db4-53be7989c9c6}</ProjectGuid>
+    <RootNamespace>androidhardwareaudioeffectV2ndk</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V4-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V4-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.effect-V2-ndk;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS;_WINDOWS;_USRDLL;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.hardware.audio.common-V1-ndk.lib;android.media.audio.common.types-V4-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AcousticEchoCanceler.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV1.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV2.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BassBoost.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Capability.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DefaultExtension.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Descriptor.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Downmix.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DynamicsProcessing.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\EnvironmentalReverb.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Equalizer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Flags.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\HapticGenerator.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IEffect.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IFactory.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\LoudnessEnhancer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\NoiseSuppression.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Parameter.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\PresetReverb.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Processing.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Range.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Spatializer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\VendorExtension.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Virtualizer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Visualizer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Volume.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AcousticEchoCanceler.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\ANDROIDHARDWAREAUDIOEFFECTV2NDK_EXPORTS_.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV1.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\AutomaticGainControlV2.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BassBoost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BnEffect.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BnFactory.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BpEffect.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\BpFactory.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Capability.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\CommandId.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DefaultExtension.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Descriptor.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Downmix.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\DynamicsProcessing.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\EnvironmentalReverb.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Equalizer.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Flags.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\HapticGenerator.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IEffect.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\IFactory.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\LoudnessEnhancer.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\NoiseSuppression.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Parameter.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\PresetReverb.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Processing.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Range.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Spatializer.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\State.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\VendorExtension.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Virtualizer.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Visualizer.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.audio.effect-V2-ndk\aidl\android\hardware\audio\effect\Volume.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
