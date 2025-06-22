@@ -3,6 +3,7 @@
 #include <map>
 #include <binder/IPCThreadState.h>
 #include <android\binder_manager.h>
+#include <base/logging.h>
 
 #include <aidl\android\hardware\bluetooth\audio\IBluetoothAudioProviderFactory.h>
 

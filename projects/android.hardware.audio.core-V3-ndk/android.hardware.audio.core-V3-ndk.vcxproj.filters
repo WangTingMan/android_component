@@ -1,201 +1,201 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\AudioPatch.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\AudioRoute.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetooth.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetoothA2dp.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetoothLe.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IConfig.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IModule.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamCallback.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamCommon.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamIn.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamOut.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamOutEventCallback.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\ITelephony.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\MmapBufferDescriptor.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\ModuleDebug.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\StreamDescriptor.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\SurroundSoundConfig.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\VendorParameter.cpp">
-      <Filter>源文件</Filter>
+      <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\AudioPatch.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\AudioRoute.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnBluetooth.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnBluetoothA2dp.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnBluetoothLe.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnConfig.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnModule.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnStreamCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnStreamCommon.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnStreamIn.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnStreamOut.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnStreamOutEventCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BnTelephony.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpBluetooth.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpBluetoothA2dp.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpBluetoothLe.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpConfig.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpModule.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpStreamCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpStreamCommon.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpStreamIn.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpStreamOut.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpStreamOutEventCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\BpTelephony.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetooth.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetoothA2dp.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IBluetoothLe.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IConfig.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IModule.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamCommon.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamIn.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamOut.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\IStreamOutEventCallback.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\ITelephony.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\MmapBufferDescriptor.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\ModuleDebug.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\StreamDescriptor.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\SurroundSoundConfig.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\VendorParameter.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated_files\android.hardware.audio.core-V3-ndk\aidl\android\hardware\audio\core\ANDROIDHARDWAREAUDIOCOREV3NDK_EXPORTS_.h">
-      <Filter>头文件</Filter>
+      <Filter>header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

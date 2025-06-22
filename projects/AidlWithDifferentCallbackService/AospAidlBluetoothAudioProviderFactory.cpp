@@ -1,6 +1,7 @@
 #include "AospAidlBluetoothAudioProviderFactory.h"
 #include "AospBluetoothAudioProvider.h"
 #include "Service.h"
+#include <base/logging.h>
 
 namespace aidl::android::hardware::bluetooth::audio {
 

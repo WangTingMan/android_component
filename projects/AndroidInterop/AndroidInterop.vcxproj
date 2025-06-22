@@ -149,6 +149,7 @@
     <ClCompile Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.cpp" />
     <ClCompile Include="module\mtk\mtk_aidl_local_service.cpp" />
     <ClCompile Include="module\mtk\mtk_hidl_local_service.cpp" />
+    <ClCompile Include="module\mtk\mtk_platform_audio_service.cpp" />
     <ClCompile Include="module\mtk\utils.cpp" />
     <ClCompile Include="module\qcom\HidlBluetoothAudioProvider.cpp" />
     <ClCompile Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="module\mtk\HidlBluetoothAudioProviderFactory_2_2.h" />
     <ClInclude Include="module\mtk\mtk_aidl_local_service.h" />
     <ClInclude Include="module\mtk\mtk_hidl_local_service.h" />
+    <ClInclude Include="module\mtk\mtk_platform_audio_service.h" />
     <ClInclude Include="module\mtk\utils.h" />
     <ClInclude Include="module\qcom\HidlBluetoothAudioProvider.h" />
     <ClInclude Include="module\qcom\HidlIBluetoothAudioProvidersFactory_2_1.h" />

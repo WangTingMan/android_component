@@ -18,11 +18,19 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\generated_files\audio_policy_engine_configuration_aidl_default\android_audio_policy_engine_configuration.cpp" />
+    <ClCompile Include="..\..\generated_files\audio_policy_engine_configuration_aidl_default\android_audio_policy_engine_configuration_enums.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\generated_files\audio_policy_engine_configuration_aidl_default\include\android_audio_policy_engine_configuration.h" />
+    <ClInclude Include="..\..\generated_files\audio_policy_engine_configuration_aidl_default\include\android_audio_policy_engine_configuration_enums.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{92bcfa5f-d2c0-4735-ab63-1559eff10bb6}</ProjectGuid>
-    <RootNamespace>androidhardwareaudiocommonV4ndk</RootNamespace>
+    <ProjectGuid>{53d78bfc-d5ff-4e4a-abaf-96550170dd19}</ProjectGuid>
+    <RootNamespace>audiopolicyengineconfigurationaidldefault</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +48,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -71,14 +79,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V4-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V4-ndk;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\system\external\libxml2\include;$(ProjectDir)..\..\system\tools\xsdc\utils\include;$(ProjectDir)..\..\generated_files\audio_policy_engine_configuration_aidl_default\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREAUDIOCOMMONV4NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;AUDIOPOLICYENGINECONFIGURATIONAIDLDEFAULT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -95,7 +102,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREAUDIOCOMMONV4NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;AUDIOPOLICYENGINECONFIGURATIONAIDLDEFAULT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -112,18 +119,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREAUDIOCOMMONV4NDK_EXPORTS_IMPL;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;AUDIOPOLICYENGINECONFIGURATIONAIDLDEFAULT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251;4068;4267;4715</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;android.media.audio.common.types-V4-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -132,7 +137,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREAUDIOCOMMONV4NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;AUDIOPOLICYENGINECONFIGURATIONAIDLDEFAULT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -145,22 +150,6 @@
       <EnableUAC>false</EnableUAC>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\AudioOffloadMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\SinkMetadata.cpp" />
-    <ClCompile Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\SourceMetadata.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\ANDROIDHARDWAREAUDIOCOMMONV4NDK_EXPORTS_.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\AudioOffloadMetadata.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\PlaybackTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\RecordTrackMetadata.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\SinkMetadata.h" />
-    <ClInclude Include="..\..\generated_files\android.hardware.audio.common-V4-ndk\aidl\android\hardware\audio\common\SourceMetadata.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

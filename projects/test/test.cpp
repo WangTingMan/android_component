@@ -2,9 +2,42 @@
 #include <iostream>
 #include <hwbinder/Parcel.h>
 #include <hidl/HidlBinderSupport.h>
+#include <log/log.h>
+
+#include <fmt/format.h>
+#include <fmt/core.h>
+#include <fmt/chrono.h>
+#include <android-base\logging.h>
+
+struct Person {
+    std::string name;
+    int age;
+};
+
+namespace fmt
+{
+    template <>
+    struct formatter<Person>
+    {
+        constexpr auto parse(fmt::format_parse_context& ctx)
+        {
+            return ctx.begin();
+        }
+
+        auto format(const Person& p, fmt::format_context& ctx) const
+        {
+            return fmt::format_to(ctx.out(), "Name: {}, Age: {}", p.name, p.age);
+        }
+    };
+
+}
 
 int main()
 {
+    LOG(ERROR) << "hee";
+    std::string str;
+    Person p{ "Bob", 30 };
+    str = fmt::format("Person: {}", p);
     android::hardware::Parcel parcel;
     ::android::status_t _hidl_err;
     parcel.writeInt32(20);

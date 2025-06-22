@@ -96,6 +96,9 @@
     <ClCompile Include="module\qcom\qcom_platform_audio_service.cpp">
       <Filter>module\qcom</Filter>
     </ClCompile>
+    <ClCompile Include="module\mtk\mtk_platform_audio_service.cpp">
+      <Filter>module\mtk</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="view\HomePage.h">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="module\qcom\qcom_platform_audio_service.h">
       <Filter>module\qcom</Filter>
+    </ClInclude>
+    <ClInclude Include="module\mtk\mtk_platform_audio_service.h">
+      <Filter>module\mtk</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

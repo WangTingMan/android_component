@@ -4,6 +4,7 @@
 #include <Zhen/logging.h>
 #include "mtk/mtk_aidl_local_service.h"
 #include "mtk/mtk_hidl_local_service.h"
+#include "mtk/mtk_platform_audio_service.h"
 #include "qcom/qcom_platform_audio_service.h"
 #include "aosp/aosp_aidl_local_service.h"
 #include "module_manager.h"
@@ -35,9 +36,40 @@ using MqDataMode = SynchronizedReadWrite;
 using DataMQ = AidlMessageQueue<MqDataType, MqDataMode>;
 using DataMQDesc = MQDescriptor<MqDataType, MqDataMode>;
 
+/**
+ * Enable platform aidl audio simulation for MTK. this service will load real MTK code if we have.
+ */
+#define MTK_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_platform_audio_local_service_enabled"
+
+/**
+* Enable platform aidl audio simulation for QCOM. this service will load real QCOM code if we have.
+*/
+#define QCOM_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.qcom_platform_audio_local_service_enabled"
+
+/**
+ * Warning:
+ * At most one of QCOM_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED and MTK_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED will be enabled.
+ * Or both of the two services will not be enabled.
+ */
+
+/**
+ * Enable local aidl audio simulation for MTK. Will register only when MTK_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED disabled 
+ */
 #define MTK_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_aidl_audio_local_service_enabled"
+
+ /**
+  * Enable local hidl audio simulation for MTK. Will register only when MTK_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED disabled
+  */
 #define MTK_HIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.mtk_hidl_audio_local_service_enabled"
+
+/**
+  * Enable local hidl audio simulation for aosp
+*/
 #define AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.aospaidl_audio_local_service_enabled"
+
+/**
+  * Enable local hidl audio simulation for QCOM. Will register only when QCOM_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED disabled
+*/
 #define QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED "persist.bluetooth.qcom_hidl_audio_local_service_enabled"
 
 class ipc_manager_impl
@@ -89,17 +121,13 @@ int ipc_manager::init()
 
     trigger_run();
 
-    auto mtk_aidl_service = std::make_shared<mtk_aidl_local_service>();
-    module_manager::get_instance()->add_new_module(mtk_aidl_service);
-    m_audio_services.emplace_back(std::move(mtk_aidl_service));
-
     auto aosp_aidl_service = std::make_shared<aosp_aidl_local_service>();
     module_manager::get_instance()->add_new_module(aosp_aidl_service);
     m_audio_services.emplace_back(std::move(aosp_aidl_service));
 
-    auto mtk_hidl_service = std::make_shared<mtk_hidl_local_service>();
-    module_manager::get_instance()->add_new_module(mtk_hidl_service);
-    m_audio_services.emplace_back( std::move( mtk_hidl_service ) );
+    auto mtk_platform_service = std::make_shared<mtk_platform_audio_service>();
+    module_manager::get_instance()->add_new_module(mtk_platform_service);
+    m_audio_services.emplace_back( std::move(mtk_platform_service) );
 
     auto qcom_platform_service = std::make_shared<qcom_platform_audio_service>();
     module_manager::get_instance()->add_new_module(qcom_platform_service);
@@ -199,5 +227,15 @@ void ipc_manager::load_config()
     property_set( AOSP_AIDL_AUDIO_LOCAL_SERVICE_ENABLED, "0" );
 
     property_set( QCOM_HIDL_AUDIO_LOCAL_SERVICE_ENABLED, "1" );
+
+    constexpr bool enable_mtk_platform = true;
+    if constexpr (enable_mtk_platform)
+    {
+        property_set(MTK_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED, "1");
+    }
+    else
+    {
+        property_set(QCOM_PLATFORM_AUDIO_LOCAL_SERVICE_ENABLED, "1");
+    }
 }
 
