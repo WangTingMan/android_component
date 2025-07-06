@@ -19,6 +19,9 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="header files\linux">
+      <UniqueIdentifier>{46fa78a1-05b7-4ed0-a8cf-3e1bd79e1b5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -93,6 +96,9 @@
     <ClCompile Include="..\..\core\libcutils\str_parms.cpp">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\linux\linux_hid.cpp">
+      <Filter>header files\linux</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
@@ -160,6 +166,12 @@
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\str_parms.h">
       <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\linux\uhid.h">
+      <Filter>header files\linux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\linux\hid.h">
+      <Filter>header files\linux</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
