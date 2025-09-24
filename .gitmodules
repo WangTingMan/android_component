@@ -151,3 +151,6 @@
 [submodule "cJSON"]
 	path = cJSON
 	url = https://github.com/WangTingMan/cJSON.git
+[submodule "system/external/glog"]
+	path = system/external/glog
+	url = https://github.com/WangTingMan/glog.git
