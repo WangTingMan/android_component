@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,6 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -133,8 +137,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;LIBUTILSBINDERSDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,6 +148,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

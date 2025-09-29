@@ -64,7 +64,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -90,6 +90,10 @@
     <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\frameworks_native\libs;$(ProjectDir)..\..\system\external\perfetto\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)..\..\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\frameworks_native\libs\binder\generated_files\gen\aidl;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir);$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\frameworks_native\libs;$(ProjectDir)..\..\system\external\perfetto\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -141,14 +145,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;NOMINMAX;DO_NOT_DEFINE_TIME_VAL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251;4068</DisableSpecificWarnings>
+      <AdditionalOptions>/Zc:preprocessor /Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;libperfetto_c.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

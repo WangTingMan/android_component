@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,6 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\system\tools\hidl\utils\include;$(ProjectDir)..\..\system/libvintf/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\system\tools\hidl\metadata\include;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\boringssl/src/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\system\tools\hidl\utils\include;$(ProjectDir)..\..\system/libvintf/include;$(ProjectDir)..\..\system/tools/aidl/metadata/include;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\system\tools\hidl\metadata\include;$(ProjectDir)..\..\frameworks_native\libs\binder\internal;$(ProjectDir)..\..\boringssl/src/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -132,10 +136,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBHWSERVICEMANAGER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBHWSERVICEMANAGER_EXPORTS;_WINDOWS;_USRDLL;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;LIB_HW_SERVICE_MANAGER_IMPL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -143,6 +149,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbase.lib;libcutils.lib;libutils.lib;liblog.lib;fmtlib.lib;libvintf.lib;libhidl-gen-utils.lib;libhidlbase.lib;android.hidl.token@1.0.lib;libChromeBase.lib;libssl.lib;libcrypto_d.lib;libbinder_driver.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

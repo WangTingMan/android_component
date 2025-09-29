@@ -51,7 +51,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -86,6 +86,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/generated_files\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\projects\libbinder_driver;$(ProjectDir)..\..\frameworks_native\libs\binder_driver;$(ProjectDir)..\..\system\external\googletest\googletest\include;$(ProjectDir)..\..\core\libbinderwrapper\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\boringssl\src\include;$(ProjectDir)..\..\hardware\interfaces\bluetooth;$(ProjectDir)..\..\system\external\fmtlib\include;$(ProjectDir)..\..\libhidl\transport\include;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\system\media\audio_utils\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,14 +140,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libChromeBase.lib;libutils.lib;libbinder_driver.lib;liblog.lib;libgtest.lib;libcutils.lib;libbase.lib;libfmq.lib;libhidlbase.lib;libbinderwrapper.lib;libcrypto_d.lib;libssl.lib;fmtlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

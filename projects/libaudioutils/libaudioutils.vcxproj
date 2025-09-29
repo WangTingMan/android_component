@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -73,6 +73,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -133,10 +137,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;LIBAPTX_EXPORTS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -144,6 +150,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libutils.lib;liblog.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
