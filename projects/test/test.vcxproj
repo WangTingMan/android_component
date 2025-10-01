@@ -131,7 +131,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libChromeBase.lib;libutils.lib;libbinder_driver.lib;liblog.lib;libgtest.lib;libcutils.lib;libbase.lib;libfmq.lib;libhidlbase.lib;libbinderwrapper.lib;libcrypto_d.lib;libssl.lib;android.hardware.bluetooth.audio-impl.lib;fmtlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libChromeBase.lib;libutils.lib;libbinder_driver.lib;liblog.lib;libgtest.lib;libcutils.lib;libbase.lib;libfmq.lib;libhidlbase.lib;libbinderwrapper.lib;libcrypto_d.lib;libssl.lib;fmtlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
