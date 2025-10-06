@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,6 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\system\external\libxml2\include;$(ProjectDir)..\..\system\tools\xsdc\utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\frameworks_av\media\audioaidlconversion\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_av\media\liberror\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\hardware/interfaces/audio/aidl/common/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\generated_files/android.media.audio.common.types-V4-ndk;$(ProjectDir)..\..\generated_files/android.hardware.audio.common-V4-ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\frameworks_av/media/module/foundation/include;$(ProjectDir)..\..\libhardware\include_all;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir)..\..\system\external\libxml2\include;$(ProjectDir)..\..\system\tools\xsdc\utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\frameworks_av\media\audioaidlconversion\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_av\media\liberror\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\hardware/interfaces/audio/aidl/common/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\generated_files/android.media.audio.common.types-V4-ndk;$(ProjectDir)..\..\generated_files/android.hardware.audio.common-V4-ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\frameworks_av/media/module/foundation/include;$(ProjectDir)..\..\libhardware\include_all;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -131,10 +135,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBAUDIOAIDLCONVERSIONCOMMONNDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBAUDIOAIDLCONVERSIONCOMMONNDK_EXPORTS;_WINDOWS;_USRDLL;BACKEND_NDK;BACKEND_NDK_IMPL;_CRT_SECURE_NO_WARNINGS;_SILENCE_CXX17_CODECVT_HEADER_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,6 +147,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>libbase.lib;libfmq.lib;libxml2.lib;libcutils.lib;libutils.lib;liblog.lib;libbinder.lib;libbinder_ndk.lib;libhidlbase.lib;libutils_binder_sdk.lib;libflatbuffers-cpp.lib;libmedia_helper.lib;libaudioutils.lib;libaudioaidlcommon.lib;android.hardware.bluetooth.audio-V4-ndk.lib;android.hardware.audio.core-V3-ndk.lib;android.hardware.audio.common-V4-ndk.lib;android.media.audio.common.types-V4-ndk.lib;android.hardware.bluetooth.audio-V2-ndk.lib;android.hardware.bluetooth.audio@2.0.lib;android.hardware.bluetooth.audio@2.1.lib;android.hardware.audio.effect-V2-ndk.lib;android.hardware.audio.core.sounddose-V2-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
