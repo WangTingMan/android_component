@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,6 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files/android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.bluetooth.audio-V4-ndk;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq/generated_files/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files/android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files/android.hardware.bluetooth.audio-V4-ndk;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq/generated_files/include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)..\..\$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -122,14 +126,16 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_SILENCE_ALL_CXX17_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libbase.lib;libbinder.lib;libcutils.lib;liblog.lib;libutils.lib;libChromeBase.lib;libbinder_driver.lib;libbinder_ndk.lib;android.hardware.bluetooth.audio-V4-ndk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
