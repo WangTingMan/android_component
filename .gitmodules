@@ -154,3 +154,21 @@
 [submodule "system/external/glog"]
 	path = system/external/glog
 	url = https://github.com/WangTingMan/glog.git
+[submodule "frameworks_base"]
+	path = frameworks_base
+	url = https://github.com/WangTingMan/frameworks_base.git
+[submodule "frameworks_minikin"]
+	path = frameworks_minikin
+	url = https://github.com/WangTingMan/frameworks_minikin.git
+[submodule "libnativehelper"]
+	path = libnativehelper
+	url = https://github.com/WangTingMan/libnativehelper.git
+[submodule "system/external/icu"]
+	path = system/external/icu
+	url = https://github.com/WangTingMan/android_external_icu.git
+[submodule "system/incremental_delivery"]
+	path = system/incremental_delivery
+	url = https://github.com/WangTingMan/incremental_delivery.git
+[submodule "system/libziparchive"]
+	path = system/libziparchive
+	url = https://github.com/WangTingMan/libziparchive.git
