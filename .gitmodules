@@ -172,3 +172,6 @@
 [submodule "system/libziparchive"]
 	path = system/libziparchive
 	url = https://github.com/WangTingMan/libziparchive.git
+[submodule "system/external/curl"]
+	path = system/external/curl
+	url = https://github.com/WangTingMan/curl.git

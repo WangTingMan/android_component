@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ae54bfed-1088-4952-bb1a-75e5c0b02f5f}</ProjectGuid>
-    <RootNamespace>liblog</RootNamespace>
+    <ProjectGuid>{55563cf8-cd4c-48aa-ba9e-01664b56ce5c}</ProjectGuid>
+    <RootNamespace>androidhardwarebluetootha2dp10</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,28 +70,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <TargetExt>.so</TargetExt>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files/android.hardware.bluetooth.a2dp@1.0;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libhidl/transport/include;$(ProjectDir)..\..\libhwbinder/include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files/android.hardware.bluetooth.a2dp@1.0;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\libhidl/base/include;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDHARDWAREBLUETOOTHA2DP10_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -108,15 +99,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDHARDWAREBLUETOOTHA2DP10_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
@@ -125,18 +114,18 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;LIBLOG_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDHARDWAREBLUETOOTHA2DP10_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4250</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils_binder_sdk.lib;libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,48 +134,40 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBLOG_EXPORTS;_WINDOWS;_USRDLL;LIBLOG_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;NOMINMAX;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDHARDWAREBLUETOOTHA2DP10_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4251;4250</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils_binder_sdk.lib;libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\logging\liblog\logger_name.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_read.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logger_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\logprint.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_list.cpp" />
-    <ClCompile Include="..\..\logging\liblog\log_event_write.cpp" />
-    <ClCompile Include="..\..\logging\liblog\porting_log.cpp" />
-    <ClCompile Include="..\..\logging\liblog\properties.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BluetoothAudioHostAll.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BluetoothAudioOffloadAll.cpp" />
+    <ClCompile Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\types.cpp" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\logging\liblog\include\android\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\event_tag_map.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\liblog_export.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\logprint.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_event_list.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_id.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_main.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_properties.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_radio.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_read.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_safetynet.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_system.h" />
-    <ClInclude Include="..\..\logging\liblog\include\log\log_time.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\ANDROIDHARDWAREBLUETOOTHA2DP10_EXPORTS_HEADER.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BnHwBluetoothAudioHost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BnHwBluetoothAudioOffload.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BpHwBluetoothAudioHost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BpHwBluetoothAudioOffload.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BsBluetoothAudioHost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\BsBluetoothAudioOffload.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\hwtypes.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\IBluetoothAudioHost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\IBluetoothAudioOffload.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\IHwBluetoothAudioHost.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\IHwBluetoothAudioOffload.h" />
+    <ClInclude Include="..\..\generated_files\android.hardware.bluetooth.a2dp%401.0\android\hardware\bluetooth\a2dp\1.0\types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
