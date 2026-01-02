@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{f6a3d36a-fab5-4aad-92a3-eaee08146656}</ProjectGuid>
-    <RootNamespace>libutils</RootNamespace>
+    <ProjectGuid>{187101ef-2c7b-48fd-a7dd-c8665340adda}</ProjectGuid>
+    <RootNamespace>androidsystemsuspendcontrolV1ndk</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -70,28 +70,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <TargetExt>.so</TargetExt>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libsystem\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir);$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\hidl;$(ProjectDir)..\..\generated_files\android.system.suspend.control-V1-ndk;$(ProjectDir)..\..\libfmq/base;$(ProjectDir)..\..\libfmq/include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_cpp;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_ndk;$(ProjectDir)..\..\frameworks_native/libs/binder/ndk/include_platform;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;ANDROIDSYSTEMSUSPENDCONTROLV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -108,15 +95,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;ANDROIDSYSTEMSUSPENDCONTROLV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
@@ -125,7 +110,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;UTILS_IMPLEMENTATION;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;ANDROIDSYSTEMSUSPENDCONTROLV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -136,7 +121,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;libutils_binder_sdk.lib;liblog.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libbinder_ndk.lib;libbase.lib;liblog.lib;libcutils.lib;libutils.lib;libhidlbase.lib;libfmq.lib;libaudioutils.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,63 +130,34 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBUTILS_EXPORTS;_WINDOWS;_USRDLL;UTILS_IMPLEMENTATION;NOMINMAX;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROIDSYSTEMSUSPENDCONTROLV1NDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;libutils_binder_sdk.lib;liblog.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\core\libutils\direct.cpp" />
-    <ClCompile Include="..\..\core\libutils\direct_ext.cpp" />
-    <ClCompile Include="..\..\core\libutils\executing_time.cpp" />
-    <ClCompile Include="..\..\core\libutils\FileMap.cpp" />
-    <ClCompile Include="..\..\core\libutils\JenkinsHash.cpp" />
-    <ClCompile Include="..\..\core\libutils\LightRefBase.cpp" />
-    <ClCompile Include="..\..\core\libutils\misc.cpp" />
-    <ClCompile Include="..\..\core\libutils\NativeHandle.cpp" />
-    <ClCompile Include="..\..\core\libutils\Printer.cpp" />
-    <ClCompile Include="..\..\core\libutils\StopWatch.cpp" />
-    <ClCompile Include="..\..\core\libutils\SystemClock.cpp" />
-    <ClCompile Include="..\..\core\libutils\Threads.cpp" />
-    <ClCompile Include="..\..\core\libutils\ThreadWithTask.cpp" />
-    <ClCompile Include="..\..\core\libutils\Timers.cpp" />
-    <ClCompile Include="..\..\core\libutils\Tokenizer.cpp" />
+    <ClCompile Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\ISuspendCallback.cpp" />
+    <ClCompile Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\ISuspendControlService.cpp" />
+    <ClCompile Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\IWakelockCallback.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="gettimeofday_ms.cpp" />
-    <ClCompile Include="timer_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\core\libutils\include\utils\AndroidThreads.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\direct.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\executing_time.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\JenkinsHash.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\LightRefBase.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\LruCache.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\misc.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Printer.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\shared_timed_recursive_mutex.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\StopWatch.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\SystemClock.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Thread.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\ThreadWithTask.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\Timers.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h" />
-    <ClInclude Include="timer_manager.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\ANDROIDSYSTEMSUSPENDCONTROLV1NDK_EXPORTS_.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BnSuspendCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BnSuspendControlService.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BnWakelockCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BpSuspendCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BpSuspendControlService.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\BpWakelockCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\ISuspendCallback.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\ISuspendControlService.h" />
+    <ClInclude Include="..\..\generated_files\android.system.suspend.control-V1-ndk\aidl\android\system\suspend\IWakelockCallback.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

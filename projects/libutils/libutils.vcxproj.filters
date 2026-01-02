@@ -72,6 +72,9 @@
     <ClCompile Include="..\..\core\libutils\direct_ext.cpp">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libutils\ThreadWithTask.cpp">
+      <Filter>source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h">
@@ -129,6 +132,9 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\shared_timed_recursive_mutex.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libutils\include\utils\ThreadWithTask.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>
