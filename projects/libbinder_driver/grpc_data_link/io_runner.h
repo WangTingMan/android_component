@@ -6,6 +6,7 @@
 
 #include <chrono>
 #include <functional>
+#include <future>
 
 namespace data_link
 {
@@ -31,7 +32,7 @@ public:
 
 protected:
 
-    void running_detail();
+    void running_detail(std::shared_ptr<std::promise<void>> a_promise);
 
     void set_running_thread_name( std::string a_name )
     {

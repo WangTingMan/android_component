@@ -83,9 +83,10 @@ abstract_io_runner::~abstract_io_runner()
 
 void abstract_io_runner::run( bool a_occupy_current_thread )
 {
+    std::shared_ptr<std::promise<void>> _promise;
     if( a_occupy_current_thread )
     {
-        running_detail();
+        running_detail( _promise );
         return;
     }
 
@@ -94,7 +95,10 @@ void abstract_io_runner::run( bool a_occupy_current_thread )
         return;
     }
 
-    m_running_thread = std::thread( &abstract_io_runner::running_detail, this );
+    _promise = std::make_shared<std::promise<void>>();
+    auto _future = _promise->get_future();
+    m_running_thread = std::thread( &abstract_io_runner::running_detail, this, _promise );
+    _future.wait();
 }
 
 void abstract_io_runner::post_task( std::function<void()> a_tsk )
@@ -125,9 +129,15 @@ void abstract_io_runner::post_delay_task
                 (void*)( id ) );
 }
 
-void abstract_io_runner::running_detail()
+void abstract_io_runner::running_detail( std::shared_ptr<std::promise<void>> a_promise )
 {
     base::PlatformThread::SetName( m_running_thread_name );
+
+    if (a_promise)
+    {
+        a_promise->set_value();
+        a_promise.reset();
+    }
 
     gpr_set_log_function( &gpr_log_func_ );
     gpr_set_log_verbosity( GPR_LOG_SEVERITY_INFO );
