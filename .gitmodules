@@ -175,3 +175,12 @@
 [submodule "system/external/curl"]
 	path = system/external/curl
 	url = https://github.com/WangTingMan/curl.git
+[submodule "binary_translation"]
+	path = binary_translation
+	url = https://github.com/WangTingMan/binary_translation.git
+[submodule "art"]
+	path = art
+	url = https://github.com/WangTingMan/art.git
+[submodule "system/external/opengl"]
+	path = system/external/opengl
+	url = https://github.com/WangTingMan/opengl_mesa.git
