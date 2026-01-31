@@ -184,3 +184,15 @@
 [submodule "system/external/opengl"]
 	path = system/external/opengl
 	url = https://github.com/WangTingMan/opengl_mesa.git
+[submodule "system/external/wepoll"]
+	path = system/external/wepoll
+	url = https://github.com/WangTingMan/wepoll.git
+[submodule "system/external/cubeb"]
+	path = system/external/cubeb
+	url = https://github.com/WangTingMan/cubeb.git
+[submodule "system/external/libzmq"]
+	path = system/external/libzmq
+	url = https://github.com/WangTingMan/libzmq.git
+[submodule "system/external/cppzmq"]
+	path = system/external/cppzmq
+	url = https://github.com/WangTingMan/cppzmq.git

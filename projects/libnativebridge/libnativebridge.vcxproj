@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
+    <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ebc3782d-a819-4eee-bdb6-998ac1de362b}</ProjectGuid>
-    <RootNamespace>libaudioutils</RootNamespace>
+    <ProjectGuid>{3f789b33-178b-4202-9c24-193d02be840f}</ProjectGuid>
+    <RootNamespace>libnativebridge</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -71,19 +71,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
-    <TargetExt>.so</TargetExt>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(ProjectDir)..\..\system\media\audio_utils\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\libbase/include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libopenaptx;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)../../art\libnativeloader\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\libnativehelper/include_jni;$(ProjectDir)../../libbase\include;$(ProjectDir)../../art/libartbase;$(ProjectDir)../../art/libnativebridge/include;$(ProjectDir)../../libnativehelper/header_only_include;$(ProjectDir)../../system\external\fmtlib\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\logging\liblog\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;LIBNATIVEBRIDGE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -100,15 +95,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LIBNATIVEBRIDGE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
@@ -117,18 +110,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;LIBAPTX_EXPORTS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBNATIVEBRIDGE_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libutils.lib;liblog.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libutils.lib;libcutils.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -137,70 +128,24 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LIBAUDIOUTILS_EXPORTS;_WINDOWS;_USRDLL;LIBAUDIOUTILS_IMPLEMENTATION;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;LIBAPTX_EXPORTS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LIBNATIVEBRIDGE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
-      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libutils.lib;liblog.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\libopenaptx\openaptx.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\Balance.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\channels.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\ErrorLog.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\fifo.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\fifo_index.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\fifo_writer_T.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\format.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\hal_smoothness.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\limiter.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\MelAggregator.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\MelProcessor.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\Metadata.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\minifloat.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\mono_blend.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\mutex.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\power.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\PowerLog.cpp" />
-    <ClCompile Include="..\..\system\media\audio_utils\primitives.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\roundup.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\sample.c" />
-    <ClCompile Include="..\..\system\media\audio_utils\threads.cpp" />
+    <ClCompile Include="..\..\art\libnativebridge\native_bridge.cc" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\libopenaptx\openaptx.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\Balance.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\channels.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\ErrorLog.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo_index.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\fifo_writer_T.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\format.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\hal_smoothness.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\libaudioutils_export.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\MelAggregator.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\MelProcessor.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\Metadata.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\minifloat.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mono_blend.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\mutex.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\power.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\PowerLog.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\primitives.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\roundup.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\sample.h" />
-    <ClInclude Include="..\..\system\media\audio_utils\include\audio_utils\threads.h" />
+    <ClInclude Include="..\..\art\libnativebridge\include\nativebridge\LIBNATIVEBRIDGE_EXPORTS_.h" />
+    <ClInclude Include="..\..\art\libnativebridge\include\nativebridge\native_bridge.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

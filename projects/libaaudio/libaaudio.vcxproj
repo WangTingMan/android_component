@@ -71,7 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\frameworks_av\media\libaaudio\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir);$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\frameworks_av\media\libaaudio\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\frameworks_av\media\libaaudio;$(ProjectDir)..\..\system\external\cubeb\include;$(ProjectDir);$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -111,7 +112,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;LIBAAUDIO_EXPORTS_API;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;LIBAAUDIO_EXPORTS_;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
@@ -121,6 +122,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>cubeb.lib;liblog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -143,12 +145,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\frameworks_av\media\libaaudio\src\core\AAudioAudio.cpp" />
+    <ClCompile Include="..\..\frameworks_av\media\libaaudio\src\core\AudioGlobal.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="porting_aaudio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudio.h" />
     <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudioTesting.h" />
+    <ClInclude Include="..\..\frameworks_av\media\libaaudio\src\core\AudioGlobal.h" />
     <ClInclude Include="internal_implement.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

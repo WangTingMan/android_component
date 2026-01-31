@@ -5,38 +5,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="header">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="source">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="header">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\frameworks_av\media\libaaudio\src\core\AudioGlobal.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="porting_aaudio.cpp">
+    <ClCompile Include="..\..\art\libnativebridge\native_bridge.cc">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudio.h">
+    <ClInclude Include="..\..\art\libnativebridge\include\nativebridge\native_bridge.h">
       <Filter>header</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\frameworks_av\media\libaaudio\include\aaudio\AAudioTesting.h">
+    <ClInclude Include="..\..\art\libnativebridge\include\nativebridge\LIBNATIVEBRIDGE_EXPORTS_.h">
       <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="internal_implement.h">
-      <Filter>header</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\frameworks_av\media\libaaudio\src\core\AudioGlobal.h">
-      <Filter>source</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
