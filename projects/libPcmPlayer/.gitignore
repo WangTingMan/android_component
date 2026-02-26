@@ -1,0 +1,7 @@
+#dsd
+x64/
+*.vcxproj.user
+*.bggdb
+*.bgidb
+*.obj
+Debug/
