@@ -8,6 +8,8 @@
 #include <fmt/core.h>
 #include <fmt/chrono.h>
 #include <android-base\logging.h>
+#include <cutils\native_handle.h>
+#include <utils\direct.h>
 
 struct Person {
     std::string name;
@@ -34,6 +36,9 @@ namespace fmt
 
 int main()
 {
+    const char* p1 = "D:/test.txt";
+    const char* p2 = "D:/test1.txt";
+    link( p1, p2 );
     LOG(ERROR) << "hee";
     std::string str;
     Person p{ "Bob", 30 };

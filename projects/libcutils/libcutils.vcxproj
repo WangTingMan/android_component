@@ -42,8 +42,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <EnableASAN>false</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -138,6 +139,9 @@
       <EnableUAC>false</EnableUAC>
       <AdditionalDependencies>libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)wintun_amd64\*.*" "$(SolutionDir)$(Platform)\$(Configuration)\" /Y /Q /I</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -182,6 +186,7 @@
     <ClCompile Include="..\..\core\libcutils\str_parms.cpp" />
     <ClCompile Include="..\..\core\libcutils\threads.cpp" />
     <ClCompile Include="..\..\core\libcutils\trace-host.cpp" />
+    <ClCompile Include="..\..\core\libcutils\virtual_net.cpp" />
     <ClCompile Include="dictionary.c" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="iniparser.c" />
@@ -209,6 +214,8 @@
     <ClInclude Include="..\..\core\libcutils\include\cutils\str_parms.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\threads.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\trace.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\virtual_net.h" />
+    <ClInclude Include="..\..\core\libcutils\include\cutils\wintun.h" />
     <ClInclude Include="dictionary.h" />
     <ClInclude Include="iniparser.h" />
     <ClInclude Include="internal_property.h" />

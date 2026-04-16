@@ -66,13 +66,22 @@ uint32_t TimerManager::MakeNewAlarm
 
     if( m_message_loop )
     {
-        m_message_loop->task_runner()->PostDelayedTask(
-            FROM_HERE,
-            base::BindOnce( &TimerManager::MakeNewAlarmInternal,
-                            base::Unretained( this ), id_promise, a_name,
-                            a_callBack, a_periodic ),
-            base::TimeDelta() );
-        uint32_t id = id_future.get();
+        uint32_t id = 0;
+        bool runing_on_current = m_message_loop->task_runner()->RunsTasksInCurrentSequence();
+        if( !runing_on_current )
+        {
+            m_message_loop->task_runner()->PostDelayedTask(
+                FROM_HERE,
+                base::BindOnce( &TimerManager::MakeNewAlarmInternal,
+                    base::Unretained( this ), id_promise, a_name,
+                    a_callBack, a_periodic ),
+                base::TimeDelta() );
+        }
+        else
+        {
+            MakeNewAlarmInternal( id_promise, std::move(a_name), a_callBack, a_periodic );
+        }
+        id = id_future.get();
         return id;
     }
     return 0;
@@ -170,11 +179,19 @@ bool TimerManager::IsScheduled( uint32_t const a_larm)
 
     if( m_message_loop )
     {
-        m_message_loop->task_runner()->PostDelayedTask(
-            FROM_HERE,
-            base::BindOnce( &TimerManager::IsScheduledInternal,
-                            base::Unretained( this ), id_promise, a_larm ),
-            base::TimeDelta() );
+        bool runing_on_current = m_message_loop->task_runner()->RunsTasksInCurrentSequence();
+        if( !runing_on_current )
+        {
+            m_message_loop->task_runner()->PostDelayedTask(
+                FROM_HERE,
+                base::BindOnce( &TimerManager::IsScheduledInternal,
+                    base::Unretained( this ), id_promise, a_larm ),
+                base::TimeDelta() );
+        }
+        else
+        {
+            IsScheduledInternal( id_promise, a_larm );
+        }
         return id_future.get();
     }
 
@@ -189,11 +206,19 @@ int TimerManager::GetRemainingMs( uint32_t a_alarm )
 
     if( m_message_loop )
     {
-        m_message_loop->task_runner()->PostDelayedTask(
-            FROM_HERE,
-            base::BindOnce( &TimerManager::GetRemainingMsInternal,
-                            base::Unretained( this ), id_promise, a_alarm ),
-            base::TimeDelta() );
+        bool runing_on_current = m_message_loop->task_runner()->RunsTasksInCurrentSequence();
+        if( !runing_on_current )
+        {
+            m_message_loop->task_runner()->PostDelayedTask(
+                FROM_HERE,
+                base::BindOnce( &TimerManager::GetRemainingMsInternal,
+                    base::Unretained( this ), id_promise, a_alarm ),
+                base::TimeDelta() );
+        }
+        else
+        {
+            GetRemainingMsInternal( id_promise, a_alarm );
+        }
         return id_future.get();
     }
 
