@@ -5,7 +5,8 @@
 #include "ipc_connection_token.h"
 
 #include "linux/binder_internal_control_block_mgr.h"
-#include <base/rand_util.h>
+#include <chrono>
+#include <random> 
 
 #include <cutils/properties.h>
 
@@ -14,8 +15,17 @@
 namespace data_link
 {
 
+    int rand_value(int min, int max)
+    {
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+        std::mt19937 gen( seed );
+        std::uniform_int_distribution<int> distInt( min, max );
+        int randInt = distInt( gen );
+        return randInt;
+    }
+
 #ifdef USING_RANDOM_ID_START
-std::atomic<uint64_t> binder_ipc_message::s_next_id{ static_cast<uint64_t>( ::base::RandInt(0,1000) )};
+std::atomic<uint64_t> binder_ipc_message::s_next_id{ static_cast<uint64_t>( rand_value(0,1000) )};
 #else
 std::atomic<uint64_t> binder_ipc_message::s_next_id;
 #endif
