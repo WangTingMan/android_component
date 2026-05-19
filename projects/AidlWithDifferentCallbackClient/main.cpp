@@ -35,6 +35,9 @@ int main()
         {
             return 0;
         }
+    } else {
+        std::cout << "no such service found. please run the service demo first.\n";
+        return 0;
     }
 
     auto aidl_retval = provider_factory->m_getInterfaceVersion(&version);

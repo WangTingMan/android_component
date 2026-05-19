@@ -42,9 +42,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
-    <EnableASAN>false</EnableASAN>
+    <EnableASAN>true</EnableASAN>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -73,7 +73,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetExt>.dll</TargetExt>
-    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth.audio-V5-ndk;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\hardware\interfaces\bluetooth\audio\utils\aidl_session;$(ProjectDir)..\..\logging\liblog\include;$(ProjectDir)..\..\libbase\include;$(ProjectDir)..\..\generated_files;$(ProjectDir)..\..\generated_files\android.media.audio.common.types-V3-ndk;$(ProjectDir)..\..\generated_files\android.hardware.audio.common-V3-ndk;$(ProjectDir)..\..\generated_files\btaudiohal_flags_c_lib;$(ProjectDir)..\..\generated_files\android.hardware.bluetooth.audio-V5-ndk;$(ProjectDir)..\..\libfmq\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_cpp;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_ndk;$(ProjectDir)..\..\chromebase;$(ProjectDir)..\..\libfmq\generated_files\include;$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libutils\binder\include;$(ProjectDir)..\..\libfmq\base;$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\libhidl\base\include;$(ProjectDir)..\..\libhwbinder\include;$(ProjectDir)..\..\libhardware\include;$(ProjectDir)..\..\system\media\audio\include;$(ProjectDir)..\..\frameworks_native\libs\binder\ndk\include_platform;$(ProjectDir)..\..\frameworks_native\libs\binder\include;$(ProjectDir)..\..\frameworks_native\libs\binder;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

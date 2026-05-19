@@ -300,6 +300,7 @@ int main( int argc, char** argv )
             adder = i;
             sum = demo->add( v, adder );
             ALOGD( "Addition result: %i + %i = %i", v, adder, sum );
+            std::cout << "Addition result: " << v << "+" << adder << "=" << sum << "\n";
         }
     }
 
