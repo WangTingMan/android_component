@@ -16,9 +16,6 @@
     <Filter Include="internal">
       <UniqueIdentifier>{168eb071-a386-4dc0-89d3-fdefebcce415}</UniqueIdentifier>
     </Filter>
-    <Filter Include="libutils_binder">
-      <UniqueIdentifier>{a405c9b3-fd00-47c7-8244-e8c73cb9592f}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

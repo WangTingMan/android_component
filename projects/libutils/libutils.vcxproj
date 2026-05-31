@@ -137,7 +137,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libcutils.lib;libutils_binder_sdk.lib;liblog.lib;libChromeBase.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcutils.lib;liblog.lib;libChromeBase.lib;libutils_binder_sdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -203,6 +203,20 @@
     <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h" />
     <ClInclude Include="timer_manager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\chromebase\ms_build\libChromeBase\libChromeBase.vcxproj">
+      <Project>{b84475ad-b078-4556-9e18-006e1ab99d3f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libcutils\libcutils.vcxproj">
+      <Project>{67b71527-1381-464e-bd24-8c6f040414a9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\liblog\liblog.vcxproj">
+      <Project>{ae54bfed-1088-4952-bb1a-75e5c0b02f5f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\libutils_binder_sdk\libutils_binder_sdk.vcxproj">
+      <Project>{cade6b73-9612-4f6a-9d15-713f37ab8f7e}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

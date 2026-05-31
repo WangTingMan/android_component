@@ -189,6 +189,11 @@
     <ClInclude Include="..\..\logging\liblog\include\log\log_system.h" />
     <ClInclude Include="..\..\logging\liblog\include\log\log_time.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\chromebase\ms_build\libChromeBase\libChromeBase.vcxproj">
+      <Project>{b84475ad-b078-4556-9e18-006e1ab99d3f}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
