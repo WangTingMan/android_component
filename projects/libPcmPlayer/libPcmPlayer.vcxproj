@@ -91,8 +91,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>$(ProjectDir)lib_debug\64;E:\VCLAB\component\x64\Debug;$(LibraryPath)</LibraryPath>
-    <IncludePath>E:\VCLAB\component\core\libutils\include;E:\VCLAB\component\chromebase;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)lib_debug\64;$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\..\core\libutils\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

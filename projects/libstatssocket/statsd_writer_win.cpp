@@ -2,6 +2,14 @@
 #include "statsd_writer.h"
 #include <mutex>
 
+#ifndef _IOVEC_DEFINED_
+struct iovec
+{
+    void* iov_base;
+    size_t iov_len;
+};
+#endif
+
 __BEGIN_DECLS
 
 static int statsdAvailable();
@@ -53,7 +61,12 @@ void statsdClose()
 
 int statsdWrite(struct timespec* ts, struct iovec* vec, size_t nr)
 {
-	return 0;
+    int len = 0;
+    int i = 0;
+    for( len = i = 0; i < nr; ++i ) {
+        len += vec[i].iov_len;
+    }
+	return len;
 }
 
 void statsdNoteDrop(int error, int tag)
