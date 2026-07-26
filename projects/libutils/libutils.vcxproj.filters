@@ -80,9 +80,6 @@
     <ClInclude Include="..\..\core\libutils\include\utils\JenkinsHash.h">
       <Filter>header files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\LightRefBase.h">
-      <Filter>header files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h">
       <Filter>header files</Filter>
     </ClInclude>
@@ -99,9 +96,6 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\Timers.h">
-      <Filter>header files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h">
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h">
@@ -132,6 +126,9 @@
       <Filter>header files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\core\libutils\include\utils\ThreadWithTask.h">
+      <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libutils\include\utils\associate_signal.h">
       <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>

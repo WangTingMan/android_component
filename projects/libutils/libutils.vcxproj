@@ -184,12 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libutils\include\utils\AndroidThreads.h" />
+    <ClInclude Include="..\..\core\libutils\include\utils\associate_signal.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\AutoHolder.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\direct.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\executing_time.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\FileMap.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\JenkinsHash.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\LightRefBase.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\LruCache.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\misc.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\NativeHandle.h" />
@@ -200,7 +200,6 @@
     <ClInclude Include="..\..\core\libutils\include\utils\Thread.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\ThreadWithTask.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\Timers.h" />
-    <ClInclude Include="..\..\core\libutils\include\utils\TypeHelpers.h" />
     <ClInclude Include="..\..\core\libutils\include\utils\utils_export.h" />
     <ClInclude Include="timer_manager.h" />
   </ItemGroup>
