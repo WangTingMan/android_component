@@ -79,7 +79,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir);$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir);$(ProjectDir)..\..\core\libcutils\include;$(ProjectDir)..\..\core\libcutils\cmsis_rtos\v1\include;$(ProjectDir)..\..\chromebase;$(IncludePath)</IncludePath>
     <TargetExt>.so</TargetExt>
     <LibraryPath>$(SolutionDir)$(Platform)\$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
@@ -167,6 +167,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\core\libcutils\ashmem-host.cpp" />
+    <ClCompile Include="..\..\core\libcutils\cmsis_rtos\cmiss_rtos_core.cpp" />
+    <ClCompile Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.cc" />
     <ClCompile Include="..\..\core\libcutils\config_utils.cpp" />
     <ClCompile Include="..\..\core\libcutils\getopt.c" />
     <ClCompile Include="..\..\core\libcutils\hashmap.cpp" />
@@ -194,6 +196,8 @@
     <ClCompile Include="internal_property.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.h" />
+    <ClInclude Include="..\..\core\libcutils\cmsis_rtos\v1\include\cmsis_os.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\ashmem.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\atomic.h" />
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h" />

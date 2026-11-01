@@ -22,6 +22,18 @@
     <Filter Include="header files\linux">
       <UniqueIdentifier>{46fa78a1-05b7-4ed0-a8cf-3e1bd79e1b5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cmsis_rtos">
+      <UniqueIdentifier>{e6f61e0d-5f88-416a-a895-ab7b2df0973f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cmsis_rtos\source">
+      <UniqueIdentifier>{2923d2f4-2a96-4abf-90e8-01af9f9e6c36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cmsis_rtos\v1">
+      <UniqueIdentifier>{9a7cf437-e929-4770-bfa2-3394c564d563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cmsis_rtos\v1\include">
+      <UniqueIdentifier>{d3caa674-0ee9-49e2-9c87-5c0aadc7528e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -102,6 +114,12 @@
     <ClCompile Include="..\..\core\libcutils\virtual_net.cpp">
       <Filter>source files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\cmsis_rtos\cmiss_rtos_core.cpp">
+      <Filter>cmsis_rtos\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.cc">
+      <Filter>cmsis_rtos\source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
@@ -181,6 +199,12 @@
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\include\cutils\virtual_net.h">
       <Filter>header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\cmsis_rtos\v1\include\cmsis_os.h">
+      <Filter>cmsis_rtos\v1\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.h">
+      <Filter>cmsis_rtos\source</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
