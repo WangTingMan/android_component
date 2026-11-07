@@ -152,7 +152,7 @@ void TimerManager::SetAlarm
     uint64_t a_interval_ms
     )
 {
-
+    SetAlarm( a_alarm, a_interval_ms );
 }
 
 void TimerManager::CancelAlarm( uint32_t a_alarm)
@@ -468,6 +468,33 @@ extern "C" {
     int get_timer_remaining_ms( uint32_t timer_id )
     {
         return TimerManager::GetInstance().GetRemainingMs( timer_id );
+    }
+
+    int timer_create( clockid_t clockid, struct sigevent* sevp, timer_t* timerid )
+    {
+        std::function<void()> _fun;
+        _fun = std::bind( sevp->sigev_notify_function, sevp->sigev_value );
+
+        *timerid = create_timer( _fun );
+        return 0;
+    }
+
+    int timer_delete( timer_t timer_id )
+    {
+        delete_timer( timer_id );
+        return 0;
+    }
+
+    int timer_settime( timer_t timerid, int flags,
+        const struct itimerspec* new_value,
+        struct itimerspec* old_value )
+    {
+        uint64_t _timeOut = ( uint64_t )new_value->it_value.tv_sec * 1000 +
+            (uint64_t)new_value->it_value.tv_nsec / 1000000;
+        uint64_t _interval_ms = (uint64_t)new_value->it_interval.tv_sec * 1000 +
+            (uint64_t)new_value->it_interval.tv_nsec / 1000000;;
+        TimerManager::GetInstance().SetAlarm( timerid, _timeOut, _interval_ms );
+        return 0;
     }
 
 #ifdef __cplusplus

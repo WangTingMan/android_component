@@ -120,6 +120,9 @@
     <ClCompile Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.cc">
       <Filter>cmsis_rtos\source</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\core\libcutils\mqueue.c">
+      <Filter>source files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\core\libcutils\include\cutils\config_utils.h">
@@ -205,6 +208,9 @@
     </ClInclude>
     <ClInclude Include="..\..\core\libcutils\cmsis_rtos\message_loop_thread.h">
       <Filter>cmsis_rtos\source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\libcutils\include\cutils\mqueue.h">
+      <Filter>header files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
